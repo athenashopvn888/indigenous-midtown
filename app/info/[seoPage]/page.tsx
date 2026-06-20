@@ -103,26 +103,8 @@ export default async function SeoLandingPage({
           <div className={styles.section}>
             <h2 className={styles.sectionTitle}>Find Us</h2>
             <div className={styles.mapWrap}>
-              <iframe
-                src="https://maps.google.com/maps?q=93%20Broadway%20Ave,+Toronto,+ON+M4S%202A2&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="350"
-                style={{ border: 0, borderRadius: "var(--radius-lg)" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Indigenous Midtown Cannabis — 93 Broadway Ave, Toronto"
-              />
             </div>
             <div className={styles.visitBtns}>
-              <a
-                href="https://maps.google.com/?q=93+Broadway+Ave,+Toronto,+ON+M4S+2A2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.visitBtn}
-              >
-                📍 Get Directions
-              </a>
             </div>
           </div>
 

@@ -191,14 +191,6 @@ export default function BlogContent() {
             ))}
           </div>
           <div className={styles.reviewsCta}>
-            <a
-              href="https://maps.google.com/?q=93+Broadway+Ave,+Toronto,+ON+M4S+2A2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.reviewsBtn}
-            >
-              📍 See All Reviews on Google
-            </a>
           </div>
         </div>
       </section>

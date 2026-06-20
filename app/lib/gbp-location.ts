@@ -24,8 +24,8 @@ export const gbpLocation = {
     "Accessories"
   ],
   menuUrl: "/",
-  directionsUrl: "https://maps.google.com/?q=93+Broadway+Ave,+Toronto,+ON+M4S+2A2",
-  mapEmbedUrl: "https://maps.google.com/maps?q=93%20Broadway%20Ave%2C%20Toronto%2C%20ON%20M4S%202A2&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  directionsUrl: "",
+  mapEmbedUrl: "",
   latitude: "43.7077",
   longitude: "-79.3948",
   hours: ["Open 24 Hours"],

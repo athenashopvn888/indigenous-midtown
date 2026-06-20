@@ -44,14 +44,6 @@ export default function ContactPage() {
                 <br />
                 <span className={styles.infoMuted}>Broadway Ave & Redpath Ave</span>
               </p>
-              <a
-                href="https://maps.google.com/?q=93+Broadway+Ave,+Toronto,+ON+M4S+2A2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.infoBtn}
-              >
-                Get Directions →
-              </a>
             </div>
 
             {/* Hours */}
@@ -128,16 +120,6 @@ export default function ContactPage() {
 
           {/* Map */}
           <div className={styles.mapSection}>
-            <iframe
-              src="https://maps.google.com/maps?q=93%20Broadway%20Ave,+Toronto,+ON+M4S%202A2&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Indigenous Midtown Cannabis — 93 Broadway Ave, Toronto"
-            ></iframe>
           </div>
         </div>
       </section>

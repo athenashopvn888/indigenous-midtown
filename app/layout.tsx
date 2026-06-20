@@ -101,20 +101,9 @@ const jsonLd = {
       closes: "23:59",
     },
   ],
-  sameAs: [
-    "https://maps.google.com/?q=93+Broadway+Ave,+Toronto,+ON+M4S+2A2",
-    "https://maps.google.com/?q=93+Broadway+Ave,+Toronto,+ON+M4S+2A2",
-  ],
-  hasMap: "https://maps.google.com/?q=93+Broadway+Ave,+Toronto,+ON+M4S+2A2",
   areaServed: {
     "@type": "City",
     name: "Toronto",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "15",
-    bestRating: "5",
   },
 };
 
