@@ -92,10 +92,15 @@ interface Review {
   date: string;
 }
 
+interface ReviewStats {
+  total: number;
+  avg: number;
+}
+
 export default function HomePage() {
   const [featuredStrains, setFeaturedStrains] = useState<any[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
-  const [reviewsStats, setReviewsStats] = useState({ total: 14, avg: 5.0 });
+  const [reviewsStats, setReviewsStats] = useState<ReviewStats | null>(null);
   const [reviewsLoading, setReviewsLoading] = useState(true);
 
   /* ── 1. Fetch Client-Side Google Reviews ── */
@@ -126,8 +131,8 @@ export default function HomePage() {
         const dtIdx = colMap["CreateTime"] !== undefined ? colMap["CreateTime"] : 3;
 
         const reviewsPool: Review[] = [];
-        let totalVal = 14;
-        let avgVal = 5.0;
+        let totalVal: number | null = null;
+        let avgVal: number | null = null;
         let hasStats = false;
 
         rows.forEach((row: any) => {
@@ -137,9 +142,13 @@ export default function HomePage() {
 
           const rn = row.c[rnIdx] ? row.c[rnIdx].v || "" : "";
           if (rn === "__STATS__") {
-            totalVal = parseInt(row.c[cmIdx] ? row.c[cmIdx].v : 14) || 14;
-            avgVal = parseFloat(row.c[dtIdx] ? row.c[dtIdx].v : 5.0) || 5.0;
-            hasStats = true;
+            const parsedTotal = parseInt(row.c[cmIdx] ? row.c[cmIdx].v : "", 10);
+            const parsedAvg = parseFloat(row.c[dtIdx] ? row.c[dtIdx].v : "");
+            if (Number.isFinite(parsedTotal) && Number.isFinite(parsedAvg)) {
+              totalVal = parsedTotal;
+              avgVal = parsedAvg;
+              hasStats = true;
+            }
             return;
           }
 
@@ -151,7 +160,9 @@ export default function HomePage() {
         });
 
         setReviews(reviewsPool.slice(0, 6));
-        if (hasStats) setReviewsStats({ total: totalVal, avg: avgVal });
+        if (hasStats && totalVal !== null && avgVal !== null) {
+          setReviewsStats({ total: totalVal, avg: avgVal });
+        }
         setReviewsLoading(false);
       })
       .catch((err) => {
@@ -313,24 +324,26 @@ export default function HomePage() {
       <section className={styles.reviewsSection}>
         <div className={styles.container}>
           <div className={styles.reviewsHeader}>
-            <h2 className={styles.sectionTitle}>What Our Customers Say</h2>
-            <div className={styles.reviewsStarsSummary}>
-              <span className={styles.reviewsStars}>★★★★★</span>
-              <span className={styles.reviewsAvg}>
-                {reviewsStats.avg.toFixed(1)}
-              </span>
-              <span className={styles.reviewsCount}>
-                ({reviewsStats.total} reviews on Google)
-              </span>
-            </div>
+            <h2 className={styles.sectionTitle}>Customer Feedback</h2>
+            {reviewsStats && (
+              <div className={styles.reviewsStarsSummary}>
+                <span className={styles.reviewsStars}>★★★★★</span>
+                <span className={styles.reviewsAvg}>
+                  {reviewsStats.avg.toFixed(1)}
+                </span>
+                <span className={styles.reviewsCount}>
+                  ({reviewsStats.total} reviews)
+                </span>
+              </div>
+            )}
           </div>
 
           <div className={styles.reviewsGrid}>
             {reviewsLoading ? (
-              <div className={styles.reviewsLoading}>Loading reviews...</div>
+              <div className={styles.reviewsLoading}>Loading customer feedback...</div>
             ) : reviews.length === 0 ? (
               <div className={styles.reviewsLoading}>
-                Rated {reviewsStats.avg.toFixed(1)}/5 across {reviewsStats.total} Google reviews
+                Customer feedback is unavailable right now.
               </div>
             ) : (
               reviews.map((rv, idx) => (
