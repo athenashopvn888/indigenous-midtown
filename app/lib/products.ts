@@ -160,13 +160,13 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   EDIBLES: {
     banner: "/banners/edibles_prerolls_more_banner.webp",
     name: "Edibles", slug: "edibles", color: "#f97316", icon: "🍬",
-    seoTitle: "Cannabis Edibles Toronto — Gummies, Chocolates & Drinks",
-    seoIntro: "Browse the full cannabis edibles menu at Indigenous Midtown Cannabis on Toronto St, Toronto. We carry THC gummies, chocolates, drinks, and more from top Canadian brands.",
-    seoDescription: "Looking for cannabis edibles in Toronto? Indigenous Midtown Cannabis stocks a wide range of THC-infused gummies, chocolates, beverages, and baked goods. Our edibles range from micro-dose options for beginners to high-potency products for experienced consumers. All products are lab-tested and sourced from licensed Canadian producers. Visit us at 93 Broadway Ave — open daily 24 hours.",
+    seoTitle: "Cannabis Edibles in Toronto | Indigenous Midtown Cannabis",
+    seoIntro: "Browse edibles category information at Indigenous Midtown Cannabis in Toronto.",
+    seoDescription: "Review edible-related menu categories at Indigenous Midtown Cannabis in Toronto and confirm current menu details before visiting. This page helps shoppers browse general edibles information without promising current availability.",
     faqs: [
-      { q: "What cannabis edibles do you carry?", a: "We stock THC gummies, chocolates, beverages, capsules, and baked goods from top Canadian brands. Potencies range from 10mg to 1000mg+ THC." },
+      { q: "What edible categories can shoppers review?", a: "Visitors can use this page to review edibles category information and then confirm current menu details before visiting Indigenous Midtown Cannabis." },
       { q: "How long do edibles take to kick in?", a: "Cannabis edibles typically take 30-90 minutes to take effect. Start with a low dose (5-10mg) and wait at least 2 hours before consuming more." },
-      { q: "Can I buy edibles at Indigenous Midtown Cannabis?", a: "Yes! Visit us at 93 Broadway Ave, Toronto. We're open daily 24 hours with a full edibles selection in store." },
+      { q: "How should customers confirm current edible menu details?", a: "Check the current menu information or contact the store before visiting, because category details can change." },
     ],
   },
   "VAPE PENS": {
@@ -194,12 +194,12 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   CONCENTRATES: {
     banner: "/banners/03_Concentrates.webp",
     name: "Concentrates", slug: "concentrates", color: "#f59e0b", icon: "💎",
-    seoTitle: "Cannabis Concentrates Toronto — Shatter, Wax, Hash & Live Resin",
-    seoIntro: "Premium cannabis concentrates at Indigenous Midtown Cannabis, Toronto. Shatter, wax, hash, live resin, and diamonds — all in stock.",
-    seoDescription: "Indigenous Midtown Cannabis offers a premium selection of cannabis concentrates in Toronto. From traditional hash and kief to modern extracts like shatter, wax, live resin, and THC diamonds, we carry products for every preference and potency level. Our concentrates are sourced from trusted extractors and tested for purity. Visit us at 93 Broadway Ave.",
+    seoTitle: "Cannabis Concentrates in Toronto | Indigenous Midtown Cannabis",
+    seoIntro: "Browse concentrates category information at Indigenous Midtown Cannabis in Toronto.",
+    seoDescription: "Review concentrate-related menu categories at Indigenous Midtown Cannabis in Toronto and confirm current menu details before visiting. This page is intended for general category browsing and does not promise current product availability.",
     faqs: [
-      { q: "What types of concentrates do you carry?", a: "We stock shatter, wax, budder, live resin, rosin, hash, kief, and THC diamonds from top Canadian extractors." },
-      { q: "How do I consume concentrates?", a: "Concentrates can be dabbed with a rig, vaped with a concentrate pen, or added to flower in a joint or bowl for extra potency." },
+      { q: "What concentrate information can shoppers review?", a: "Visitors can use this page to review concentrates category information and then confirm current menu details before visiting Indigenous Midtown Cannabis." },
+      { q: "Does this page guarantee current concentrate availability?", a: "No. Category details can change, so customers should confirm the current menu before visiting." },
     ],
   },
   PREROLLS: {
