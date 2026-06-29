@@ -5,11 +5,11 @@ import AgeGate from "./components/AgeGate";
 export const metadata: Metadata = {
   metadataBase: new URL("https://indigenousmidtowncannabis.ca"),
   title: {
-    default: "Indigenous Midtown Cannabis — Premium Cannabis Dispensary, Toronto",
+    default: "Indigenous Midtown Cannabis | Midtown Toronto Dispensary",
     template: "%s | Indigenous Midtown Cannabis",
   },
   description:
-    "Shop 200+ premium cannabis strains at Indigenous Midtown Cannabis. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Toronto's uplifting dispensary at 93 Broadway Ave. Open 24 Hours.",
+    "Indigenous Midtown Cannabis is a Midtown Toronto dispensary near Yonge and Eglinton with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
   keywords: [
     "cannabis dispensary Toronto",
     "weed store Toronto",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://indigenousmidtowncannabis.ca",
     siteName: "Indigenous Midtown Cannabis",
-    title: "Indigenous Midtown Cannabis — Premium Toronto Cannabis Dispensary",
+    title: "Indigenous Midtown Cannabis | Midtown Toronto Dispensary",
     description:
-      "200+ strains from $3/g. Exotic to Budget. Toronto's uplifting dispensary at 93 Broadway Ave. Open 24 Hours.",
+      "Indigenous Midtown Cannabis is a Midtown Toronto dispensary near Yonge and Eglinton with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: [
       {
         url: "https://indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Indigenous Midtown Cannabis — Toronto's Uplifting Dispensary",
-    description: "200+ strains from $3/g. Open 24 Hours at 93 Broadway Ave, Toronto.",
+    title: "Indigenous Midtown Cannabis | Midtown Toronto Dispensary",
+    description: "Indigenous Midtown Cannabis is a Midtown Toronto dispensary near Yonge and Eglinton with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: ["https://indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
