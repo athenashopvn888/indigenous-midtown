@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://indigenousmidtowncannabis.ca/sitemap.xml",
+    sitemap: "https://www.indigenousmidtowncannabis.ca/sitemap.xml",
   };
 }

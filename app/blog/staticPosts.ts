@@ -25,7 +25,7 @@ export const STORE_BLOG_CONFIG = {
   storeCode: "IMC01",
   storeName: "Indigenous Midtown Cannabis",
   city: "Toronto",
-  domain: "indigenousmidtowncannabis.ca",
+  domain: "www.indigenousmidtowncannabis.ca",
   storePath: "/weed-dispensary-toronto",
 };
 
