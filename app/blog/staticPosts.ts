@@ -39,7 +39,7 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     meta_description: "Adult 19+ guide to Indigenous Midtown Cannabis around Midtown Toronto / Yonge and Eglinton / Mount Pleasant, with local store-page checks, menu-category context, and safe visit planning.",
     h1: "Indigenous Midtown Cannabis Local Store Guide for Adults 19+",
     excerpt: "Indigenous Midtown Cannabis guide for adults 19+ reviewing store information around Midtown Toronto / Yonge and Eglinton / Mount Pleasant.",
-    author: "Athena SEO Team",
+    author: "The Indigenous Midtown Cannabis Team",
     date: "2026-07-02",
     category: "Store Guide",
     readTime: "4 min",
