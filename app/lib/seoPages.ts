@@ -22,11 +22,11 @@ export const SEO_PAGES: SeoPageData[] = [
     sections: [
       {
         heading: "Shop Indigenous Midtown Cannabis With A Plan",
-        body: "Indigenous Midtown Cannabis helps adult shoppers compare the menu without guessing. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed.",
+        body: "Indigenous Midtown Cannabis helps adult shoppers review the menu by category. Start with the store page, then choose the section that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed.",
       },
       {
         heading: "Local Notes For Yonge and Eglinton / Mount Pleasant",
-        body: "If you searched for a cannabis dispensary near Yonge and Eglinton, use this page to get oriented. Local terms should point shoppers to the right store and the right menu lane, not recycled city copy.",
+        body: "If you searched for a cannabis dispensary near Yonge and Eglinton, use this page to confirm the local store, product categories, and current menu details.",
       },
       {
         heading: "What To Check Before Visiting",
@@ -55,7 +55,7 @@ export const SEO_PAGES: SeoPageData[] = [
       "A value-minded guide for comparing cheap weed, budget weed, affordable weed, and flower tiers at Indigenous Midtown Cannabis.",
     h1: "Indigenous Midtown Cannabis Cheap Weed and Budget Weed Guide",
     icon: "*",
-    heroTagline: "Value shopping without the guessing game",
+    heroTagline: "Value shopping with clear menu categories",
     sections: [
       {
         heading: "Start With Budget And AA",
@@ -67,7 +67,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Know When To Move Up",
-        body: "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A cleaner tier decision starts with the lane, not random scrolling.",
+        body: "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A clearer tier decision starts with the category and current menu details.",
       },
     ],
     faqs: [
