@@ -12,367 +12,176 @@ export interface SeoPageData {
 
 export const SEO_PAGES: SeoPageData[] = [
   {
-    "slug": "toronto-weed-dispensary",
-    "title": "Indigenous Midtown Cannabis Weed Dispensary in Toronto",
-    "metaDescription": "Indigenous Midtown Cannabis is a weed dispensary in Toronto with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and shopper resources.",
-    "h1": "Indigenous Midtown Cannabis Weed Dispensary in Toronto",
-    "icon": "*",
-    "heroTagline": "Menu shopping around Midtown Toronto / Yonge and Eglinton / Mount Pleasant",
-    "sections": [
+    slug: "toronto-weed-dispensary",
+    title: "Indigenous Midtown Cannabis Weed Dispensary in Toronto",
+    metaDescription:
+      "Indigenous Midtown Cannabis is a local cannabis dispensary in Toronto around Yonge and Eglinton / Mount Pleasant, with shopper resources for flower, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes.",
+    h1: "Indigenous Midtown Cannabis Weed Dispensary in Toronto",
+    icon: "*",
+    heroTagline: "Menu shopping around Yonge and Eglinton / Mount Pleasant",
+    sections: [
       {
-        "heading": "Shop Indigenous Midtown Cannabis With A Plan",
-        "body": "Indigenous Midtown Cannabis helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
+        heading: "Shop Indigenous Midtown Cannabis With A Plan",
+        body: "Indigenous Midtown Cannabis helps adult shoppers compare the menu without guessing. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed.",
       },
       {
-        "heading": "Local Menu Notes For Midtown Toronto / Yonge and Eglinton / Mount Pleasant",
-        "body": "If you searched for a weed dispensary in Midtown Toronto / Yonge and Eglinton / Mount Pleasant or a cannabis dispensary in Toronto, use this page to get oriented. Midtown Toronto / Yonge and Eglinton / Mount Pleasant, Midtown Toronto, Yonge and Eglinton, Mount Pleasant are useful local cues, but the current menu and staff are the right place for details that change."
+        heading: "Local Notes For Yonge and Eglinton / Mount Pleasant",
+        body: "If you searched for a cannabis dispensary near Yonge and Eglinton, use this page to get oriented. Local terms should point shoppers to the right store and the right menu lane, not recycled city copy.",
       },
       {
-        "heading": "What To Check Before Visiting",
-        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current products, prices, or availability, use the menu or ask staff before leaving."
-      }
+        heading: "What To Check Before Visiting",
+        body: "Confirm the current menu, directions, contact options, and listed hours. For current products, prices, or availability, use the menu or ask staff before leaving.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "q": "Is Indigenous Midtown Cannabis a cannabis dispensary in Toronto?",
-        "a": "Yes. Indigenous Midtown Cannabis serves shoppers looking for a cannabis dispensary in Toronto. Use the store page for directions, contact options, and listed hours."
+        q: "Is Indigenous Midtown Cannabis a local cannabis dispensary?",
+        a: "Yes. Indigenous Midtown Cannabis serves adult shoppers in Toronto around Yonge and Eglinton / Mount Pleasant. Use the store page for directions, contact details, and listed hours.",
       },
       {
-        "q": "What should I check before visiting Indigenous Midtown Cannabis?",
-        "a": "Start with the store page, then use the current menu to compare product names, formats, prices, and item notes."
+        q: "What should I check before visiting Indigenous Midtown Cannabis?",
+        a: "Check the current menu, category pages, directions, and contact details before visiting. Product details can change.",
       },
       {
-        "q": "Does Indigenous Midtown Cannabis carry flower and pre-rolls?",
-        "a": "The site has menu paths for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
-      }
-    ]
+        q: "Does the site show current product categories?",
+        a: "The site includes menu paths for flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and cigarettes where listed.",
+      },
+    ],
   },
   {
-    "slug": "york-weed-dispensary",
-    "title": "Indigenous Midtown Cannabis Weed Dispensary in Toronto",
-    "metaDescription": "Indigenous Midtown Cannabis is a weed dispensary in Toronto with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and shopper resources.",
-    "h1": "Indigenous Midtown Cannabis Weed Dispensary in Toronto",
-    "icon": "*",
-    "heroTagline": "Menu shopping around Midtown Toronto / Yonge and Eglinton / Mount Pleasant",
-    "sections": [
+    slug: "cheap-weed-toronto",
+    title: "Indigenous Midtown Cannabis Cheap Weed and Budget Weed Guide",
+    metaDescription:
+      "A value-minded guide for comparing cheap weed, budget weed, affordable weed, and flower tiers at Indigenous Midtown Cannabis.",
+    h1: "Indigenous Midtown Cannabis Cheap Weed and Budget Weed Guide",
+    icon: "*",
+    heroTagline: "Value shopping without the guessing game",
+    sections: [
       {
-        "heading": "Shop Indigenous Midtown Cannabis With A Plan",
-        "body": "Indigenous Midtown Cannabis helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
+        heading: "Start With Budget And AA",
+        body: "If affordable weed is the mission, start with the Budget and AA flower lanes before jumping around the rest of the menu.",
       },
       {
-        "heading": "Local Menu Notes For Midtown Toronto / Yonge and Eglinton / Mount Pleasant",
-        "body": "If you searched for a weed dispensary in Midtown Toronto / Yonge and Eglinton / Mount Pleasant or a cannabis dispensary in Toronto, use this page to get oriented. Midtown Toronto / Yonge and Eglinton / Mount Pleasant, Midtown Toronto, Yonge and Eglinton, Mount Pleasant are useful local cues, but the current menu and staff are the right place for details that change."
+        heading: "Compare The Current Menu",
+        body: "Look at product name, format, weight, posted price, and item notes. Menus change, so use this page for the method and the live menu for current details.",
       },
       {
-        "heading": "What To Check Before Visiting",
-        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current products, prices, or availability, use the menu or ask staff before leaving."
-      }
+        heading: "Know When To Move Up",
+        body: "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A cleaner tier decision starts with the lane, not random scrolling.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "q": "Is Indigenous Midtown Cannabis a cannabis dispensary in Toronto?",
-        "a": "Yes. Indigenous Midtown Cannabis serves shoppers looking for a cannabis dispensary in Toronto. Use the store page for directions, contact options, and listed hours."
+        q: "How should shoppers compare value flower?",
+        a: "Start with Budget and AA, then compare current product name, format, weight, posted price, and item notes.",
       },
       {
-        "q": "What should I check before visiting Indigenous Midtown Cannabis?",
-        "a": "Start with the store page, then use the current menu to compare product names, formats, prices, and item notes."
+        q: "Does this page guarantee current availability?",
+        a: "No. Use this page as a shopping guide and confirm the current menu before visiting.",
       },
-      {
-        "q": "Does Indigenous Midtown Cannabis carry flower and pre-rolls?",
-        "a": "The site has menu paths for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
-      }
-    ]
+    ],
   },
   {
-    "slug": "cheap-weed-toronto",
-    "title": "Indigenous Midtown Cannabis Cheap Weed and Budget Weed Guide",
-    "metaDescription": "A value-minded Indigenous Midtown Cannabis guide for cheap weed, budget weed, affordable weed, and flower tier shopping in Toronto.",
-    "h1": "Indigenous Midtown Cannabis Cheap Weed and Budget Weed Guide",
-    "icon": "$",
-    "heroTagline": "Value shopping without the guessing game",
-    "sections": [
+    slug: "native-cigarettes-toronto",
+    title: "Indigenous Midtown Cannabis Native Cigarettes Guide",
+    metaDescription:
+      "A shopper-friendly Native cigarettes guide for Indigenous Midtown Cannabis, with cigarette category notes where listed.",
+    h1: "Indigenous Midtown Cannabis Native Cigarettes Guide",
+    icon: "*",
+    heroTagline: "Cigarette category notes for local shoppers",
+    sections: [
       {
-        "heading": "Start With Budget And AA",
-        "body": "If cheap weed or affordable weed is the mission, start with the Budget and AA flower lanes before jumping around the rest of the menu. That keeps the comparison clean."
+        heading: "Use The Cigarette Category First",
+        body: "If cigarettes are part of the stop, start with the cigarette category and compare the current listings before visiting.",
       },
       {
-        "heading": "Compare The Current Menu",
-        "body": "Look at product name, format, weight, posted price, and item notes. Menus change, so use this page for the shopping method and the live menu or staff for current details."
+        heading: "Confirm Current Brands",
+        body: "Brand names, carton notes, and pricing can change. Treat this page as a guide and confirm current options from the menu or staff.",
       },
       {
-        "heading": "Know When To Move Up",
-        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
-      }
+        heading: "Keep The Visit Local",
+        body: "This guide is connected to Indigenous Midtown Cannabis around Yonge and Eglinton / Mount Pleasant, so shoppers do not land on copied pages for another market.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "q": "Where should value shoppers start at Indigenous Midtown Cannabis?",
-        "a": "Start with Budget and AA flower, then compare current menu details before choosing."
+        q: "Does Indigenous Midtown Cannabis list Native cigarettes?",
+        a: "The site includes a cigarette category where listed. Confirm current brands and pricing before visiting.",
       },
       {
-        "q": "Does affordable weed mean guessing?",
-        "a": "No. Compare the category, product name, format, size, posted price, and item notes. Ask staff if anything is unclear."
+        q: "Can cigarette selection change?",
+        a: "Yes. Brand names, carton notes, and availability can change, so use the current menu or staff for live details.",
       },
-      {
-        "q": "Where can shoppers confirm current prices?",
-        "a": "Use the current menu or ask staff. A guide should not pretend prices and availability never move."
-      }
-    ]
+    ],
   },
   {
-    "slug": "cheap-weed-york",
-    "title": "Indigenous Midtown Cannabis Cheap Weed and Budget Weed Guide",
-    "metaDescription": "A value-minded Indigenous Midtown Cannabis guide for cheap weed, budget weed, affordable weed, and flower tier shopping in Toronto.",
-    "h1": "Indigenous Midtown Cannabis Cheap Weed and Budget Weed Guide",
-    "icon": "$",
-    "heroTagline": "Value shopping without the guessing game",
-    "sections": [
+    slug: "weed-store-near-midtown-toronto-yonge-and-eglinton-mount-pleasant",
+    title: "Indigenous Midtown Cannabis Weed Store Near Yonge and Eglinton",
+    metaDescription:
+      "Indigenous Midtown Cannabis local guide for adults searching for a weed store near Yonge and Eglinton.",
+    h1: "Indigenous Midtown Cannabis Weed Store Near Yonge and Eglinton",
+    icon: "*",
+    heroTagline: "Local guide around Yonge and Eglinton",
+    sections: [
       {
-        "heading": "Start With Budget And AA",
-        "body": "If cheap weed or affordable weed is the mission, start with the Budget and AA flower lanes before jumping around the rest of the menu. That keeps the comparison clean."
+        heading: "Near Yonge and Eglinton",
+        body: "Indigenous Midtown Cannabis is tied to the local Yonge and Eglinton / Mount Pleasant shopping area. Use this page when comparing nearby cannabis menu options and store details.",
       },
       {
-        "heading": "Compare The Current Menu",
-        "body": "Look at product name, format, weight, posted price, and item notes. Menus change, so use this page for the shopping method and the live menu or staff for current details."
+        heading: "Avoid Stale City Pages",
+        body: "The page is written for this local store identity and does not reuse unrelated city copy.",
       },
       {
-        "heading": "Know When To Move Up",
-        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
-      }
+        heading: "Check Before You Go",
+        body: "Open the current menu, confirm directions, and use the contact details if a product or category detail matters before the visit.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "q": "Where should value shoppers start at Indigenous Midtown Cannabis?",
-        "a": "Start with Budget and AA flower, then compare current menu details before choosing."
+        q: "Is this page focused on Yonge and Eglinton?",
+        a: "Yes. This page is focused on Indigenous Midtown Cannabis around Yonge and Eglinton / Mount Pleasant, not unrelated city copy.",
       },
       {
-        "q": "Does affordable weed mean guessing?",
-        "a": "No. Compare the category, product name, format, size, posted price, and item notes. Ask staff if anything is unclear."
+        q: "What is the best next step?",
+        a: "Open the current menu or store page, then confirm directions and contact details before heading over.",
       },
-      {
-        "q": "Where can shoppers confirm current prices?",
-        "a": "Use the current menu or ask staff. A guide should not pretend prices and availability never move."
-      }
-    ]
+    ],
   },
   {
-    "slug": "native-cigarettes-toronto",
-    "title": "Indigenous Midtown Cannabis Native Cigarettes Resource",
-    "metaDescription": "Indigenous Midtown Cannabis Native cigarettes resource with brand names shown on the menu and $25 carton notes where listed.",
-    "h1": "Indigenous Midtown Cannabis Native Cigarettes Resource",
-    "icon": "#",
-    "heroTagline": "$25 carton notes and brand names where listed",
-    "sections": [
+    slug: "dispensary-near-me-toronto",
+    title: "Indigenous Midtown Cannabis Dispensary Near Me Guide",
+    metaDescription:
+      "Indigenous Midtown Cannabis guide for adults using near-me searches around Yonge and Eglinton / Mount Pleasant.",
+    h1: "Indigenous Midtown Cannabis Dispensary Near Me Guide",
+    icon: "*",
+    heroTagline: "A near-me page tied to the actual store",
+    sections: [
       {
-        "heading": "Start With The Cigarette Category",
-        "body": "The cigarette menu may show carton-style Native smoke options around $25, with brand names such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Check the current menu or ask staff before making the trip."
+        heading: "A Local Near-Me Result",
+        body: "Near-me searches should land on a page connected to Indigenous Midtown Cannabis, Toronto, and the local Yonge and Eglinton / Mount Pleasant area.",
       },
       {
-        "heading": "Keep Cannabis And Smokes Separate",
-        "body": "If you are also shopping flower, pre-rolls, edibles, THC vapes, or concentrates, compare those categories separately. It keeps the visit cleaner."
+        heading: "Use The Menu For Live Details",
+        body: "This page explains the shopping path. The current menu and staff remain the source for live products, prices, and availability.",
       },
       {
-        "heading": "Confirm What Matters Today",
-        "body": "Specific brands, carton options, and prices can change. Use this resource for the shopping path, then confirm current details with the menu or staff."
-      }
+        heading: "Keep The Route Simple",
+        body: "Confirm directions, listed hours, and product category before heading over.",
+      },
     ],
-    "faqs": [
+    faqs: [
       {
-        "q": "Does Indigenous Midtown Cannabis list Native cigarette options?",
-        "a": "The menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, and Canadian Menthol. Confirm current options before visiting."
+        q: "Is this page focused on Yonge and Eglinton?",
+        a: "Yes. This page is focused on Indigenous Midtown Cannabis around Yonge and Eglinton / Mount Pleasant, not unrelated city copy.",
       },
       {
-        "q": "Are $25 cartons guaranteed?",
-        "a": "No. This page points shoppers toward menu listings where $25 carton-style options are shown. Confirm current price and availability before choosing."
+        q: "What is the best next step?",
+        a: "Open the current menu or store page, then confirm directions and contact details before heading over.",
       },
-      {
-        "q": "Where should shoppers start?",
-        "a": "Open the cigarette category, then use the store page for directions, contact options, and listed hours."
-      }
-    ]
+    ],
   },
-  {
-    "slug": "native-cigarettes-york",
-    "title": "Indigenous Midtown Cannabis Native Cigarettes Resource",
-    "metaDescription": "Indigenous Midtown Cannabis Native cigarettes resource with brand names shown on the menu and $25 carton notes where listed.",
-    "h1": "Indigenous Midtown Cannabis Native Cigarettes Resource",
-    "icon": "#",
-    "heroTagline": "$25 carton notes and brand names where listed",
-    "sections": [
-      {
-        "heading": "Start With The Cigarette Category",
-        "body": "The cigarette menu may show carton-style Native smoke options around $25, with brand names such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Check the current menu or ask staff before making the trip."
-      },
-      {
-        "heading": "Keep Cannabis And Smokes Separate",
-        "body": "If you are also shopping flower, pre-rolls, edibles, THC vapes, or concentrates, compare those categories separately. It keeps the visit cleaner."
-      },
-      {
-        "heading": "Confirm What Matters Today",
-        "body": "Specific brands, carton options, and prices can change. Use this resource for the shopping path, then confirm current details with the menu or staff."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "Does Indigenous Midtown Cannabis list Native cigarette options?",
-        "a": "The menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, and Canadian Menthol. Confirm current options before visiting."
-      },
-      {
-        "q": "Are $25 cartons guaranteed?",
-        "a": "No. This page points shoppers toward menu listings where $25 carton-style options are shown. Confirm current price and availability before choosing."
-      },
-      {
-        "q": "Where should shoppers start?",
-        "a": "Open the cigarette category, then use the store page for directions, contact options, and listed hours."
-      }
-    ]
-  },
-  {
-    "slug": "weed-store-near-midtown-toronto-yonge-and-eglinton-mount-pleasant",
-    "title": "Weed Store Near Midtown Toronto / Yonge and Eglinton / Mount Pleasant | Indigenous Midtown Cannabis",
-    "metaDescription": "Looking for a weed store near Midtown Toronto / Yonge and Eglinton / Mount Pleasant? Use Indigenous Midtown Cannabis for store-page checks, menu categories, and local visit planning in Toronto.",
-    "h1": "Weed Store Near Midtown Toronto / Yonge and Eglinton / Mount Pleasant",
-    "icon": ">",
-    "heroTagline": "Local visit notes for Midtown Toronto / Yonge and Eglinton / Mount Pleasant, Midtown Toronto, Yonge and Eglinton, Mount Pleasant",
-    "sections": [
-      {
-        "heading": "Confirm The Right Store Page",
-        "body": "When you search for a weed store near Midtown Toronto / Yonge and Eglinton / Mount Pleasant, open the Indigenous Midtown Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
-      },
-      {
-        "heading": "Choose The Product Lane",
-        "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
-      },
-      {
-        "heading": "Use Staff For The Close Call",
-        "body": "If one detail decides the visit, ask staff. That is the cleanest way to handle current product questions."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "What is the best first step for a Midtown Toronto / Yonge and Eglinton / Mount Pleasant visit?",
-        "a": "Open the Indigenous Midtown Cannabis store page, then use the current menu category that matches the visit."
-      },
-      {
-        "q": "Should shoppers rely on old blog prices?",
-        "a": "No. Use the current menu or staff for details that change."
-      },
-      {
-        "q": "What categories can shoppers compare?",
-        "a": "Use the menu paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
-      }
-    ]
-  },
-  {
-    "slug": "weed-store-near-brampton",
-    "title": "Weed Store Near Midtown Toronto / Yonge and Eglinton / Mount Pleasant | Indigenous Midtown Cannabis",
-    "metaDescription": "Looking for a weed store near Midtown Toronto / Yonge and Eglinton / Mount Pleasant? Use Indigenous Midtown Cannabis for store-page checks, menu categories, and local visit planning in Toronto.",
-    "h1": "Weed Store Near Midtown Toronto / Yonge and Eglinton / Mount Pleasant",
-    "icon": ">",
-    "heroTagline": "Local visit notes for Midtown Toronto / Yonge and Eglinton / Mount Pleasant, Midtown Toronto, Yonge and Eglinton, Mount Pleasant",
-    "sections": [
-      {
-        "heading": "Confirm The Right Store Page",
-        "body": "When you search for a weed store near Midtown Toronto / Yonge and Eglinton / Mount Pleasant, open the Indigenous Midtown Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
-      },
-      {
-        "heading": "Choose The Product Lane",
-        "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
-      },
-      {
-        "heading": "Use Staff For The Close Call",
-        "body": "If one detail decides the visit, ask staff. That is the cleanest way to handle current product questions."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "What is the best first step for a Midtown Toronto / Yonge and Eglinton / Mount Pleasant visit?",
-        "a": "Open the Indigenous Midtown Cannabis store page, then use the current menu category that matches the visit."
-      },
-      {
-        "q": "Should shoppers rely on old blog prices?",
-        "a": "No. Use the current menu or staff for details that change."
-      },
-      {
-        "q": "What categories can shoppers compare?",
-        "a": "Use the menu paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
-      }
-    ]
-  },
-  {
-    "slug": "dispensary-near-me-toronto",
-    "title": "Cannabis Dispensary Near Me in Toronto | Indigenous Midtown Cannabis",
-    "metaDescription": "Use Indigenous Midtown Cannabis when searching for a cannabis dispensary near me in Toronto; compare menu categories and confirm current details before visiting.",
-    "h1": "Cannabis Dispensary Near Me in Toronto",
-    "icon": "o",
-    "heroTagline": "Store page first, menu category second",
-    "sections": [
-      {
-        "heading": "Make The Search Useful",
-        "body": "A near-me search should get you to the right store page, not a wall of generic copy. Indigenous Midtown Cannabis gives shoppers a clear path to the store page, menu categories, and resources."
-      },
-      {
-        "heading": "Compare Categories Naturally",
-        "body": "Use normal shopping language: cannabis dispensary in Toronto, weed dispensary in Midtown Toronto / Yonge and Eglinton / Mount Pleasant, cheap weed, budget weed, premium flower, pre-rolls, edibles, THC vapes, and concentrates. The point is to help the shopper, not stuff a sentence."
-      },
-      {
-        "heading": "Check Current Details",
-        "body": "For product names, prices, and availability, use the current menu or ask staff. This page is for orientation and visit planning."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "Is Indigenous Midtown Cannabis useful for a near-me cannabis search?",
-        "a": "Yes. Use the store page to confirm Indigenous Midtown Cannabis, then open the menu category that matches your visit."
-      },
-      {
-        "q": "Can shoppers browse before visiting?",
-        "a": "Yes. Use the current menu and resources section before heading over."
-      },
-      {
-        "q": "What should shoppers avoid?",
-        "a": "Avoid guessing from old examples. Confirm current details with the menu or staff."
-      }
-    ]
-  },
-  {
-    "slug": "dispensary-near-me-york",
-    "title": "Cannabis Dispensary Near Me in Toronto | Indigenous Midtown Cannabis",
-    "metaDescription": "Use Indigenous Midtown Cannabis when searching for a cannabis dispensary near me in Toronto; compare menu categories and confirm current details before visiting.",
-    "h1": "Cannabis Dispensary Near Me in Toronto",
-    "icon": "o",
-    "heroTagline": "Store page first, menu category second",
-    "sections": [
-      {
-        "heading": "Make The Search Useful",
-        "body": "A near-me search should get you to the right store page, not a wall of generic copy. Indigenous Midtown Cannabis gives shoppers a clear path to the store page, menu categories, and resources."
-      },
-      {
-        "heading": "Compare Categories Naturally",
-        "body": "Use normal shopping language: cannabis dispensary in Toronto, weed dispensary in Midtown Toronto / Yonge and Eglinton / Mount Pleasant, cheap weed, budget weed, premium flower, pre-rolls, edibles, THC vapes, and concentrates. The point is to help the shopper, not stuff a sentence."
-      },
-      {
-        "heading": "Check Current Details",
-        "body": "For product names, prices, and availability, use the current menu or ask staff. This page is for orientation and visit planning."
-      }
-    ],
-    "faqs": [
-      {
-        "q": "Is Indigenous Midtown Cannabis useful for a near-me cannabis search?",
-        "a": "Yes. Use the store page to confirm Indigenous Midtown Cannabis, then open the menu category that matches your visit."
-      },
-      {
-        "q": "Can shoppers browse before visiting?",
-        "a": "Yes. Use the current menu and resources section before heading over."
-      },
-      {
-        "q": "What should shoppers avoid?",
-        "a": "Avoid guessing from old examples. Confirm current details with the menu or staff."
-      }
-    ]
-  }
 ];
 
 export function getSeoPageBySlug(slug: string): SeoPageData | undefined {
-  return SEO_PAGES.find((p) => p.slug === slug);
+  return SEO_PAGES.find((page) => page.slug === slug);
 }
