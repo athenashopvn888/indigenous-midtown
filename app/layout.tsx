@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "vapes",
     "pre-rolls",
     "native cigarettes Toronto",
-    "weed store Mississauga",
+    "weed store Yonge and Eglinton",
   ],
   openGraph: {
     type: "website",
@@ -39,15 +39,18 @@ export const metadata: Metadata = {
         url: "https://indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
-        alt: "Indigenous Midtown Cannabis — Premium Cannabis Dispensary Toronto",
+        alt: "Indigenous Midtown Cannabis — Toronto Cannabis Dispensary Toronto",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Indigenous Midtown Cannabis | Midtown Toronto Dispensary",
-    description: "Indigenous Midtown Cannabis is a Midtown Toronto dispensary near Yonge and Eglinton with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
-    images: ["https://indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
+    description:
+      "Indigenous Midtown Cannabis is a Midtown Toronto dispensary near Yonge and Eglinton with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+    images: [
+      "https://indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
+    ],
   },
   robots: {
     index: true,
@@ -68,17 +71,19 @@ export const metadata: Metadata = {
   },
 };
 
-/* ── JSON-LD Structured Data ── */
+/* JSON-LD Structured Data */
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
   "@id": "https://indigenousmidtowncannabis.ca",
   name: "Indigenous Midtown Cannabis",
-  description: "Cannabis dispensary at 93 Broadway Ave in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
+  description:
+    "Cannabis dispensary at 93 Broadway Ave in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
   url: "https://indigenousmidtowncannabis.ca",
   telephone: "+14378703710",
-  image: "https://indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
+  image:
+    "https://indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",
@@ -96,7 +101,15 @@ const jsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
       opens: "00:00",
       closes: "23:59",
     },
@@ -129,7 +142,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7BRTHFNF"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-HJ7BRTHFNF"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -137,7 +153,7 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-HJ7BRTHFNF');
-            `
+            `,
           }}
         />
       </head>
