@@ -1,5 +1,10 @@
 import type { MetadataRoute } from "next";
-import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
+import {
+  TIER_CONFIG,
+  CATEGORY_CONFIG,
+  allFlowers,
+  allItems,
+} from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
 import { RESOURCE_PAGES } from "./resources/resourceData";
 
@@ -10,27 +15,51 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE, lastModified: now, changeFrequency: "daily", priority: 1 },
-    { url: `${BASE}/weed-dispensary-toronto/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/delivery`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    {
+      url: `${BASE}/weed-dispensary-toronto/`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE}/contact`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE}/faq`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE}/delivery`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 
   /* Tier pages */
-  const tierPages: MetadataRoute.Sitemap = Object.values(TIER_CONFIG).map((t) => ({
-    url: `${BASE}/${t.slug}`,
-    lastModified: now,
-    changeFrequency: "daily" as const,
-    priority: 0.9,
-  }));
+  const tierPages: MetadataRoute.Sitemap = Object.values(TIER_CONFIG).map(
+    (t) => ({
+      url: `${BASE}/${t.slug}`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    }),
+  );
 
   /* Item category pages */
-  const itemPages: MetadataRoute.Sitemap = Object.values(CATEGORY_CONFIG).map((c) => ({
-    url: `${BASE}/items/${c.slug}`,
-    lastModified: now,
-    changeFrequency: "daily" as const,
-    priority: 0.8,
-  }));
+  const itemPages: MetadataRoute.Sitemap = Object.values(CATEGORY_CONFIG).map(
+    (c) => ({
+      url: `${BASE}/items/${c.slug}`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+    }),
+  );
 
   /* Flower detail pages */
   const flowerPages: MetadataRoute.Sitemap = allFlowers.map((f) => ({
@@ -64,7 +93,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page.slug ? 0.6 : 0.7,
   }));
 
-
-  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages];
+  return [
+    ...staticPages,
+    ...tierPages,
+    ...itemPages,
+    ...flowerPages,
+    ...itemDetailPages,
+    ...resourcePages,
+    ...seoPages,
+  ];
 }
-
