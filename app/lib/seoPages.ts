@@ -44,7 +44,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         q: "Does the site show current product categories?",
-        a: "The site includes menu paths for flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and cigarettes where listed.",
+        a: "The site includes menu categories for flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and cigarettes where listed.",
       },
     ],
   },
@@ -63,7 +63,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Compare The Current Menu",
-        body: "Look at product name, format, weight, posted price, and item notes. Menus change, so use this page for the method and the live menu for current details.",
+        body: "Look at product name, format, weight, posted price, and item details. Menus change, so use this page for the method and the live menu for current details.",
       },
       {
         heading: "Know When To Move Up",
@@ -73,7 +73,7 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [
       {
         q: "How should shoppers compare value flower?",
-        a: "Start with Budget and AA, then compare current product name, format, weight, posted price, and item notes.",
+        a: "Start with Budget and AA, then compare current product name, format, weight, posted price, and item details.",
       },
       {
         q: "Does this page guarantee current availability?",

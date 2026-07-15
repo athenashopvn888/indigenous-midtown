@@ -12,7 +12,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     "sections": [
       {
         "heading": "How To Shop Exotic",
-        "body": "Exotic is the lane for shoppers who want to compare the higher shelf flower category first. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
+        "body": "Exotic is the lane for shoppers who want to compare the higher shelf flower category first. Start with the tier page, then compare product name, format, weight, posted price, and item details. The current menu is the right place for details that move."
       },
       {
         "heading": "When Exotic Makes Sense",
@@ -44,7 +44,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     "sections": [
       {
         "heading": "How To Shop Premium",
-        "body": "Premium is a strong lane for shoppers balancing flower quality and value. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
+        "body": "Premium is a strong lane for shoppers balancing flower quality and value. Start with the tier page, then compare product name, format, weight, posted price, and item details. The current menu is the right place for details that move."
       },
       {
         "heading": "When Premium Makes Sense",
@@ -76,7 +76,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     "sections": [
       {
         "heading": "How To Shop AAA+",
-        "body": "AAA+ is a clean middle lane for shoppers comparing flower without jumping straight to the top tier. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
+        "body": "AAA+ is a clean middle lane for shoppers comparing flower without jumping straight to the top tier. Start with the tier page, then compare product name, format, weight, posted price, and item details. The current menu is the right place for details that move."
       },
       {
         "heading": "When AAA+ Makes Sense",
@@ -108,7 +108,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     "sections": [
       {
         "heading": "How To Shop AA",
-        "body": "AA is a practical value lane for shoppers who want straightforward flower browsing. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
+        "body": "AA is a practical value lane for shoppers who want straightforward flower browsing. Start with the tier page, then compare product name, format, weight, posted price, and item details. The current menu is the right place for details that move."
       },
       {
         "heading": "When AA Makes Sense",
@@ -140,7 +140,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     "sections": [
       {
         "heading": "How To Shop Budget",
-        "body": "Budget is the first stop when cheap weed, budget weed, or affordable weed is the goal. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
+        "body": "Budget is the first stop when cheap weed, budget weed, or affordable weed is the goal. Start with the tier page, then compare product name, format, weight, posted price, and item details. The current menu is the right place for details that move."
       },
       {
         "heading": "When Budget Makes Sense",

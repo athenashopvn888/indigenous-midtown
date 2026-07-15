@@ -17,16 +17,16 @@ export function getItemData(category: string, name: string): ItemEffects {
   if (cat === "EDIBLES") {
     return {
       effects: menuNotes,
-      description: `${name} is listed in the edibles category at Indigenous Midtown Cannabis. Compare the product name, package details, posted price, and item notes on the current menu before choosing.`,
+      description: `${name} is listed in the edibles category at Indigenous Midtown Cannabis. Compare the product name, package details, posted price, and item details on the current menu before choosing.`,
       metaDescription: `Shop ${name} edibles in Toronto at Indigenous Midtown Cannabis. Check the current menu and ask staff for current details before visiting.`,
-      consume: "Read the package and current menu notes carefully. Ask staff if any edible detail is unclear before choosing.",
+      consume: "Read the package and current menu details carefully. Ask staff if any edible detail is unclear before choosing.",
     };
   }
 
   if (cat.includes("VAPE")) {
     return {
       effects: menuNotes,
-      description: `${name} is listed in a vape category at Indigenous Midtown Cannabis. Compare the format, product name, posted price, and menu notes before choosing.`,
+      description: `${name} is listed in a vape category at Indigenous Midtown Cannabis. Compare the format, product name, posted price, and menu details before choosing.`,
       metaDescription: `Shop ${name} vape listings in Toronto at Indigenous Midtown Cannabis. Check the current menu for product details before visiting.`,
       consume: "Use as directed on the package. Ask staff if the format or compatibility details are unclear.",
     };
@@ -35,7 +35,7 @@ export function getItemData(category: string, name: string): ItemEffects {
   if (cat === "CONCENTRATES") {
     return {
       effects: menuNotes,
-      description: `${name} is listed in the concentrates category at Indigenous Midtown Cannabis. Compare the product type, posted notes, price, and current menu details before choosing.`,
+      description: `${name} is listed in the concentrates category at Indigenous Midtown Cannabis. Compare the product type, posted details, price, and current menu details before choosing.`,
       metaDescription: `Shop ${name} concentrates in Toronto at Indigenous Midtown Cannabis. Confirm current product details through the menu or staff.`,
       consume: "Use as directed on the package. Ask staff when a concentrate format detail matters.",
     };
@@ -44,7 +44,7 @@ export function getItemData(category: string, name: string): ItemEffects {
   if (cat === "PREROLLS") {
     return {
       effects: menuNotes,
-      description: `${name} is listed in the pre-roll category at Indigenous Midtown Cannabis. Compare the format, pack details, product notes, and current price before choosing.`,
+      description: `${name} is listed in the pre-roll category at Indigenous Midtown Cannabis. Compare the format, pack details, current details, and current price before choosing.`,
       metaDescription: `Shop ${name} pre-rolls in Toronto at Indigenous Midtown Cannabis. Use the current menu for product details before visiting.`,
       consume: "Use as directed on the package. Ask staff if the format or pack detail is unclear.",
     };

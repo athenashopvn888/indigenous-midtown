@@ -115,7 +115,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         bullets: [
           "Flower shoppers should compare tiers.",
           "Pre-roll shoppers should compare format and package details.",
-          "Edible, vape, and concentrate shoppers should read product notes carefully.",
+          "Edible, vape, and concentrate shoppers should read current details carefully.",
         ],
       },
       {
@@ -164,7 +164,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     sections: [
       {
         heading: "Compare Tier, Then Details",
-        body: "Open the tier, then compare the current product name, format, weight, posted price, and item notes. That gives you a clean decision path without turning the whole menu into noise.",
+        body: "Open the tier, then compare the current product name, format, weight, posted price, and item details. That gives you a clean decision path without turning the whole menu into noise.",
       },
       {
         heading: "Value Does Not Need To Be Complicated",
@@ -181,7 +181,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "A practical value guide for shoppers comparing cheap weed, budget weed, affordable weed, and menu categories at Indigenous Midtown Cannabis.",
     eyebrow: "Value Guide",
     intro:
-      "Good value shopping is not just chasing the lowest number. It is choosing the right category, checking the current details, and knowing when Budget, AA, or another lane makes more sense.",
+      "Good value shopping starts with the product type, the current details, and the price that fits the visit.",
     cards: [
       {
         title: "Budget Flower",
@@ -235,7 +235,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     sections: [
       {
         heading: "Compare Format First",
-        body: "Check whether the listing is a single, pack, infused option, or another pre-roll format shown on the menu. Then compare the posted notes and price before choosing.",
+        body: "Check whether the listing is a single, pack, infused option, or another pre-roll format shown on the menu. Then compare the posted details and price before choosing.",
       },
       {
         heading: "Keep It Separate",
@@ -375,7 +375,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     sections: [
       {
         heading: "Compare The Brand Names",
-        body: "Look for the brand name first, then compare the posted price and any item notes. The menu may include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, * Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full.",
+        body: "Look for the brand name first, then compare the posted price and any item details. The menu may include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, * Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full.",
         bullets: [
           "Canadian Lights",
           "Canadian Full",
