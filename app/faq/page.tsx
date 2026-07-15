@@ -17,7 +17,7 @@ const FAQ_CATEGORIES = [
     faqs: [
       { q: "Where is Indigenous Midtown Cannabis located?", a: "Indigenous Midtown Cannabis is listed at 93 Broadway Ave, Toronto, ON M4S 2A2. Use the store page for directions and contact options before visiting." },
       { q: "What are the listed hours?", a: "Open 24 Hours. Check the current store page or contact staff before visiting if timing matters." },
-      { q: "What is the best way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
+      { q: "What is the way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
     ],
   },
   {
@@ -25,7 +25,7 @@ const FAQ_CATEGORIES = [
     faqs: [
       { q: "What menu categories can shoppers compare?", a: "The site has paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed." },
       { q: "How should shoppers use the menu?", a: "Pick one category first, then compare product name, format, weight or package size, posted price, and item details." },
-      { q: "Do menu details change?", a: "Yes. Product names, prices, and availability can change, so use the current menu or ask staff before making the trip." },
+      { q: "Do menu details change?", a: "Yes. Product names, prices, and menu details can change, so use the current menu or ask staff before making the trip." },
     ],
   },
   {
@@ -40,7 +40,7 @@ const FAQ_CATEGORIES = [
     title: "Native Smokes",
     faqs: [
       { q: "Does Indigenous Midtown Cannabis list Native cigarettes?", a: "The cigarette menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Confirm current options through the menu or staff." },
-      { q: "Are $25 cartons guaranteed?", a: "No. Where $25 carton-style listings are shown, confirm current price and availability through the menu or staff." },
+      { q: "Where can I confirm carton details?", a: "Where $25 carton-style listings are shown, confirm current price and menu details through the menu or staff." },
       { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the store page for directions, contact options, and listed hours." },
     ],
   },

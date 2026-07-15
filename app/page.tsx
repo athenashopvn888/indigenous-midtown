@@ -385,7 +385,7 @@ export default function HomePage() {
             </p>
             <p className={styles.seoPanelText}>
               Menus change, so use the current menu and staff for product names,
-              prices, and availability before you make the trip.
+              prices, and menu details before you make the trip.
             </p>
           </div>
         </div>

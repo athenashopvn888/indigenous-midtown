@@ -135,7 +135,7 @@ function ItemCard({ title, accent, items, hiIdx, preset }: {
 /* -- TICKER -- */
 const TICKER_SLIDES = [
   "🔥 Indigenous Midtown Cannabis — 93 Broadway Ave, Toronto",
-  "200+ Strains In Stock",
+  "FLOWER TIERS - MENU CATEGORIES",
   "Open 24 Hours",
   "Pre-Rolls · Edibles · Vapes · Concentrates",
   "ALL SALES ARE FINAL",

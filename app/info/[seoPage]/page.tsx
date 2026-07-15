@@ -26,7 +26,7 @@ export async function generateMetadata({
     title: page.title,
     description: page.metaDescription,
     alternates: {
-      canonical: `https://indigenousmidtowncannabis.ca/info/${slug}`,
+      canonical: `https://www.indigenousmidtowncannabis.ca/info/${slug}`,
     },
   };
 }

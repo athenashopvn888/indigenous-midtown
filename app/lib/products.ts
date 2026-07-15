@@ -97,7 +97,7 @@ export const TIER_CONFIG: Record<
     slug: "exotic",
     color: "#f59e0b",
     icon: "\uD83D\uDD25",
-    tagline: "Ultra-rare, top-shelf genetics \u00B7 THC 35-39%",
+    tagline: "Explore the Exotic flower tier",
     banner: "/banners/exotics_banner.webp",
     unitPrice: 20,
     deal3g: { label: "3g bundle", total: "3G", price: 40 },
@@ -108,7 +108,7 @@ export const TIER_CONFIG: Record<
     slug: "premium",
     color: "#a78bfa",
     icon: "\uD83D\uDC8E",
-    tagline: "Hand-picked connoisseur grade \u00B7 THC 32-34%",
+    tagline: "Explore the Premium flower tier",
     banner: "/banners/premium_banner.webp",
     unitPrice: 15,
     deal3g: { label: "3g bundle", total: "3G", price: 30 },
@@ -119,7 +119,7 @@ export const TIER_CONFIG: Record<
     slug: "aaa",
     color: "#22d3ee",
     icon: "\u26A1",
-    tagline: "Heavy hitters, proven strains \u00B7 THC 30-32%",
+    tagline: "Explore the AAA+ flower tier",
     banner: "/banners/aaa_plus_banner.webp",
     unitPrice: 10,
     deal3g: { label: "3g bundle", total: "3G", price: 20 },
@@ -130,7 +130,7 @@ export const TIER_CONFIG: Record<
     slug: "aa",
     color: "#34d399",
     icon: "\u2726",
-    tagline: "Quality daily drivers \u00B7 THC 27-29%",
+    tagline: "Explore the AA flower tier",
     banner: "/banners/aa_banner.webp",
     unitPrice: 4,
     deal3g: null,
@@ -141,7 +141,7 @@ export const TIER_CONFIG: Record<
     slug: "budget",
     color: "#94a3b8",
     icon: "\uD83D\uDCB0",
-    tagline: "Shreds & value OZs \u00B7 From $40/oz",
+    tagline: "Explore the Budget flower tier",
     banner: "/banners/budget_banner.webp",
     unitPrice: 3,
     deal3g: { label: "$10 / 3g Special", total: "3G", price: 10 },
@@ -162,7 +162,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     name: "Edibles", slug: "edibles", color: "#f97316", icon: "ED",
     seoTitle: "Cannabis Edibles Toronto | Indigenous Midtown Cannabis",
     seoIntro: "Browse edible options at Indigenous Midtown Cannabis. Compare product names, package details, posted details, and current menu information before choosing.",
-    seoDescription: "Edibles shop best when you compare the exact listing instead of guessing from an old example. Use the current menu at Indigenous Midtown Cannabis for names, package details, posted prices, and staff help when needed.",
+    seoDescription: "Compare edible listings by name, package details, and posted price. Ask Indigenous Midtown Cannabis staff when a current item detail matters.",
     faqs: [
       { q: "What edibles are listed at Indigenous Midtown Cannabis?", a: "Use the current menu to compare edible names, package details, prices, and item details." },
       { q: "Should shoppers ask staff about edibles?", a: "Yes. If a package detail or menu note is unclear, ask staff before choosing." },
@@ -187,7 +187,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     seoDescription: "Disposable vape listings are easiest to compare inside their own category. Check the current menu and ask staff if a detail matters before choosing.",
     faqs: [
       { q: "Where should disposable vape shoppers start?", a: "Open the disposable vape category and compare the current listings." },
-      { q: "Should shoppers confirm current options?", a: "Yes. Product names and availability can change, so confirm through the menu or staff." },
+      { q: "Should shoppers confirm current options?", a: "Yes. Product names and menu details can change, so confirm through the menu or staff." },
     ],
   },
   CONCENTRATES: {
@@ -228,7 +228,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     seoDescription: "Specialty listings can vary. Use the current menu for what is shown at this store and ask staff before choosing.",
     faqs: [
       { q: "What specialty items are available?", a: "Selection can change. Check the current menu for this location." },
-      { q: "Does availability vary?", a: "Yes. Use the current menu or staff for current details." },
+      { q: "Does menu details vary?", a: "Yes. Use the current menu or staff for current details." },
     ],
   },
   CIGARETTES: {
@@ -240,7 +240,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     faqs: [
       { q: "Does Indigenous Midtown Cannabis list Native cigarettes?", a: "Check the cigarette category for current Native smoke listings and brand names." },
       { q: "What brands may be shown?", a: "The menu may show Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Confirm current options before visiting." },
-      { q: "Are $25 cartons guaranteed?", a: "No. Where $25 carton-style listings are shown, confirm current price and availability through the menu or staff." },
+      { q: "Where can I confirm carton details?", a: "Where $25 carton-style listings are shown, confirm current price and menu details through the menu or staff." },
     ],
   },
 };

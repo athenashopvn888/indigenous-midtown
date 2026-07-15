@@ -3,7 +3,7 @@ import "./globals.css";
 import AgeGate from "./components/AgeGate";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://indigenousmidtowncannabis.ca"),
+  metadataBase: new URL("https://www.indigenousmidtowncannabis.ca"),
   title: {
     default: "Indigenous Midtown Cannabis | Midtown Toronto Dispensary",
     template: "%s | Indigenous Midtown Cannabis",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://indigenousmidtowncannabis.ca",
+    url: "https://www.indigenousmidtowncannabis.ca",
     siteName: "Indigenous Midtown Cannabis",
     title: "Indigenous Midtown Cannabis | Midtown Toronto Dispensary",
     description:
       "Indigenous Midtown Cannabis is a Midtown Toronto dispensary near Yonge and Eglinton with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: [
       {
-        url: "https://indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
+        url: "https://www.indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
         alt: "Indigenous Midtown Cannabis — Toronto Cannabis Dispensary Toronto",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description:
       "Indigenous Midtown Cannabis is a Midtown Toronto dispensary near Yonge and Eglinton with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: [
-      "https://indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
+      "https://www.indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
     ],
   },
   robots: {
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://indigenousmidtowncannabis.ca",
+    canonical: "https://www.indigenousmidtowncannabis.ca",
   },
   verification: {
     // google: "your-google-verification-code",
@@ -76,14 +76,14 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
-  "@id": "https://indigenousmidtowncannabis.ca",
+  "@id": "https://www.indigenousmidtowncannabis.ca",
   name: "Indigenous Midtown Cannabis",
   description:
     "Cannabis dispensary at 93 Broadway Ave in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
-  url: "https://indigenousmidtowncannabis.ca",
+  url: "https://www.indigenousmidtowncannabis.ca",
   telephone: "+14378703710",
   image:
-    "https://indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
+    "https://www.indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",

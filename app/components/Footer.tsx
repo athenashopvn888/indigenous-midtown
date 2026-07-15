@@ -83,7 +83,7 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p>
             © {new Date().getFullYear()} Indigenous Midtown Cannabis. Must be
-            19+ to enter. Please consume responsibly.
+            19+ to enter. Please review posted store and menu information.
           </p>
         </div>
       </div>

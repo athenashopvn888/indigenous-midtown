@@ -120,7 +120,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         heading: "Check What Is Current",
-        body: "Use this guide for the shopping method, then use the current menu and staff for details that change. Product names, prices, and availability can move, so do not let an old example make the decision.",
+        body: "Use this guide for the shopping method, then use the current menu and staff for details that change. Product names, prices, and menu details can move, so do not let an old example make the decision.",
       },
     ],
   },
@@ -251,7 +251,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "The Indigenous Midtown Cannabis resource centre gives shoppers cleaner menu guides for flower, value, pre-rolls, and store visits.",
     eyebrow: "Resource Update",
     intro:
-      "The resource centre is here to make the menu easier to shop. No stiff SEO talk, no fake certainty, just cleaner notes for real shoppers.",
+      "The resource centre is here to make the menu easier to shop. No internal jargon, no fake certainty, just cleaner notes for real shoppers.",
     cards: [
       {
         title: "Menu Guide",

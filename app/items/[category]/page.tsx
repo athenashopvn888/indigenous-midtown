@@ -32,7 +32,7 @@ export async function generateMetadata({
     title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
     description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at Indigenous Midtown Cannabis.`,
     alternates: {
-      canonical: `https://indigenousmidtowncannabis.ca/items/${catSlug}`,
+      canonical: `https://www.indigenousmidtowncannabis.ca/items/${catSlug}`,
     },
   };
 }
@@ -74,7 +74,7 @@ export default async function ItemsCategoryPage({
             <h1 className={styles.heroTitle}>
               <span style={{ color: "#fff" }}>{config.name}</span>
             </h1>
-            <p className={styles.heroSub} style={{ color: "rgba(255,255,255,0.8)" }}>{items.length} products available</p>
+            <p className={styles.heroSub} style={{ color: "rgba(255,255,255,0.8)" }}>Browse current category listings</p>
           </div>
         )}
       </section>

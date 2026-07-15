@@ -1,7 +1,6 @@
-// Auto-generated Google Business Profile Local SEO Location Configuration
 export const gbpLocation = {
   storeName: "Indigenous Midtown Cannabis",
-  domain: "indigenousmidtowncannabis.ca",
+  domain: "www.indigenousmidtowncannabis.ca",
   city: "Toronto",
   province: "ON",
   country: "CA",
@@ -32,7 +31,7 @@ export const gbpLocation = {
   seoTitle: "Indigenous Midtown Cannabis | Weed Dispensary in Toronto",
   metaDescription: "Indigenous Midtown Cannabis is a local weed dispensary in Toronto offering flower, pre-rolls, edibles, vapes, concentrates, CBD, and service for adults 19+.",
   localLandmarks: ["Midtown Toronto", "Yonge and Eglinton", "Mount Pleasant"],
-  introVariant: "Indigenous Midtown Cannabis is your welcoming neighborhood weed dispensary in Toronto, located at 93 Broadway Ave near Midtown Toronto / Yonge and Eglinton / Mount Pleasant. We carry a massive selection of weed, cannabis flower, pre-rolls, edibles, THC vapes, concentrates, and smoking accessories for adults 19+. Conveniently located near Yonge and Eglinton, our cannabis store and weed shop is designed to make finding the perfect strain easy and accessible.",
+  introVariant: "Indigenous Midtown Cannabis is a local weed dispensary at 93 Broadway Ave near Midtown Toronto, Yonge and Eglinton, and Mount Pleasant. Adults 19+ can browse flower tiers and category pages for pre-rolls, edibles, vapes, concentrates, and accessories before visiting.",
   neighborhoodDescription: "Located in the vibrant Midtown Toronto / Yonge and Eglinton / Mount Pleasant district, our cannabis store fits right into this active and historic community, surrounded by local retail shops and convenient transit links.",
   parkingNote: "Street parking and public parking garages are nearby",
   transitNote: "A short walk from Eglinton subway station and served by local TTC routes.",

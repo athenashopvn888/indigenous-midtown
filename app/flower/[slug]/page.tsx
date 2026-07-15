@@ -31,7 +31,7 @@ export async function generateMetadata({
     title: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | Indigenous Midtown Cannabis Toronto`,
     description: strainData.metaDescription,
     alternates: {
-      canonical: `https://indigenousmidtowncannabis.ca/flower/${slug}`,
+      canonical: `https://www.indigenousmidtowncannabis.ca/flower/${slug}`,
     },
     openGraph: {
       title: `${flower.name} | Indigenous Midtown Cannabis`,
@@ -60,9 +60,8 @@ function getJsonLd(flower: FlowerProduct) {
 
   const offers: any = {
     "@type": "Offer",
-    url: `https://indigenousmidtowncannabis.ca/flower/${flower.slug}`,
+    url: `https://www.indigenousmidtowncannabis.ca/flower/${flower.slug}`,
     priceCurrency: "CAD",
-    availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
     seller: { "@type": "Organization", name: "Indigenous Midtown Cannabis" },
     hasMerchantReturnPolicy: {
@@ -80,7 +79,7 @@ function getJsonLd(flower: FlowerProduct) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: flower.name,
-    image: flower.image ? [flower.image.startsWith('http') ? flower.image : `https://indigenousmidtowncannabis.ca${flower.image.startsWith('/') ? '' : '/'}${flower.image}`] : undefined,
+    image: flower.image ? [flower.image.startsWith('http') ? flower.image : `https://www.indigenousmidtowncannabis.ca${flower.image.startsWith('/') ? '' : '/'}${flower.image}`] : undefined,
     description: strainData.description,
     brand: { "@type": "Brand", name: "Indigenous Midtown Cannabis" },
     sku: cleanSku(flower.sku || flower.slug),
@@ -101,19 +100,19 @@ function getBreadcrumbJsonLd(flower: FlowerProduct) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://indigenousmidtowncannabis.ca"
+        "item": "https://www.indigenousmidtowncannabis.ca"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": tierName,
-        "item": `https://indigenousmidtowncannabis.ca/${tierSlug}`
+        "item": `https://www.indigenousmidtowncannabis.ca/${tierSlug}`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": flower.name,
-        "item": `https://indigenousmidtowncannabis.ca/flower/${flower.slug}`
+        "item": `https://www.indigenousmidtowncannabis.ca/flower/${flower.slug}`
       }
     ]
   };
@@ -236,7 +235,7 @@ export default async function FlowerPage({
                 </div>
               </div>
 
-              {/* Effects */}
+              {/* Menu notes */}
               <div className={styles.effectsRow}>
                 {strainData.effects.map((e) => (
                   <span key={e.label} className={styles.effectPill}>
@@ -285,7 +284,7 @@ export default async function FlowerPage({
 
                 {bestValue && (
                   <div className={styles.valueNote}>
-                    Best value: <strong>${bestValue.perG}/g</strong> at {bestValue.label}
+                    Lowest unit price: <strong>${bestValue.perG}/g</strong> at {bestValue.label}
                   </div>
                 )}
               </div>
@@ -297,7 +296,7 @@ export default async function FlowerPage({
               </div>
 
               <div className={styles.visitCta}>
-                <p>Available in-store &middot; Walk-in welcome &middot; No appointment needed</p>
+                <p>Check the current menu &middot; Walk-in welcome &middot; No appointment needed</p>
               </div>
             </div>
           </div>

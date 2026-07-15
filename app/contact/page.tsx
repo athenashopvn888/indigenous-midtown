@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Visit Indigenous Midtown Cannabis at 93 Broadway Ave, Toronto, ON M4S 2A2. Open 24 hours, 7 days a week. Walk-ins welcome.",
   alternates: {
-    canonical: "https://indigenousmidtowncannabis.ca/contact",
+    canonical: "https://www.indigenousmidtowncannabis.ca/contact",
   },
   openGraph: {
     title: "Contact Indigenous Midtown Cannabis — Toronto Dispensary",
@@ -95,16 +95,16 @@ export default function ContactPage() {
                 <br />
                 Just walk in and our staff will
                 <br />
-                help you find the perfect strain.
+                help you compare current menu details.
               </p>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>
-                  200+ strains in stock
+                  Flower tiers and menu categories
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>
-                  Lab-tested &amp; safe
+                  Current package details
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>

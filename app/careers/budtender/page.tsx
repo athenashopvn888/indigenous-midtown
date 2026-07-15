@@ -6,7 +6,7 @@ import BudtenderApplicationForm from "./BudtenderApplicationForm";
 import styles from "./budtender.module.css";
 
 export const metadata: Metadata = {
-  title: "Budtender Or Manager Application | Indigenous Midtown Cannabis",
+  title: { absolute: "Budtender Or Manager Application | Indigenous Midtown Cannabis" },
   description:
     "Apply online for budtender or manager opportunities at Indigenous Midtown Cannabis. Submit availability, customer-service experience, motivation, determination, and a required selfie.",
   alternates: {

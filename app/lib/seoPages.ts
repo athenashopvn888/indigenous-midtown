@@ -30,7 +30,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "What To Check Before Visiting",
-        body: "Confirm the current menu, directions, contact options, and listed hours. For current products, prices, or availability, use the menu or ask staff before leaving.",
+        body: "Confirm the current menu, directions, contact options, and listed hours. For current products, prices, or menu details, use the menu or ask staff before leaving.",
       },
     ],
     faqs: [
@@ -63,7 +63,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Compare The Current Menu",
-        body: "Look at product name, format, weight, posted price, and item details. Menus change, so use this page for the method and the live menu for current details.",
+        body: "Look at product name, format, weight, posted price, and item details. Menus change, so use this page for the method and the current menu for current details.",
       },
       {
         heading: "Know When To Move Up",
@@ -76,7 +76,7 @@ export const SEO_PAGES: SeoPageData[] = [
         a: "Start with Budget and AA, then compare current product name, format, weight, posted price, and item details.",
       },
       {
-        q: "Does this page guarantee current availability?",
+        q: "Does this page guarantee current menu details?",
         a: "No. Use this page as a shopping guide and confirm the current menu before visiting.",
       },
     ],
@@ -110,7 +110,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         q: "Can cigarette selection change?",
-        a: "Yes. Brand names, carton notes, and availability can change, so use the current menu or staff for live details.",
+        a: "Yes. Brand names, carton notes, and menu details can change, so use the current menu or ask staff.",
       },
     ],
   },
@@ -142,7 +142,7 @@ export const SEO_PAGES: SeoPageData[] = [
         a: "Yes. This page is focused on Indigenous Midtown Cannabis around Yonge and Eglinton / Mount Pleasant, not unrelated city copy.",
       },
       {
-        q: "What is the best next step?",
+        q: "What is the next step?",
         a: "Open the current menu or store page, then confirm directions and contact details before heading over.",
       },
     ],
@@ -161,8 +161,8 @@ export const SEO_PAGES: SeoPageData[] = [
         body: "Near-me searches should land on a page connected to Indigenous Midtown Cannabis, Toronto, and the local Yonge and Eglinton / Mount Pleasant area.",
       },
       {
-        heading: "Use The Menu For Live Details",
-        body: "This page explains the shopping path. The current menu and staff remain the source for live products, prices, and availability.",
+        heading: "Use The Current Menu",
+        body: "This page explains the shopping path. Use the current menu or ask staff to confirm product names, prices, and item details.",
       },
       {
         heading: "Keep The Route Simple",
@@ -175,7 +175,7 @@ export const SEO_PAGES: SeoPageData[] = [
         a: "Yes. This page is focused on Indigenous Midtown Cannabis around Yonge and Eglinton / Mount Pleasant, not unrelated city copy.",
       },
       {
-        q: "What is the best next step?",
+        q: "What is the next step?",
         a: "Open the current menu or store page, then confirm directions and contact details before heading over.",
       },
     ],
