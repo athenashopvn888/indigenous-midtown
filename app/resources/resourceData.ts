@@ -31,48 +31,48 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "Resource guides for shopping the Indigenous Midtown Cannabis menu in Toronto, including flower, value, pre-rolls, and Native smokes where listed.",
     eyebrow: "Resource Centre",
     intro:
-      "Use these Indigenous Midtown Cannabis guides to understand the menu before visiting. Start with the product category that matches your visit, then check the current menu or ask staff for details that can change.",
+      "Planning a Midtown stop should not mean opening every menu tab. This library organizes Indigenous Midtown Cannabis by the decisions shoppers actually make: what category they want, which flower tier fits, and which details need a fresh menu check.",
     cards: [
       {
         title: "Menu Guide",
         href: "/resources/menu-guide",
-        text: "Pick the category first, then compare the details that matter.",
+        text: "Build a short list before heading through Midtown Toronto.",
       },
       {
         title: "Flower Guide",
         href: "/resources/flower-guide",
-        text: "Compare Exotic, Premium, AAA+, AA, and Budget flower tiers.",
+        text: "See how the five flower shelves are arranged before browsing strains.",
       },
       {
         title: "Value Guide",
         href: "/resources/value-guide",
-        text: "A cleaner way to think about cheap weed, budget weed, and affordable weed.",
+        text: "Focus a price-minded visit without bouncing between every category.",
       },
       {
         title: "Pre-Roll Guide",
         href: "/resources/pre-roll-guide",
-        text: "Keep pre-roll shopping separate from flower, edibles, vapes, and concentrates.",
+        text: "Read singles, packs, and other listed formats as their own menu lane.",
       },
       {
         title: "Native Smokes",
         href: "/resources/native-smokes",
-        text: "Brand names and carton notes for the cigarette menu where listed.",
+        text: "Use the cigarette category as the source for current brand and carton listings.",
       },
     ],
     sections: [
       {
-        heading: "How To Use These Guides",
-        body: "Start with the store page for location and hours, then open the category guide that matches your visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarette options each have different details to check.",
+        heading: "Plan The Midtown Stop In Two Steps",
+        body: "Choose the guide that matches the reason for the visit, then move to the live menu category. The guide supplies context; the menu supplies the latest names, formats, and posted prices.",
         bullets: [
-          "Use the store page for directions, contact options, and listed hours.",
-          "Use category pages to compare the current menu category.",
-          "Ask staff when a product detail needs a current answer.",
+          "Use the Toronto store page when the trip details matter.",
+          "Keep flower-tier research separate from format-based categories.",
+          "Confirm any time-sensitive item detail on the current menu.",
         ],
       },
       {
         heading:
           "Local Notes For Midtown Toronto / Yonge and Eglinton / Mount Pleasant",
-        body: "Indigenous Midtown Cannabis serves shoppers around Midtown Toronto, Yonge and Eglinton, Mount Pleasant, Davisville, and Leaside. Use this resource centre to confirm store details, choose the right product category, and check the current menu before visiting.",
+        body: "Shoppers searching around Midtown Toronto, Yonge and Eglinton, Mount Pleasant, Davisville, or Leaside can use the same simple route through the site: confirm the store details, narrow the category, and finish on the current menu.",
       },
     ],
   },
@@ -85,42 +85,42 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "How to shop the Indigenous Midtown Cannabis menu by category, with natural tips for flower, pre-rolls, edibles, THC vapes, concentrates, and value shopping.",
     eyebrow: "Menu Guide",
     intro:
-      "The fastest way through the menu is simple: choose the product type before you compare products. That keeps the page useful whether you want premium flower, cheap weed, pre-rolls, edibles, THC vapes, or concentrates.",
+      "Treat the Indigenous Midtown menu like a set of separate shelves. Decide whether this is a flower, pre-roll, edible, vape, concentrate, accessory, or cigarette visit first; the useful comparisons become much shorter after that.",
     cards: [
       {
         title: "Flower Guide",
         href: "/resources/flower-guide",
-        text: "Compare Exotic, Premium, AAA+, AA, and Budget flower tiers.",
+        text: "Move from shelf level to the current flower listings.",
       },
       {
         title: "Value Guide",
         href: "/resources/value-guide",
-        text: "A cleaner way to think about cheap weed, budget weed, and affordable weed.",
+        text: "Keep a value-first browse centred on the lower flower tiers.",
       },
       {
         title: "Pre-Roll Guide",
         href: "/resources/pre-roll-guide",
-        text: "Keep pre-roll shopping separate from flower, edibles, vapes, and concentrates.",
+        text: "Compare the format shown in the pre-roll category before anything else.",
       },
       {
         title: "Native Smokes",
         href: "/resources/native-smokes",
-        text: "Brand names and carton notes for the cigarette menu where listed.",
+        text: "Review the current cigarette list without mixing it into cannabis categories.",
       },
     ],
     sections: [
       {
-        heading: "Choose The Product Category First",
-        body: "If you want flower, start with flower. If you want pre-rolls, stay in pre-rolls. If the visit is about edibles, vapes, concentrates, or accessories, open that section and compare there first.",
+        heading: "Turn A Long Menu Into A Short List",
+        body: "Open only the category that answers the purpose of the visit. A flower shopper can begin with tiers, while someone looking for pre-rolls or another format should compare within that dedicated section.",
         bullets: [
-          "Flower shoppers should compare tiers.",
-          "Pre-roll shoppers should compare format and package details.",
-          "Edible, vape, and concentrate shoppers should read current details carefully.",
+          "Flower: choose a shelf level before reading individual listings.",
+          "Pre-rolls: note whether the menu shows a single or multipack.",
+          "Other formats: use the category page for its own listed details.",
         ],
       },
       {
-        heading: "Check What Is Current",
-        body: "Use this guide for the shopping method, then use the current menu and staff for details that change. Product names, prices, and menu details can move, so do not let an old example make the decision.",
+        heading: "Finish With The Current Listing",
+        body: "A guide can explain how the Midtown menu is organized, but it cannot freeze the shelf. Recheck the item page and posted price when the final choice depends on a specific listing.",
       },
     ],
   },
@@ -133,42 +133,42 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "Compare exotic flower, premium flower, budget weed, cheap weed, and affordable weed at Indigenous Midtown Cannabis with current menu details.",
     eyebrow: "Flower Guide",
     intro:
-      "Flower gets easier when you compare one tier at a time. Exotic flower and premium flower sit in different lanes from AAA+, AA, and Budget, so start with the lane that matches the visit.",
+      "Indigenous Midtown divides flower browsing into Exotic, Premium, AAA+, AA, and Budget pages. Pick the shelf level first, then compare the listings inside it instead of judging the whole flower menu at once.",
     cards: [
       {
         title: "Exotic Flower",
         href: "/exotic",
-        text: "Start here when you want the higher shelf flower lane.",
+        text: "Open the top flower shelf and review its current names.",
       },
       {
         title: "Premium Flower",
         href: "/premium",
-        text: "A strong lane for shoppers comparing quality and value.",
+        text: "Browse a premium shelf without crossing into every tier.",
       },
       {
         title: "AAA+ Flower",
         href: "/aaa",
-        text: "A clear middle lane for flower comparison.",
+        text: "Use the AAA+ page as its own Midtown menu shelf.",
       },
       {
         title: "AA Flower",
         href: "/aa",
-        text: "A straight value-minded flower lane.",
+        text: "Review AA listings when the browse is value-led.",
       },
       {
         title: "Budget Flower",
         href: "/budget",
-        text: "Start here when cheap weed or affordable weed is the goal.",
+        text: "Go directly to the lowest listed flower tier for a budget-first visit.",
       },
     ],
     sections: [
       {
-        heading: "Compare Tier, Then Details",
-        body: "Open the tier, then compare the current product name, format, weight, posted price, and item details. That gives you a clean decision path without turning the whole menu into noise.",
+        heading: "Use The Shelf Labels As Filters",
+        body: "The tier pages are navigation tools, not promises about a particular strain. Once inside a shelf, read the current name, size, format, price, and any item-specific notes shown there.",
       },
       {
-        heading: "Value Does Not Need To Be Complicated",
-        body: "Budget weed and affordable weed are easiest to compare when you stay inside the right lane. If the details are thin or the choice feels close, ask staff before choosing.",
+        heading: "Compare Like With Like",
+        body: "A useful flower comparison stays within one shelf until there is a reason to move. That makes a Midtown visit easier to plan and keeps lower-tier choices from being measured against a different shopping goal.",
       },
     ],
   },
@@ -181,32 +181,32 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "A practical value guide for shoppers comparing cheap weed, budget weed, affordable weed, and menu categories at Indigenous Midtown Cannabis.",
     eyebrow: "Value Guide",
     intro:
-      "Good value shopping starts with the product type, the current details, and the price that fits the visit.",
+      "For a price-led Indigenous Midtown visit, begin with the Budget or AA flower page and work upward only if the current listings do not fit the plan.",
     cards: [
       {
         title: "Budget Flower",
         href: "/budget",
-        text: "The first stop for cheap weed and affordable weed comparisons.",
+        text: "See the store's lowest flower shelf before expanding the search.",
       },
       {
         title: "AA Flower",
         href: "/aa",
-        text: "A simple value lane for flower shoppers.",
+        text: "Compare the next flower shelf without leaving the value path.",
       },
       {
         title: "Menu Guide",
         href: "/resources/menu-guide",
-        text: "Use this when you are comparing more than flower.",
+        text: "Return here when the visit is not strictly about flower.",
       },
     ],
     sections: [
       {
-        heading: "Start With The Budget Lane",
-        body: "If low spend is the point, start in Budget and AA before jumping across the rest of the menu. That keeps the comparison honest and quick.",
+        heading: "Set The Boundary Before Browsing",
+        body: "Choose the product type and the amount you intend to spend before opening item pages. For flower, the Budget and AA shelves provide a focused starting point on the Indigenous Midtown menu.",
       },
       {
-        heading: "Read The Menu Notes",
-        body: "Compare the product name, format, size, and posted price. If one detail is unclear, use staff for the answer instead of guessing from an old blog line.",
+        heading: "Use Posted Details, Not Assumptions",
+        body: "Read the current size, format, and price together. When a listing does not provide enough context for a choice, confirm it directly rather than relying on an older resource example.",
       },
     ],
   },
@@ -219,27 +219,27 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "How to compare pre-rolls at Indigenous Midtown Cannabis without mixing them up with flower, edibles, THC vapes, and concentrates.",
     eyebrow: "Pre-Roll Guide",
     intro:
-      "Pre-rolls are their own lane. Compare them like pre-rolls, not like loose flower, edibles, THC vapes, or concentrates.",
+      "The Indigenous Midtown pre-roll page is most useful when you read format before strain name. A single, multipack, or infused listing answers a different kind of stop, so establish that first.",
     cards: [
       {
         title: "Pre-Rolls",
         href: "/items/prerolls",
-        text: "Open the current pre-roll category.",
+        text: "Check today's listed formats and package information.",
       },
       {
         title: "Menu Guide",
         href: "/resources/menu-guide",
-        text: "Use this if you are still choosing between categories.",
+        text: "Step back when a pre-roll is not yet the settled category.",
       },
     ],
     sections: [
       {
-        heading: "Compare Format First",
-        body: "Check whether the listing is a single, pack, infused option, or another pre-roll format shown on the menu. Then compare the posted details and price before choosing.",
+        heading: "Read The Package Before The Name",
+        body: "Start by identifying the format presented on each current listing. After that, compare the count, other displayed details, and posted price among options that serve the same purpose.",
       },
       {
-        heading: "Keep It Separate",
-        body: "If the visit turns into flower, edibles, vapes, or concentrates, switch categories. Do not force one pre-roll decision to carry the whole menu.",
+        heading: "Know When To Change Sections",
+        body: "Loose flower and pre-rolls are not interchangeable menu views. If the Midtown shopping plan changes to edibles, vapes, concentrates, or flower, move to that category and restart the comparison there.",
       },
     ],
   },
@@ -251,42 +251,42 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "The Indigenous Midtown Cannabis resource centre gives shoppers cleaner menu guides for flower, value, pre-rolls, and store visits.",
     eyebrow: "Resource Update",
     intro:
-      "The resource centre makes the menu easier to shop with clear category notes and practical links for real shoppers.",
+      "Indigenous Midtown's Resource Centre brings the site's planning guides into one Midtown-focused starting point, from flower shelves and value browsing to pre-roll and cigarette categories.",
     cards: [
       {
         title: "Menu Guide",
         href: "/resources/menu-guide",
-        text: "Pick the category first, then compare the details that matter.",
+        text: "Learn the shortest route from a shopping goal to a menu page.",
       },
       {
         title: "Flower Guide",
         href: "/resources/flower-guide",
-        text: "Compare Exotic, Premium, AAA+, AA, and Budget flower tiers.",
+        text: "Understand the five shelf links used by this store.",
       },
       {
         title: "Value Guide",
         href: "/resources/value-guide",
-        text: "A cleaner way to think about cheap weed, budget weed, and affordable weed.",
+        text: "Start a price-led flower browse in the right section.",
       },
       {
         title: "Pre-Roll Guide",
         href: "/resources/pre-roll-guide",
-        text: "Keep pre-roll shopping separate from flower, edibles, vapes, and concentrates.",
+        text: "Read current pre-roll formats without category crossover.",
       },
       {
         title: "Native Smokes",
         href: "/resources/native-smokes",
-        text: "Brand names and carton notes for the cigarette menu where listed.",
+        text: "Find the separate Native smokes and cigarette navigation path.",
       },
     ],
     sections: [
       {
-        heading: "What Changed",
-        body: "The resources section now gives shoppers a central place for menu tips, flower comparison, value shopping, pre-roll notes, and store visit guidance.",
+        heading: "One Starting Point For Midtown Shoppers",
+        body: "Instead of hunting through unrelated pages, visitors can choose a planning guide here and continue to the relevant live category. The store page remains the place for trip details.",
       },
       {
-        heading: "How To Use It",
-        body: "Start with the guide that matches the visit, then open the current menu or store page when you are ready to compare details.",
+        heading: "Guide First, Current Menu Last",
+        body: "Use a resource page to narrow the decision, then finish on the Indigenous Midtown menu. That division keeps evergreen guidance separate from information that changes on the shelf.",
       },
     ],
   },
@@ -298,28 +298,28 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "Indigenous Midtown Cannabis Native smokes resource with cigarette brand names shown on the menu and $25 carton notes where listed.",
     eyebrow: "Native Smokes",
     intro:
-      "Indigenous Midtown Cannabis shoppers looking for Native smokes can use this page as a cleaner starting point. Brand names shown on the cigarette menu include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, * Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full. Some carton-style listings show around $25, but shoppers should check the current menu or staff before making the trip.",
+      "Native smokes sit in a separate cigarette category on the Indigenous Midtown site. Use that page to review the current brand names and carton-style listings; this guide explains the route without treating an older list as today's shelf.",
     cards: [
       {
         title: "Cigarette Menu",
         href: "/items/cigarettes",
-        text: "Open the current cigarette category before making the trip.",
+        text: "Check the Midtown store's latest cigarette listings directly.",
       },
       {
         title: "Native Cigarettes Guide",
         href: "/resources/native-smokes/native-cigarettes-guide",
-        text: "Brand notes and a cleaner shopping checklist.",
+        text: "Use a brand-first checklist for the cigarette section.",
       },
       {
         title: "Store Page",
         href: "/weed-dispensary-toronto",
-        text: "Use the store page for directions, contact options, and listed hours.",
+        text: "Keep location and visit planning on the Toronto store page.",
       },
     ],
     sections: [
       {
-        heading: "Brands Shoppers May See",
-        body: "The cigarette menu may show brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, * Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full. The exact shelf can change, so treat this as a menu guide and confirm current options before choosing.",
+        heading: "Read The Cigarette List By Brand",
+        body: "Names previously presented in this store's cigarette category include Canadian Lights, Canadian Full, Putters, Canadian Goose, Canadian Menthol, Canadian Classics, Rolled Gold, Nexus, and Time. Full, light, silver, or menthol labels matter, so read the complete current listing.",
         bullets: [
           "Canadian Lights",
           "Canadian Full",
@@ -336,12 +336,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         ],
       },
       {
-        heading: "$25 Carton Notes",
-        body: "Where the menu lists $25 carton-style Native cigarettes, this resource points shoppers to the cigarette category first. Check the current menu or ask staff for what is available today.",
+        heading: "Treat Carton Prices As Current-Menu Information",
+        body: "Some Indigenous Midtown listings have shown $25 carton notes. That is a reason to open the current cigarette category, not a promise that every brand or format carries that price today.",
       },
       {
-        heading: "Keep The Visit Simple",
-        body: "If you are also shopping cannabis, keep the cigarette decision separate from flower, pre-rolls, edibles, THC vapes, and concentrates. One lane at a time keeps the visit smooth.",
+        heading: "Separate The Two Menu Paths",
+        body: "Complete the cigarette check in its own category. If the same Midtown stop also involves cannabis, return to the main menu and choose the relevant cannabis section independently.",
       },
     ],
   },
@@ -354,28 +354,28 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "A shopper-friendly Native cigarettes guide for Indigenous Midtown Cannabis, including brand names shown on the menu and $25 carton notes where listed.",
     eyebrow: "Native Cigarettes Guide",
     intro:
-      "If Native cigarettes are part of the stop, start with the cigarette category and compare the current listings. Indigenous Midtown Cannabis menu brand names may include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, * Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full.",
+      "A brand-first scan is the quickest way through Indigenous Midtown's cigarette category. Find the family name, check whether the listing says full, light, silver, or menthol, and then read the current carton and price details.",
     cards: [
       {
         title: "Cigarette Menu",
         href: "/items/cigarettes",
-        text: "Open the current cigarette category before making the trip.",
+        text: "Use the live category for the final brand and format check.",
       },
       {
         title: "Native Cigarettes Guide",
         href: "/resources/native-smokes/native-cigarettes-guide",
-        text: "Brand notes and a cleaner shopping checklist.",
+        text: "Return to the Native smokes overview for broader context.",
       },
       {
         title: "Store Page",
         href: "/weed-dispensary-toronto",
-        text: "Use the store page for directions, contact options, and listed hours.",
+        text: "Plan the Midtown visit separately from product research.",
       },
     ],
     sections: [
       {
-        heading: "Compare The Brand Names",
-        body: "Look for the brand name first, then compare the posted price and any item details. The menu may include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, * Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full.",
+        heading: "Scan Family Name, Then Variant",
+        body: "The site's cigarette list has included Canadian, Putters, Canadian Goose, Canadian Classics, Rolled Gold, Nexus, and Time labels. Similar family names can lead to different full, light, silver, or menthol listings, so compare the whole line rather than one word.",
         bullets: [
           "Canadian Lights",
           "Canadian Full",
@@ -392,12 +392,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         ],
       },
       {
-        heading: "Ask If The Shelf Matters",
-        body: "When a specific carton, full, light, or menthol option matters, ask staff before choosing. That is better than guessing from any resource page.",
+        heading: "Confirm A Specific Variant",
+        body: "If the stop depends on one precise label, use the current listing and contact the store when clarification is needed. Resource copy should not be used as a live inventory record.",
       },
       {
-        heading: "Use The Cigarette Category",
-        body: "Open the cigarette category before the trip. It is the cleanest public path for current Native smokes information at this store.",
+        heading: "End On The Current Category",
+        body: "The cigarette page is the last step because it carries the store's present public listings. This guide is only the reading method for navigating them.",
       },
     ],
   },
