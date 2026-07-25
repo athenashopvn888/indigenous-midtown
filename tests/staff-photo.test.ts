@@ -18,6 +18,7 @@ import {
   signStaffMedia,
   verifyStaffMediaSignature,
 } from "../app/lib/staffPhotoSignedMedia.ts";
+import { mutationRetryDelay } from "../app/lib/staffPhotoMutation.ts";
 
 const secret = "test-secret-that-is-at-least-thirty-two-characters-long";
 
@@ -161,6 +162,9 @@ test("client source does not contain server secret names or PIN formula", () => 
   assert.equal(client.includes("IMC_STAFF_"), false);
   assert.equal(client.includes("createHmac"), false);
   assert.equal(client.includes("DAILY_PIN_SECRET"), false);
+  assert.match(client, /const formElement = event\.currentTarget/);
+  assert.match(client, /formElement\.reset\(\)/);
+  assert.doesNotMatch(client, /await apiJson\("\/api\/staff-photo\/auth"[\s\S]{0,400}event\.currentTarget\.reset\(\)/);
 });
 
 test("deployment cleanup is scheduled and keeps separate cron authorization", () => {
@@ -182,8 +186,20 @@ test("private Vercel Blob state uses fresh reads and optimistic concurrency", ()
   assert.match(store, /access: "private"/);
   assert.match(store, /useCache: false/);
   assert.match(store, /BlobPreconditionFailedError/);
+  assert.match(store, /head\(STAFF_STATE_PATH\)/);
   assert.match(store, /ifMatch: etag/);
+  assert.match(store, /waitForMutationRetry\(attempt\)/);
   assert.doesNotMatch(store, /NEXT_PUBLIC_/);
+});
+
+test("state conflict retries use bounded exponential backoff with jitter", () => {
+  assert.equal(mutationRetryDelay(0, 0), 35);
+  assert.equal(mutationRetryDelay(1, 0), 70);
+  assert.equal(mutationRetryDelay(4, 0), 560);
+  assert.equal(mutationRetryDelay(5, 0), 1000);
+  assert.equal(mutationRetryDelay(9, 1), 1250);
+  assert.equal(mutationRetryDelay(100, 1), 1250);
+  assert.equal(mutationRetryDelay(-1, -1), 35);
 });
 
 test("staff-photo runtime and package have no Supabase dependency", () => {
