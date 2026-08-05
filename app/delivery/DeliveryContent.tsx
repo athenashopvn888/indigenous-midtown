@@ -120,7 +120,7 @@ export default function DeliveryContent() {
           <p className={styles.ctaText}>
             Can&apos;t wait? Visit us in-store at{" "}
             <strong>93 Broadway Ave, Toronto</strong> — open{" "}
-            <strong>24 hours</strong>. Call <strong>(437) 870-3710</strong>.
+            <strong>24 hours</strong>. Call <strong>+1 (437) 219-7367</strong>.
           </p>
         </div>
       </div>

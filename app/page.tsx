@@ -113,7 +113,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "Where is Indigenous Midtown Cannabis located?",
-    a: "We are located at 93 Broadway Ave, Toronto, ON M4S 2A2. Visit us in person or call us at (437) 870-3710. Free evening street parking is available.",
+    a: "We are located at 93 Broadway Ave, Toronto, ON M4S 2A2. Visit us in person or call us at +1 (437) 219-7367. Free evening street parking is available.",
   },
   {
     q: "What is the cheapest weed at Indigenous Midtown Cannabis?",

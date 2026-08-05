@@ -340,7 +340,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         body: "Some Indigenous Midtown listings have shown $25 carton notes. That is a reason to open the current cigarette category, not a promise that every brand or format carries that price today.",
       },
       {
-        heading: "Separate The Two Menu Paths",
+        heading: "Choose The Right Menu",
         body: "Complete the cigarette check in its own category. If the same Midtown stop also involves cannabis, return to the main menu and choose the relevant cannabis section independently.",
       },
     ],
