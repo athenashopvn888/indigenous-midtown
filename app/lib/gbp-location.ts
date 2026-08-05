@@ -8,8 +8,8 @@ export const gbpLocation = {
   address: "93 Broadway Ave, Toronto, ON M4S 2A2",
   streetAddress: "93 Broadway Ave",
   postalCode: "M4S 2A2",
-  phone: "(437) 870-3710",
-  phoneIntl: "+14378703710",
+  phone: "+1 (437) 219-7367",
+  phoneIntl: "+14372197367",
   neighborhood: "Midtown Toronto / Yonge and Eglinton / Mount Pleasant",
   nearbyAreas: ["Midtown Toronto", "Yonge and Eglinton", "Mount Pleasant", "Davisville", "Eglinton Avenue", "Leaside", "Moore Park", "TTC"],
   products: [

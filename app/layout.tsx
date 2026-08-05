@@ -81,7 +81,7 @@ const jsonLd = {
   description:
     "Cannabis dispensary at 93 Broadway Ave in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
   url: "https://www.indigenousmidtowncannabis.ca",
-  telephone: "+14378703710",
+  telephone: "+14372197367",
   image:
     "https://www.indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
