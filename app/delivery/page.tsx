@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import DeliveryContent from "./DeliveryContent";
+import menu from "./delivery-menu.json";
 
 export const metadata: Metadata = {
-  title: "Delivery Coming Soon — Indigenous Midtown Cannabis | Toronto",
-  description: "Get notified when Indigenous Midtown Cannabis launches same-day weed delivery across Toronto and surrounding areas.",
-  alternates: {
-    canonical: "https://indigenousmidtowncannabis.ca/delivery",
-  },
+  title: "Delivery Menu | Indigenous Midtown Cannabis",
+  description: "Browse the Indigenous Midtown Cannabis delivery product catalog and compare flower tiers and prices.",
+  alternates: { canonical: "https://www.indigenousmidtowncannabis.ca/delivery" },
 };
 
 export default function DeliveryPage() {
-  return <DeliveryContent />;
+  const structuredData = { "@context": "https://schema.org", "@type": "CollectionPage", name: "Indigenous Midtown Cannabis Delivery Menu", url: "https://www.indigenousmidtowncannabis.ca/delivery", mainEntity: { "@type": "ItemList", numberOfItems: menu.products.length, itemListElement: menu.products.map((product, index) => ({ "@type": "ListItem", position: index + 1, name: product.name })) } };
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} /><DeliveryContent /></>;
 }
