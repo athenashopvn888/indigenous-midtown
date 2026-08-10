@@ -107,7 +107,6 @@ export default function DeliveryContent() {
     </section>
     <section className={styles.deliveryDetails} aria-label="Indigenous Midtown Cannabis delivery details">
       <strong>$60 PRODUCT MINIMUM</strong>
-      <a href="sms:+14372910007"><span>DELIVERY TEXT NUMBER</span> +1 (437) 291-0007</a>
     </section>
     <section className={styles.loyalty} aria-labelledby="loyalty-title">
       <div><p>SAVE ON A LATER ORDER</p><h2 id="loyalty-title">Member Loyalty Savings</h2><span>Qualify with an eligible regular-price 28g purchase in BC Premium, Crafts, or Exotics, or with a selected 2 × 28g tier offer. Rewards and coupons apply to a later order—not the qualifying purchase.</span></div>
