@@ -80,4 +80,19 @@ const publicSource = collectPublicSources(fileURLToPath(appRoot)).map((file) => 
 assert(!/Play Games|Games Arcade|href=["']\/games["']|href:\s*["']\/games["']|slug:\s*["']games["']|\$\{BASE\}\/games/.test(publicSource), "public Play Games and /games discovery links must not ship");
 assert(!/farmers\s*link|farmerslink|farmer['’]s\s*link/i.test(publicSource), "public supplier wording must not ship");
 
-+console.log("Verified delivery pricing, announcement bar, and public navigation guards.");
+assert(source.includes("$60 PRODUCT MINIMUM"), "delivery product minimum must be visible");
+assert(source.includes("Member Loyalty Savings"), "member loyalty heading must be visible");
+assert(source.includes("Rewards and coupons apply to a later order—not the qualifying purchase."), "later-order timing must be explicit");
+assert(source.includes("save $30"), "later-order $30 saving must be documented");
+assert(source.includes("$120+ purchase"), "3g Craft coupon threshold must be documented");
+assert(source.includes("$50+ purchase within 14 days"), "keep-active condition must be documented");
+assert(source.includes("Complimentary items apply only to regular-price Craft or Exotic ounces—not BC Premium."), "complimentary-item condition must be documented");
+assert(source.includes("HOW TO ORDER") && source.includes("Select LIVE ORDER"), "LIVE ORDER instructions must be visible");
+assert(source.includes("private selfie-with-ID"), "private new-customer ID step must be visible");
+assert(source.includes("dispatcher confirms availability"), "dispatcher confirmation step must be visible");
+const smsMatch = source.match(/href="sms:(\+1[2-9]\d{9})"><span>DELIVERY TEXT NUMBER<\/span> (\+1 \([2-9]\d{2}\) \d{3}-\d{4})<\/a>/);
+assert(smsMatch, "a valid dedicated delivery text number must be prominent");
+assert(!source.includes("__DELIVERY_"), "delivery phone placeholders must not ship");
+assert(smsMatch[2].replace(/\D/g, "") === smsMatch[1].replace(/\D/g, ""), "visible delivery digits must match the SMS href");
+
+console.log("Verified delivery pricing, announcement bar, and public navigation guards.");
