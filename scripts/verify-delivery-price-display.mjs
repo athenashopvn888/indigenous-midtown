@@ -93,9 +93,8 @@ assert(source.includes("Complimentary items apply only to regular-price Craft or
 assert(source.includes("HOW TO ORDER") && source.includes("Select LIVE ORDER"), "LIVE ORDER instructions must be visible");
 assert(source.includes("private selfie-with-ID"), "private new-customer ID step must be visible");
 assert(source.includes("dispatcher confirms availability"), "dispatcher confirmation step must be visible");
-const smsMatch = source.match(/href="sms:(\+1[2-9]\d{9})"><span>DELIVERY TEXT NUMBER<\/span> (\+1 \([2-9]\d{2}\) \d{3}-\d{4})<\/a>/);
-assert(smsMatch, "a valid dedicated delivery text number must be prominent");
+assert(!/href=["']sms:/i.test(source), "customer-facing delivery SMS links must not ship");
+assert(!source.includes("DELIVERY TEXT NUMBER"), "customer-facing delivery telephone labels must not ship");
 assert(!source.includes("__DELIVERY_"), "delivery phone placeholders must not ship");
-assert(smsMatch[2].replace(/\D/g, "") === smsMatch[1].replace(/\D/g, ""), "visible delivery digits must match the SMS href");
 
 console.log("Verified delivery pricing, announcement bar, and public navigation guards.");
