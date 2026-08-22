@@ -90,7 +90,7 @@ const EXPLORE_CATEGORIES = [
   {
     name: "Cigarettes",
     slug: "items/cigarettes",
-    banner: "/banners/06_Cigarettes.webp",
+    banner: "/banners/native-cigarette-offer-20260822.webp",
     icon: "🏷️",
   },
   {
