@@ -96,8 +96,8 @@ const jsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 43.7077,
-    longitude: -79.3948,
+    latitude: 43.7104899,
+    longitude: -79.3935826,
   },
   openingHoursSpecification: [
     {
@@ -131,8 +131,8 @@ export default function RootLayout({
       <head>
         <meta name="geo.region" content="CA-ON" />
         <meta name="geo.placename" content="Toronto" />
-        <meta name="geo.position" content="43.7077;-79.3948" />
-        <meta name="ICBM" content="43.7077, -79.3948" />
+        <meta name="geo.position" content="43.7104899;-79.3935826" />
+        <meta name="ICBM" content="43.7104899, -79.3935826" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
