@@ -1,0 +1,26 @@
+.page { max-width: 1120px; margin: 0 auto; padding: 32px 20px 64px; color: var(--text-primary); }
+.hero { padding: 64px 28px; border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); background: linear-gradient(135deg, #25163d, #08050e); text-align: center; }
+.hero h1 { max-width: 940px; margin: 10px auto 16px; color: #fff; font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.08; }
+.hero > p:last-of-type { max-width: 720px; margin: 0 auto; color: #f1e8ff; font-size: 1.08rem; }
+.eyebrow { color: var(--accent, #d2a7ff); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 26px; }
+.actions a { padding: 13px 20px; border-radius: 999px; font-weight: 800; text-decoration: none; }
+.primary { color: #160b24; background: var(--accent, #d2a7ff); }
+.secondary { color: #fff; border: 1px solid rgba(255,255,255,.5); }
+.section { margin-top: 26px; padding: 30px; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); background: var(--bg-card); }
+.section h2 { margin: 0 0 16px; font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.section p { color: var(--text-secondary); line-height: 1.75; }
+.section a { color: var(--accent, #9c62d8); font-weight: 750; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.card { display: block; padding: 20px; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); color: inherit !important; text-decoration: none; background: var(--bg-secondary); }
+.card:hover { border-color: var(--accent, #9c62d8); transform: translateY(-2px); }
+.card h3, .terms h3, .faqs h3 { margin: 0 0 8px; font-size: 1.06rem; }
+.card p, .terms p, .faqs p { margin: 0; }
+.card span { display: inline-block; margin-top: 14px; color: var(--accent, #9c62d8); font-weight: 800; }
+.terms div, .faqs article { padding: 18px; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); }
+.note { margin: 18px 0 0; font-size: .92rem; }
+.address { font-style: normal; line-height: 1.75; }
+.faqs { display: grid; gap: 12px; }
+@media (max-width: 760px) { .cards { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .page { padding-inline: 14px; } .hero { padding: 44px 18px; } .section { padding: 22px 18px; } .cards, .terms { grid-template-columns: 1fr; } }

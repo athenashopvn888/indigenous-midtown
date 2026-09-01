@@ -1,0 +1,11 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import test from "node:test";
+const owner = readFileSync("app/components/WeedOwnerPage.tsx", "utf8");
+const route = readFileSync("app/weed-dispensary-toronto/page.tsx", "utf8");
+const home = readFileSync("app/page.tsx", "utf8");
+test("protected owner keeps canonical and indexing",()=>{assert.match(route,/Weed Dispensary in Toronto \| Indigenous Midtown Cannabis/);assert.match(route,/indigenousmidtowncannabis\.ca\/weed-dispensary-toronto\//);assert.match(route,/index: true/);assert.match(route,/follow: true/)});
+test("owner uses exact verified identity and facts",()=>{assert.match(owner,/Indigenous Midtown Cannabis/);assert.match(owner,/93 Broadway Ave/);assert.match(owner,/\+1 437-219-7367/);assert.match(owner,/Open 24 Hours/)});
+test("approved discovery routes are present",()=>{for(const href of ["/resources/flower-guide","/resources/menu-guide","/resources/value-guide","/resources/pre-roll-guide","/resources"])assert.ok(owner.includes(`"${href}"`));assert.doesNotMatch(owner,/available now|in stock|best price/i)});
+test("copy makes no unsupported cultural claim",()=>{assert.match(owner,/No additional ownership, cultural or affiliation claim is made/);assert.doesNotMatch(owner,/indigenous-owned|community-owned/i)});
+test("homepage H1 and bridge are preserved",()=>{assert.match(home,/INDIGENOUS MIDTOWN CANNABIS/);assert.match(home,/Explore Weed &amp; Cannabis/)});
