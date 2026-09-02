@@ -101,6 +101,9 @@ export default async function ItemsCategoryPage({
       {/* SEO Content */}
       <section className={styles.seoSection}>
         <div className={styles.container}>
+          {(catInfo.key === "VAPE PENS" || catInfo.key === "VAPE DISPOSABLE") && (
+            <h1 className={styles.seoTitle}>{config.name}</h1>
+          )}
           <h2 className={styles.seoTitle}>{config.seoTitle}</h2>
           <p className={styles.seoBody}>{config.seoDescription}</p>
 

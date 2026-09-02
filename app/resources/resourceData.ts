@@ -39,13 +39,13 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         text: "Build a short list before heading through Midtown Toronto.",
       },
       {
-        title: "Flower Guide",
-        href: "/resources/flower-guide",
+        title: "Weed & Flower Guide",
+        href: "/resources/weed-flower-guide",
         text: "See how the five flower shelves are arranged before browsing strains.",
       },
       {
-        title: "Value Guide",
-        href: "/resources/value-guide",
+        title: "Weed Value Guide",
+        href: "/resources/weed-value-guide",
         text: "Focus a price-minded visit without bouncing between every category.",
       },
       {
@@ -88,13 +88,13 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "Treat the Indigenous Midtown menu like a set of separate shelves. Decide whether this is a flower, pre-roll, edible, vape, concentrate, accessory, or cigarette visit first; the useful comparisons become much shorter after that.",
     cards: [
       {
-        title: "Flower Guide",
-        href: "/resources/flower-guide",
+        title: "Weed & Flower Guide",
+        href: "/resources/weed-flower-guide",
         text: "Move from shelf level to the current flower listings.",
       },
       {
-        title: "Value Guide",
-        href: "/resources/value-guide",
+        title: "Weed Value Guide",
+        href: "/resources/weed-value-guide",
         text: "Keep a value-first browse centred on the lower flower tiers.",
       },
       {
@@ -125,40 +125,44 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
   },
   {
-    slug: "flower-guide",
-    title: "Indigenous Midtown Cannabis Flower Guide",
-    seoTitle:
-      "Indigenous Midtown Cannabis Flower Guide | Exotic, Premium, Budget",
+    slug: "weed-flower-guide",
+    title: "Indigenous Midtown Cannabis Weed & Flower Guide",
+    seoTitle: "Weed & Cannabis Flower Guide Toronto",
     description:
-      "Compare exotic flower, premium flower, budget weed, cheap weed, and affordable weed at Indigenous Midtown Cannabis with current menu details.",
+      "Compare Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed collections at Indigenous Midtown Cannabis in Toronto.",
     eyebrow: "Flower Guide",
     intro:
-      "Indigenous Midtown divides flower browsing into Exotic, Premium, AAA+, AA, and Budget pages. Pick the shelf level first, then compare the listings inside it instead of judging the whole flower menu at once.",
+      "Indigenous Midtown Cannabis brings together five Weed flower collections for shoppers comparing Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed. Explore whichever collections interest you, or start with the broader Toronto Weed selection before narrowing your browsing.",
     cards: [
       {
-        title: "Exotic Flower",
-        href: "/exotic",
+        title: "Explore Exotic Weed",
+        href: "/exotic-weed",
         text: "Open the top flower shelf and review its current names.",
       },
       {
-        title: "Premium Flower",
-        href: "/premium",
+        title: "Explore Premium Weed",
+        href: "/premium-weed",
         text: "Browse a premium shelf without crossing into every tier.",
       },
       {
-        title: "AAA+ Flower",
-        href: "/aaa",
+        title: "Explore AAA+ Weed",
+        href: "/aaa-weed",
         text: "Use the AAA+ page as its own Midtown menu shelf.",
       },
       {
-        title: "AA Flower",
-        href: "/aa",
+        title: "Explore AA Weed",
+        href: "/aa-weed",
         text: "Review AA listings when the browse is value-led.",
       },
       {
-        title: "Budget Flower",
-        href: "/budget",
+        title: "Explore Budget Weed",
+        href: "/budget-weed",
         text: "Go directly to the lowest listed flower tier for a budget-first visit.",
+      },
+      {
+        title: "Explore Indigenous Midtown Cannabis Weed in Toronto",
+        href: "/weed-dispensary-toronto/",
+        text: "Start with the broader Toronto Weed selection before choosing a flower collection.",
       },
     ],
     sections: [
@@ -173,24 +177,23 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
   },
   {
-    slug: "value-guide",
-    title: "Indigenous Midtown Cannabis Value Guide",
-    seoTitle:
-      "Indigenous Midtown Cannabis Value Guide | Cheap Weed and Budget Weed",
+    slug: "weed-value-guide",
+    title: "Indigenous Midtown Cannabis Weed Value Guide",
+    seoTitle: "Weed Value Guide Toronto",
     description:
-      "A practical value guide for shoppers comparing cheap weed, budget weed, affordable weed, and menu categories at Indigenous Midtown Cannabis.",
+      "Compare Indigenous Midtown Cannabis Weed flower collections with a straightforward shopping guide for adults 19+ in Toronto.",
     eyebrow: "Value Guide",
     intro:
-      "For a price-led Indigenous Midtown visit, begin with the Budget or AA flower page and work upward only if the current listings do not fit the plan.",
+      "Use this guide to compare the Weed flower collections and product information presented while browsing Indigenous Midtown Cannabis, without relying on fixed prices, promotions or availability claims that can change.",
     cards: [
       {
-        title: "Budget Flower",
-        href: "/budget",
+        title: "Explore Budget Weed",
+        href: "/budget-weed",
         text: "See the store's lowest flower shelf before expanding the search.",
       },
       {
-        title: "AA Flower",
-        href: "/aa",
+        title: "Explore AA Weed",
+        href: "/aa-weed",
         text: "Compare the next flower shelf without leaving the value path.",
       },
       {
@@ -259,13 +262,13 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         text: "Learn the shortest route from a shopping goal to a menu page.",
       },
       {
-        title: "Flower Guide",
-        href: "/resources/flower-guide",
+        title: "Weed & Flower Guide",
+        href: "/resources/weed-flower-guide",
         text: "Understand the five shelf links used by this store.",
       },
       {
-        title: "Value Guide",
-        href: "/resources/value-guide",
+        title: "Weed Value Guide",
+        href: "/resources/weed-value-guide",
         text: "Start a price-led flower browse in the right section.",
       },
       {
