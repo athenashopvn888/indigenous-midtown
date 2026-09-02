@@ -12,36 +12,36 @@ import Papa from "papaparse";
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
   {
-    name: "EXOTICS",
-    slug: "exotic",
+    name: "EXOTIC WEED",
+    slug: "exotic-weed",
     price: "$10-$12/g",
     banner: "/banners/exotics_banner.webp",
     className: styles.bentoExotic,
   },
   {
-    name: "PREMIUM",
-    slug: "premium",
+    name: "PREMIUM WEED",
+    slug: "premium-weed",
     price: "$7-$10/g",
     banner: "/banners/premium_banner.webp",
     className: styles.bentoPremium,
   },
   {
-    name: "AAA+",
-    slug: "aaa",
+    name: "AAA+ WEED",
+    slug: "aaa-weed",
     price: "$5-$6/g",
     banner: "/banners/aaa_plus_banner.webp",
     className: styles.bentoTile,
   },
   {
-    name: "AA",
-    slug: "aa",
+    name: "AA WEED",
+    slug: "aa-weed",
     price: "$4/g",
     banner: "/banners/aa_banner.webp",
     className: styles.bentoTile,
   },
   {
-    name: "BUDGET",
-    slug: "budget",
+    name: "BUDGET WEED",
+    slug: "budget-weed",
     price: "$3/g",
     banner: "/banners/budget_banner.webp",
     className: styles.bentoTile,
@@ -58,13 +58,13 @@ const BENTO_TIERS = [
 /* ── Explore Categories Config (New Banners) ── */
 const EXPLORE_CATEGORIES = [
   {
-    name: "Vape Pens",
+    name: "Nicotine Vape",
     slug: "items/vapes",
     banner: "/banners/01_Vape_Pens.webp",
     icon: "💨",
   },
   {
-    name: "Nic Vape",
+    name: "THC Vape",
     slug: "items/vape-disposables",
     banner: "/banners/02_Vape_Disposable.webp",
     icon: "💨",
@@ -458,7 +458,7 @@ export default function HomePage() {
         <div className={styles.container}>
           <h2 id="weed-cannabis-heading">Weed &amp; Cannabis at Indigenous Midtown Cannabis</h2>
           <p>Indigenous Midtown Cannabis is open 24 hours at 93 Broadway Ave. Adults 19+ can explore the dedicated Toronto Weed and Cannabis section along with flower information.</p>
-          <div className={styles.weedModuleLinks}><Link href="/weed-dispensary-toronto/">Explore Weed &amp; Cannabis</Link><Link href="/resources/flower-guide">Explore the Flower Guide</Link></div>
+          <div className={styles.weedModuleLinks}><Link href="/weed-dispensary-toronto/">Explore Weed &amp; Cannabis</Link><Link href="/resources/weed-flower-guide">Explore the Weed &amp; Flower Guide</Link></div>
         </div>
       </section>
 

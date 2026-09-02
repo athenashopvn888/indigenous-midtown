@@ -4,9 +4,9 @@ import styles from "./WeedOwnerPage.module.css";
 
 const storeName = "Indigenous Midtown Cannabis";
 const discovery = [
-  ["Flower Guide", "Learn more about cannabis flower.", "/resources/flower-guide"],
+  ["Weed & Flower Guide", "Learn more about cannabis flower.", "/resources/weed-flower-guide"],
   ["Menu Guide", "Compare broader cannabis choices.", "/resources/menu-guide"],
-  ["Value Guide", "Explore value-oriented shopping concepts without current-price claims.", "/resources/value-guide"],
+  ["Weed Value Guide", "Explore value-oriented shopping concepts without current-price claims.", "/resources/weed-value-guide"],
   ["Pre-Roll Guide", "Focus specifically on the pre-roll format.", "/resources/pre-roll-guide"],
   ["Resources", "Explore more cannabis information.", "/resources"],
 ] as const;
@@ -30,7 +30,7 @@ export function WeedOwnerPage() {
         <p className={styles.eyebrow}>Open 24 Hours · Adults 19+</p>
         <h1>{storeName} — Weed Dispensary in Toronto</h1>
         <p>Weed, Cannabis, flower and shopping information for adults visiting 93 Broadway Ave.</p>
-        <div className={styles.actions}><Link href="/resources/flower-guide" className={styles.primary}>Explore the Flower Guide</Link><a href="tel:+14372197367" className={styles.secondary}>Call +1 437-219-7367</a></div>
+        <div className={styles.actions}><Link href="/resources/weed-flower-guide" className={styles.primary}>Explore the Weed &amp; Flower Guide</Link><a href="tel:+14372197367" className={styles.secondary}>Call +1 437-219-7367</a></div>
       </header>
 
       <section className={styles.section}>
