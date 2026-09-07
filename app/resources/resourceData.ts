@@ -160,9 +160,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         text: "Go directly to the lowest listed flower tier for a budget-first visit.",
       },
       {
-        title: "Explore Indigenous Midtown Cannabis Weed in Toronto",
+        title: "Midtown Toronto store information",
         href: "/weed-dispensary-toronto/",
-        text: "Start with the broader Toronto Weed selection before choosing a flower collection.",
+        text: "Review the local store information before choosing a flower collection.",
       },
     ],
     sections: [
