@@ -148,34 +148,39 @@ export const SEO_PAGES: SeoPageData[] = [
   },
   {
     slug: "weed-store-near-midtown-toronto-yonge-and-eglinton-mount-pleasant",
-    title: "Indigenous Midtown Cannabis Weed Store Near Yonge and Eglinton",
+    title: "Weed Store in Midtown Toronto | Broadway Avenue",
+    absoluteTitle: true,
     metaDescription:
-      "Indigenous Midtown Cannabis local guide for adults searching for a weed store near Yonge and Eglinton.",
-    h1: "Indigenous Midtown Cannabis Weed Store Near Yonge and Eglinton",
+      "Find Indigenous Midtown Cannabis at 93 Broadway Ave and review local store information for adults 19+ around Midtown Toronto, Yonge and Eglinton and Mount Pleasant.",
+    h1: "Weed Store Information for Midtown Toronto",
     icon: "*",
-    heroTagline: "Local guide around Yonge and Eglinton",
+    heroTagline: "Broadway Avenue store information for adults 19+",
     sections: [
       {
-        heading: "Near Yonge and Eglinton",
-        body: "Indigenous Midtown Cannabis is tied to the local Yonge and Eglinton / Mount Pleasant shopping area. Use this page when comparing nearby cannabis menu options and store details.",
+        heading: "Broadway Avenue store information",
+        body: "Indigenous Midtown Cannabis is located at 93 Broadway Ave in Toronto. Use the current store page for the address, phone number, hours shown on the site and links to the established Weed categories.",
       },
       {
-        heading: "Avoid Stale City Pages",
-        body: "The page is written for this local store identity and does not reuse unrelated city copy.",
+        heading: "Midtown Toronto location context",
+        body: "This store information is for adults 19+ looking around Midtown Toronto, Yonge and Eglinton, Mount Pleasant and Davisville. The Broadway Avenue details keep the visit planning centred on this location.",
       },
       {
-        heading: "Check Before You Go",
-        body: "Open the current menu, confirm directions, and use the contact details if a product or category detail matters before the visit.",
+        heading: "Continue to the established Weed pages",
+        body: "Use the Toronto dispensary page for the store overview, then explore the established Weed flower tiers or educational resources. The current menu remains the source for current names, formats and posted details.",
       },
     ],
     faqs: [
       {
-        q: "Is this page focused on Yonge and Eglinton?",
-        a: "Yes. This page is focused on Indigenous Midtown Cannabis around Yonge and Eglinton / Mount Pleasant, not unrelated city copy.",
+        q: "Where is Indigenous Midtown Cannabis located?",
+        a: "Indigenous Midtown Cannabis is located at 93 Broadway Ave, Toronto, ON M4S 2A2.",
       },
       {
-        q: "What is the next step?",
-        a: "Open the current menu or store page, then confirm directions and contact details before heading over.",
+        q: "Where can I find current store information?",
+        a: "Use the current store page for the address, phone number, hours shown on the site and links to the established Weed categories.",
+      },
+      {
+        q: "Who is this guide for?",
+        a: "This guide is for adults 19+ looking for store information around Midtown Toronto.",
       },
     ],
   },
