@@ -101,23 +101,23 @@ const EXPLORE_CATEGORIES = [
   },
 ];
 
-/* ── Local FAQs for Jane St ── */
+/* ── Local FAQs ── */
 const LOCAL_FAQS = [
   {
     q: "What are the hours for Indigenous Midtown Cannabis?",
     a: "Indigenous Midtown Cannabis at 93 Broadway Ave, Toronto is Open 24 Hours a day, 7 days a week. Walk in anytime — no appointment needed.",
   },
   {
-    q: "What cannabis products do you carry?",
-    a: "We carry five tiers of premium flower: Exotic ($10-$12/g), Premium ($7-$10/g), AAA+ ($5-$6/g), AA ($4/g), and Budget ($3/g), plus a wide variety of edibles, prerolls, vapes, and concentrates.",
+    q: "Which established Weed tiers can adults 19+ explore?",
+    a: "The website includes Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed pages. Use the current menu for current names, formats and posted details.",
   },
   {
     q: "Where is Indigenous Midtown Cannabis located?",
-    a: "We are located at 93 Broadway Ave, Toronto, ON M4S 2A2. Visit us in person or call us at +1 (437) 219-7367. Free evening street parking is available.",
+    a: "We are located at 93 Broadway Ave, Toronto, ON M4S 2A2. Visit us in person or call us at +1 (437) 219-7367.",
   },
   {
-    q: "What is the cheapest weed at Indigenous Midtown Cannabis?",
-    a: "Our budget flower starts at just $3/g. We also offer AA daily drivers from $4/g and AAA+ heavy hitters from $5-$6/g. View our budget menu for our latest deals.",
+    q: "Where can I learn about the Weed flower tiers?",
+    a: "Start with the Weed & Flower Guide, then open the tier page that fits your visit.",
   },
 ];
 
@@ -295,6 +295,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className={styles.weedModule} aria-labelledby="midtown-store-heading">
+        <div className={styles.container}>
+          <p className={styles.localEyebrow}>MIDTOWN TORONTO STORE INFORMATION</p>
+          <h2 id="midtown-store-heading">A Cannabis Dispensary on Broadway Avenue</h2>
+          <p>Indigenous Midtown Cannabis is located at 93 Broadway Ave in Toronto. The website brings together current store information, Weed flower tiers and educational resources for adults 19+ looking for a cannabis dispensary in Midtown Toronto.</p>
+          <p>Start with the Toronto dispensary guide for local store information, or explore the established Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed pages to understand the flower tiers presented on this site.</p>
+          <p>Find the store at 93 Broadway Ave in Midtown Toronto. Current store hours are shown on the website before your visit.</p>
+          <div className={styles.weedModuleLinks}>
+            <Link href="/weed-dispensary-toronto/">Toronto dispensary guide</Link>
+            <Link href="/info/weed-store-near-midtown-toronto-yonge-and-eglinton-mount-pleasant">Midtown Toronto store information</Link>
+            <Link href="/exotic-weed">Exotic Weed</Link>
+            <Link href="/premium-weed">Premium Weed</Link>
+            <Link href="/aaa-weed">AAA+ Weed</Link>
+            <Link href="/aa-weed">AA Weed</Link>
+            <Link href="/budget-weed">Budget Weed</Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── EXPLORE CATEGORIES ── */}
       <section className={styles.categoriesSection} id="menu">
         <div className={styles.container}>
@@ -451,14 +470,6 @@ export default function HomePage() {
               <p className={styles.faqAnswer}>{faq.a}</p>
             </details>
           ))}
-        </div>
-      </section>
-
-      <section className={styles.weedModule} aria-labelledby="weed-cannabis-heading">
-        <div className={styles.container}>
-          <h2 id="weed-cannabis-heading">Weed &amp; Cannabis at Indigenous Midtown Cannabis</h2>
-          <p>Indigenous Midtown Cannabis is open 24 hours at 93 Broadway Ave. Adults 19+ can explore the dedicated Toronto Weed and Cannabis section along with flower information.</p>
-          <div className={styles.weedModuleLinks}><Link href="/weed-dispensary-toronto/">Explore Weed &amp; Cannabis</Link><Link href="/resources/weed-flower-guide">Explore the Weed &amp; Flower Guide</Link></div>
         </div>
       </section>
 

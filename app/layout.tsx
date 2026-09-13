@@ -80,12 +80,11 @@ const jsonLd = {
   "@id": "https://www.indigenousmidtowncannabis.ca",
   name: "Indigenous Midtown Cannabis",
   description:
-    "Cannabis dispensary at 93 Broadway Ave in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
+    "Cannabis dispensary at 93 Broadway Ave in Toronto, ON, with current store information for adults 19+.",
   url: "https://www.indigenousmidtowncannabis.ca",
   telephone: "+14372197367",
   image:
     "https://www.indigenousmidtowncannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
-  priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",
     streetAddress: "93 Broadway Ave",
@@ -96,8 +95,8 @@ const jsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 43.7104899,
-    longitude: -79.3935826,
+    latitude: 43.7104858,
+    longitude: -79.393603,
   },
   openingHoursSpecification: [
     {
@@ -115,10 +114,6 @@ const jsonLd = {
       closes: "23:59",
     },
   ],
-  areaServed: {
-    "@type": "City",
-    name: "Toronto",
-  },
 };
 
 export default function RootLayout({
@@ -131,8 +126,8 @@ export default function RootLayout({
       <head>
         <meta name="geo.region" content="CA-ON" />
         <meta name="geo.placename" content="Toronto" />
-        <meta name="geo.position" content="43.7104899;-79.3935826" />
-        <meta name="ICBM" content="43.7104899, -79.3935826" />
+        <meta name="geo.position" content="43.7104858;-79.393603" />
+        <meta name="ICBM" content="43.7104858, -79.393603" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

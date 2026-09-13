@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import { WeedOwnerPage } from "@/app/components/WeedOwnerPage";
 
 export const metadata: Metadata = {
-  title: { absolute: "Weed Dispensary in Toronto | Indigenous Midtown Cannabis" },
+  title: { absolute: "Weed Dispensary in Midtown Toronto | Indigenous Midtown Cannabis" },
   description:
-    "Indigenous Midtown Cannabis is open 24 hours at 93 Broadway Ave in Toronto. Adults 19+ can explore cannabis, flower and shopping guides.",
+    "Visit Indigenous Midtown Cannabis at 93 Broadway Ave in Toronto. Find store information and explore established Weed flower tiers and cannabis resources for adults 19+.",
   alternates: {
     canonical: "https://www.indigenousmidtowncannabis.ca/weed-dispensary-toronto/",
   },
