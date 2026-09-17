@@ -2,15 +2,21 @@ import { Metadata } from "next";
 import { WeedOwnerPage } from "@/app/components/WeedOwnerPage";
 
 export const metadata: Metadata = {
-  title: { absolute: "Weed Dispensary in Toronto | Indigenous Midtown Cannabis" },
+  title: {
+    absolute: "Weed Info for Broadway Midtown | Indigenous Midtown Cannabis",
+  },
   description:
-    "Indigenous Midtown Cannabis is open 24 hours at 93 Broadway Ave in Toronto. Adults 19+ can explore cannabis, flower and shopping guides.",
+    "Supporting weed and cannabis notes for Indigenous Midtown Cannabis at 93 Broadway Ave near Yonge–Eglinton. Adults 19+. The homepage is the visit hub.",
   alternates: {
-    canonical: "https://www.indigenousmidtowncannabis.ca/weed-dispensary-toronto/",
+    canonical: "https://www.indigenousmidtowncannabis.ca/",
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
   },
 };
 

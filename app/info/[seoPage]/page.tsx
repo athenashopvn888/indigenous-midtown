@@ -6,6 +6,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
 import { TIER_CONFIG } from "../../lib/products";
+import { STORE } from "../../lib/storeIdentity";
 import styles from "./seo.module.css";
 
 /* ── Generate all SEO pages ── */
@@ -130,10 +131,23 @@ export default async function SeoLandingPage({
 
           {/* Map */}
           {heroPreview?.theme !== "nicotine" && <div className={styles.section}>
-            <h2 className={styles.sectionTitle}>Find Us</h2>
+            <h2 className={styles.sectionTitle}>Find Us on Broadway Avenue</h2>
+            <p className={styles.sectionBody}>
+              {STORE.name} is at {STORE.addressLine}, {STORE.corridor}. Adults 19+.
+              The homepage keeps the hours hub; /visit has walking, Line 1, and parking notes.
+            </p>
             <div className={styles.mapWrap}>
+              <iframe
+                title="Map of Indigenous Midtown Cannabis at 93 Broadway Ave"
+                src={STORE.mapEmbedUrl}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                style={{ width: "100%", height: "320px", border: 0, display: "block" }}
+              />
             </div>
             <div className={styles.visitBtns}>
+              <Link href="/visit" className={styles.visitBtn}>How to reach Broadway</Link>
+              <Link href="/" className={styles.visitBtn}>Homepage hours &amp; map</Link>
             </div>
           </div>}
 

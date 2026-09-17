@@ -10,9 +10,10 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.brand}>INDIGENOUS MIDTOWN CANNABIS</div>
             <p className={styles.desc}>
-              Your Local Cannabis Dispensary At 93 Broadway Ave, Toronto. Visit
-              Indigenous Midtown Cannabis For Premium Flower, Edibles, Vapes
-              &amp; More. Open 24 Hours.
+              Your Local Cannabis Dispensary At 93 Broadway Ave, Midtown
+              Toronto, near Yonge–Eglinton and Redpath. Visit Indigenous
+              Midtown Cannabis For Flower, Edibles, Vapes &amp; More. Open 24
+              Hours. Adults 19+.
             </p>
             <div className={styles.buttons}>
               <a href="tel:+14372197367" className={styles.btnPrimary}>
@@ -61,6 +62,7 @@ export default function Footer() {
               <Link href="/info/nicotine-vapes-toronto">Nicotine Vapes Toronto</Link>
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/visit">How to Reach Broadway</Link>
               <Link href="/delivery">Delivery (Coming Soon)</Link>
               <Link href="/info/toronto-weed-dispensary">
                 Yonge and Eglinton Dispensary
@@ -73,9 +75,6 @@ export default function Footer() {
               </Link>
               <Link href="/info/weed-store-near-midtown-toronto-yonge-and-eglinton-mount-pleasant">
                 Weed Store Near Yonge and Eglinton
-              </Link>
-              <Link href="/weed-dispensary-toronto/">
-                Indigenous Midtown Cannabis Weed Dispensary in Toronto
               </Link>
               <Link href="/contact">Contact Us</Link>
             </nav>

@@ -150,32 +150,32 @@ export const SEO_PAGES: SeoPageData[] = [
     slug: "weed-store-near-midtown-toronto-yonge-and-eglinton-mount-pleasant",
     title: "Indigenous Midtown Cannabis Weed Store Near Yonge and Eglinton",
     metaDescription:
-      "Indigenous Midtown Cannabis local guide for adults searching for a weed store near Yonge and Eglinton.",
+      "How to reach Indigenous Midtown Cannabis at 93 Broadway Ave, one block north of Eglinton near Redpath. Walking, Line 1, and parking notes for the Broadway / Yonge–Eglinton Midtown walk-in.",
     h1: "Indigenous Midtown Cannabis Weed Store Near Yonge and Eglinton",
     icon: "*",
-    heroTagline: "Local guide around Yonge and Eglinton",
+    heroTagline: "Broadway Avenue walk-in, one block north of Eglinton",
     sections: [
       {
-        heading: "Near Yonge and Eglinton",
-        body: "Indigenous Midtown Cannabis is tied to the local Yonge and Eglinton / Mount Pleasant shopping area. Use this page when comparing nearby cannabis menu options and store details.",
+        heading: "Near Yonge and Eglinton on Broadway",
+        body: "Indigenous Midtown Cannabis is at 93 Broadway Ave, Toronto, ON M4S 2A2 — a short east–west street just north of Eglinton Avenue, near Redpath Avenue. Use this page when you searched a weed store near Yonge and Eglinton and need the actual Midtown door, not a generic city listing.",
       },
       {
-        heading: "Avoid Stale City Pages",
-        body: "The page is written for this local store identity and does not reuse unrelated city copy.",
+        heading: "Walk, subway, and the last block",
+        body: "Eglinton Station on Line 1 is the closest subway. Come up to Yonge Street, walk north one block to Broadway Avenue, then east toward Redpath until the civic number is 93. Davisville Station works if you are already on that stretch of Yonge; finish north past Eglinton, then east on Broadway. Driving: east from Yonge onto Broadway, or west from Mount Pleasant Road onto Broadway. Street parking on Broadway is the usual option; evening curb space is often easier than the Yonge–Eglinton midday rush.",
       },
       {
-        heading: "Check Before You Go",
-        body: "Open the current menu, confirm directions, and use the contact details if a product or category detail matters before the visit.",
+        heading: "Homepage remains the visit hub",
+        body: "Hours, the map pin, and the full name-address-phone block stay on the Indigenous Midtown Cannabis homepage. This guide is supporting reach copy for the Broadway / Yonge–Eglinton corridor. Open /visit for the longer how-to-reach notes. Adults 19+ with photo ID. No medical or cultural-authority claims — the verified business name is used as listed.",
       },
     ],
     faqs: [
       {
         q: "Is this page focused on Yonge and Eglinton?",
-        a: "Yes. This page is focused on Indigenous Midtown Cannabis around Yonge and Eglinton / Mount Pleasant, not unrelated city copy.",
+        a: "Yes. It describes the Indigenous Midtown Cannabis walk-in at 93 Broadway Ave, one block north of Eglinton near Redpath, not an unrelated city page.",
       },
       {
         q: "What is the next step?",
-        a: "Open the current menu or store page, then confirm directions and contact details before heading over.",
+        a: "Use the homepage for hours and the map pin, or open /visit for TTC and parking notes, then confirm the current menu before heading over.",
       },
     ],
   },
