@@ -11,7 +11,7 @@ const discovery = [
   ["Resources", "Explore more cannabis information.", "/resources"],
 ] as const;
 const faqs = [
-  ["Where is Indigenous Midtown Cannabis?", "Indigenous Midtown Cannabis is located at 93 Broadway Ave, Toronto, ON M4S 2A2."],
+  ["Where is Indigenous Midtown Cannabis?", "Indigenous Midtown Cannabis is located at 93 Broadway Ave, Toronto, ON M4S 2A2, one block north of Eglinton near Redpath Avenue."],
   ["Is Indigenous Midtown Cannabis open 24 hours?", "Yes. It is open 24 hours a day, seven days a week."],
   ["What cannabis information can adults 19+ explore?", "Adults 19+ can explore flower information, cannabis-format guidance, value-oriented shopping information and pre-roll guidance."],
   ["What is the difference between weed and cannabis?", "Weed is common everyday terminology for cannabis. Cannabis is the broader term."],
@@ -22,20 +22,39 @@ const faqs = [
 ] as const;
 
 export function WeedOwnerPage() {
-  const schema = { "@context": "https://schema.org", "@type": "Store", name: storeName, url: "https://www.indigenousmidtowncannabis.ca/weed-dispensary-toronto/", telephone: "+14372197367", address: { "@type": "PostalAddress", streetAddress: "93 Broadway Ave", addressLocality: "Toronto", addressRegion: "ON", postalCode: "M4S 2A2", addressCountry: "CA" }, openingHours: "Mo-Su 00:00-24:00" };
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Weed info for the Broadway Midtown walk-in",
+    url: "https://www.indigenousmidtowncannabis.ca/weed-dispensary-toronto/",
+    isPartOf: { "@type": "WebSite", url: "https://www.indigenousmidtowncannabis.ca/" },
+    about: {
+      "@type": "CannabisStore",
+      name: storeName,
+      telephone: "+14372197367",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "93 Broadway Ave",
+        addressLocality: "Toronto",
+        addressRegion: "ON",
+        postalCode: "M4S 2A2",
+        addressCountry: "CA",
+      },
+    },
+  };
   return (
     <main className={styles.page}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <header className={styles.hero}>
-        <p className={styles.eyebrow}>Open 24 Hours · Adults 19+</p>
-        <h1>{storeName} — Weed Dispensary in Toronto</h1>
-        <p>Weed, Cannabis, flower and shopping information for adults visiting 93 Broadway Ave.</p>
-        <div className={styles.actions}><Link href="/resources/weed-flower-guide" className={styles.primary}>Explore the Weed &amp; Flower Guide</Link><a href="tel:+14372197367" className={styles.secondary}>Call +1 437-219-7367</a></div>
+        <p className={styles.eyebrow}>Open 24 Hours · Adults 19+ · Broadway / Yonge–Eglinton</p>
+        <h1>{storeName} — Weed Info for the Broadway Midtown Walk-In</h1>
+        <p>Weed, cannabis, flower and shopping notes for adults visiting 93 Broadway Ave. This supporting page is not the city-wide Toronto landing; the homepage remains the visit hub.</p>
+        <div className={styles.actions}><Link href="/resources/weed-flower-guide" className={styles.primary}>Explore the Weed &amp; Flower Guide</Link><Link href="/visit" className={styles.secondary}>How to reach Broadway Ave</Link></div>
       </header>
 
       <section className={styles.section}>
         <h2>Weed and Cannabis at Indigenous Midtown Cannabis</h2>
-        <p>{storeName} is located at 93 Broadway Ave in Toronto and is open 24 hours a day, seven days a week.</p>
+        <p>{storeName} is located at 93 Broadway Ave in Midtown Toronto, one block north of Eglinton Avenue near Redpath, and is open 24 hours a day, seven days a week.</p>
         <p>Adults 19+ can begin with flower information, compare cannabis formats, explore value-oriented shopping concepts or focus on pre-rolls.</p>
         <p>The business name is used exactly as verified. No additional cultural identity, ownership or affiliation claim is made.</p>
         <p>For a specific item, call <a href="tel:+14372197367">+1 437-219-7367</a> before making a special trip.</p>

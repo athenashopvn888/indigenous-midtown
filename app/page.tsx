@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
 import { allFlowers } from "./lib/products";
 import Papa from "papaparse";
+import { HOME_FAQS, STORE } from "./lib/storeIdentity";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -99,26 +100,6 @@ const EXPLORE_CATEGORIES = [
     slug: "items/magic",
     banner: "/banners/09_Magic_Stuff.webp",
     icon: "🍄",
-  },
-];
-
-/* ── Local FAQs for Jane St ── */
-const LOCAL_FAQS = [
-  {
-    q: "What are the hours for Indigenous Midtown Cannabis?",
-    a: "Indigenous Midtown Cannabis at 93 Broadway Ave, Toronto is Open 24 Hours a day, 7 days a week. Walk in anytime — no appointment needed.",
-  },
-  {
-    q: "What cannabis products do you carry?",
-    a: "We carry five tiers of premium flower: Exotic ($10-$12/g), Premium ($7-$10/g), AAA+ ($5-$6/g), AA ($4/g), and Budget ($3/g), plus a wide variety of edibles, prerolls, vapes, and concentrates.",
-  },
-  {
-    q: "Where is Indigenous Midtown Cannabis located?",
-    a: "We are located at 93 Broadway Ave, Toronto, ON M4S 2A2. Visit us in person or call us at +1 (437) 219-7367. Free evening street parking is available.",
-  },
-  {
-    q: "What is the cheapest weed at Indigenous Midtown Cannabis?",
-    a: "Our budget flower starts at just $3/g. We also offer AA daily drivers from $4/g and AAA+ heavy hitters from $5-$6/g. View our budget menu for our latest deals.",
   },
 ];
 
@@ -230,7 +211,7 @@ export default function HomePage() {
         <div className={styles.welcomeBannerContainer}>
           <img
             src="/banners/welcome_banner.webp"
-            alt="Welcome to Indigenous Midtown Cannabis — Premium Toronto Cannabis Dispensary"
+            alt="Welcome to Indigenous Midtown Cannabis — Broadway Avenue walk-in near Yonge–Eglinton"
             className={styles.welcomeBannerImg}
           />
         </div>
@@ -270,8 +251,12 @@ export default function HomePage() {
               }}
             />
             <h1 className={styles.brandTitle}>INDIGENOUS MIDTOWN CANNABIS</h1>
-            <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
-            <div className={styles.brandBadge}>Open 24 Hours</div>
+            <p className={styles.brandSub}>
+              Broadway Walk-In · Yonge–Eglinton · Redpath
+            </p>
+            <div className={styles.brandBadge}>
+              Open 24 Hours · Adults 19+ · {STORE.streetAddress}
+            </div>
           </div>
 
           {/* Bento Grid */}
@@ -303,8 +288,8 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Explore Categories</h2>
             <p className={styles.sectionSubtitle}>
-              Pick the category that matches the visit, then compare the current
-              menu details.
+              Choose a lane for this Broadway stop — flower, vapes, pre-rolls,
+              or the rest of the Midtown menu — then read the live listing.
             </p>
           </div>
 
@@ -338,8 +323,8 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Featured Strains</h2>
             <p className={styles.sectionSubtitle}>
-              A quick look at flower options from the store menu. Open the item
-              page for current details before choosing.
+              A rotating sample from the 93 Broadway Ave flower wall. Open the
+              item page; do not treat this row as a stock or price guarantee.
             </p>
           </div>
 
@@ -357,21 +342,31 @@ export default function HomePage() {
       <section className={styles.seoSection}>
         <div className={styles.container}>
           <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>Shop The Menu With A Plan</h2>
+            <h2 className={styles.seoPanelTitle}>
+              Walk in on Broadway Avenue at Yonge–Eglinton
+            </h2>
             <p className={styles.seoPanelText}>
-              Start with the store page, then choose the product category that
-              fits the visit. Flower, pre-rolls, edibles, THC vapes,
-              concentrates, accessories, and cigarettes each shop differently.
+              Indigenous Midtown Cannabis sits at {STORE.addressLine}, one
+              block north of Eglinton Avenue near Redpath Avenue. Davisville,
+              North Toronto, and the Yonge–Eglinton towers are the local
+              handles — not a city-wide Toronto hunt. Adults 19+ with photo ID
+              can walk in any hour we list as open.
             </p>
             <p className={styles.seoPanelText}>
-              If cheap weed or affordable weed is the goal, start with Budget
-              and AA flower before moving up. If premium flower or exotic flower
-              is the mood, open those lanes first and compare the current
-              details there.
+              Use this homepage as the visit hub: address, phone{" "}
+              {STORE.phoneDisplay}, 24-hour hours, and the map pin below. For
+              Line 1 from Eglinton Station, curb parking on Broadway, and the
+              last-block approach, open the{" "}
+              <Link href="/visit" className={styles.seoPanelLink}>
+                how to reach Indigenous Midtown Cannabis
+              </Link>{" "}
+              page.
             </p>
             <p className={styles.seoPanelText}>
-              Menus change, so use the current menu and staff for product names,
-              prices, and menu details before you make the trip.
+              Menu categories live on this site so you can plan the stop. Posted
+              names and prices change; ask at the counter before you travel for
+              one item. No medical claims — adult recreational retail only. The
+              verified business name is used as listed.
             </p>
           </div>
         </div>
@@ -447,7 +442,7 @@ export default function HomePage() {
           >
             Frequently Asked Questions
           </h2>
-          {LOCAL_FAQS.map((faq, i) => (
+          {HOME_FAQS.map((faq, i) => (
             <details key={i} className={styles.faqItem}>
               <summary className={styles.faqQuestion}>{faq.q}</summary>
               <p className={styles.faqAnswer}>{faq.a}</p>
@@ -459,8 +454,17 @@ export default function HomePage() {
       <section className={styles.weedModule} aria-labelledby="weed-cannabis-heading">
         <div className={styles.container}>
           <h2 id="weed-cannabis-heading">Weed &amp; Cannabis at Indigenous Midtown Cannabis</h2>
-          <p>Indigenous Midtown Cannabis is open 24 hours at 93 Broadway Ave. Adults 19+ can explore the dedicated Toronto Weed and Cannabis section along with flower information.</p>
-          <div className={styles.weedModuleLinks}><Link href="/weed-dispensary-toronto/">Explore Weed &amp; Cannabis</Link><Link href="/resources/weed-flower-guide">Explore the Weed &amp; Flower Guide</Link></div>
+          <p>
+            Indigenous Midtown Cannabis is open 24 hours at 93 Broadway Ave, one
+            block north of Eglinton in Midtown. Adults 19+ can compare flower
+            and cannabis formats on this site, then use the homepage map and
+            hours before they go. For subway and parking notes, open how to
+            reach Broadway Avenue.
+          </p>
+          <div className={styles.weedModuleLinks}>
+            <Link href="/resources/weed-flower-guide">Explore Weed &amp; Cannabis</Link>
+            <Link href="/visit">How to reach 93 Broadway Ave</Link>
+          </div>
         </div>
       </section>
 
@@ -472,10 +476,13 @@ export default function HomePage() {
               <span className={styles.storeIcon}>📍</span>
               <h3 className={styles.storeCardTitle}>Location</h3>
               <p className={styles.storeCardText}>
-                93 Broadway Ave
+                {STORE.streetAddress}
                 <br />
-                Toronto, ON M4S 2A2
+                {STORE.city}, {STORE.region} {STORE.postalCode}
                 <br />
+                <a href={`tel:${STORE.phoneE164}`} className={styles.storeLink}>
+                  {STORE.phoneDisplay}
+                </a>
               </p>
             </div>
             <div className={styles.storeCard}>
@@ -494,14 +501,29 @@ export default function HomePage() {
                 No appointment needed
                 <br />
                 <span className={styles.storeHighlight}>
-                  Broadway Ave & Redpath Ave, Toronto
+                  {STORE.intersection}, Midtown
                 </span>
               </p>
             </div>
           </div>
 
-          {/* Map wrapper */}
-          <div className={styles.mapWrap}></div>
+          <p className={styles.visitHint}>
+            Need TTC, driving, or parking notes for this corridor?{" "}
+            <Link href="/visit" className={styles.storeLink}>
+              How to reach 93 Broadway Ave
+            </Link>
+          </p>
+
+          {/* Map wrapper — homepage remains the visit hub */}
+          <div className={styles.mapWrap}>
+            <iframe
+              title="Map of Indigenous Midtown Cannabis at 93 Broadway Ave"
+              src={STORE.mapEmbedUrl}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{ width: "100%", height: "340px", border: 0, display: "block" }}
+            />
+          </div>
         </div>
       </section>
 

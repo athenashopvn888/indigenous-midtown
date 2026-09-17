@@ -15,9 +15,9 @@ const FAQ_CATEGORIES = [
   {
     title: "Location and Hours",
     faqs: [
-      { q: "Where is Indigenous Midtown Cannabis located?", a: "Indigenous Midtown Cannabis is listed at 93 Broadway Ave, Toronto, ON M4S 2A2. Use the store page for directions and contact options before visiting." },
+      { q: "Where is Indigenous Midtown Cannabis located?", a: "Indigenous Midtown Cannabis is at 93 Broadway Ave, Toronto, ON M4S 2A2, one block north of Eglinton near Redpath Avenue. Use the homepage for the map pin and /visit for walking, TTC, and parking notes." },
       { q: "What are the listed hours?", a: "Open 24 Hours. Check the current store page or contact staff before visiting if timing matters." },
-      { q: "What is the way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
+      { q: "What is the way to plan the visit?", a: "Start with the homepage visit hub for name, address, phone, hours, and the map. Open /visit if you need Eglinton Station or Broadway parking notes, then choose the menu category that matches the stop." },
     ],
   },
   {

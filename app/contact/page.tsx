@@ -42,7 +42,10 @@ export default function ContactPage() {
                 <br />
                 Toronto, ON M4S 2A2
                 <br />
-                <span className={styles.infoMuted}>Broadway Ave & Redpath Ave</span>
+                <span className={styles.infoMuted}>Broadway Ave &amp; Redpath Ave · Yonge–Eglinton Midtown</span>
+              </p>
+              <p className={styles.infoText}>
+                <a href="tel:+14372197367">+1 437 219 7367</a>
               </p>
             </div>
 

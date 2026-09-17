@@ -10,8 +10,8 @@ export const gbpLocation = {
   postalCode: "M4S 2A2",
   phone: "+1 (437) 219-7367",
   phoneIntl: "+14372197367",
-  neighborhood: "Midtown Toronto / Yonge and Eglinton / Mount Pleasant",
-  nearbyAreas: ["Midtown Toronto", "Yonge and Eglinton", "Mount Pleasant", "Davisville", "Eglinton Avenue", "Leaside", "Moore Park", "TTC"],
+  neighborhood: "Broadway / Yonge–Eglinton Midtown",
+  nearbyAreas: ["Midtown Toronto", "Yonge and Eglinton", "Broadway Avenue", "Redpath Avenue", "Davisville", "Eglinton Avenue", "North Toronto", "TTC"],
   products: [
     "Flower",
     "Pre-rolls",
@@ -23,17 +23,17 @@ export const gbpLocation = {
     "Accessories"
   ],
   menuUrl: "/",
-  directionsUrl: "",
+  directionsUrl: "/visit",
   mapEmbedUrl: "",
   latitude: "43.7104899",
   longitude: "-79.3935826",
   hours: ["Open 24 Hours"],
-  seoTitle: "Indigenous Midtown Cannabis | Weed Dispensary in Toronto",
-  metaDescription: "Indigenous Midtown Cannabis is a local weed dispensary in Toronto offering flower, pre-rolls, edibles, vapes, concentrates, CBD, and service for adults 19+.",
-  localLandmarks: ["Midtown Toronto", "Yonge and Eglinton", "Mount Pleasant"],
-  introVariant: "Indigenous Midtown Cannabis is a local weed dispensary at 93 Broadway Ave near Midtown Toronto, Yonge and Eglinton, and Mount Pleasant. Adults 19+ can browse flower tiers and category pages for pre-rolls, edibles, vapes, concentrates, and accessories before visiting.",
-  neighborhoodDescription: "Located in the vibrant Midtown Toronto / Yonge and Eglinton / Mount Pleasant district, our cannabis store fits right into this active and historic community, surrounded by local retail shops and convenient transit links.",
-  parkingNote: "Street parking and public parking garages are nearby",
-  transitNote: "A short walk from Eglinton subway station and served by local TTC routes.",
-  sectionTitle: "Serving Customers Near Midtown Toronto and Yonge-Eglinton"
+  seoTitle: "Indigenous Midtown Cannabis | Broadway Walk-In at Yonge–Eglinton",
+  metaDescription: "Indigenous Midtown Cannabis is an adult 19+ walk-in at 93 Broadway Ave in Midtown Toronto near Yonge–Eglinton and Redpath. Open 24 Hours.",
+  localLandmarks: ["Broadway Avenue", "Yonge and Eglinton", "Redpath Avenue"],
+  introVariant: "Indigenous Midtown Cannabis is a local weed dispensary at 93 Broadway Ave, one block north of Eglinton near Redpath Avenue. Adults 19+ can browse flower tiers and category pages for pre-rolls, edibles, vapes, concentrates, and accessories before visiting.",
+  neighborhoodDescription: "The storefront sits on Broadway Avenue in the Yonge–Eglinton Midtown grid, surrounded by local retail and a short walk from Eglinton Station on Line 1.",
+  parkingNote: "Street parking on Broadway Avenue; evening curb space is often easier than midday. Read posted signs.",
+  transitNote: "A short walk from Eglinton Station on Line 1. Walk north to Broadway Avenue, then east toward Redpath.",
+  sectionTitle: "Serving walk-in customers on Broadway near Yonge–Eglinton"
 };

@@ -3,8 +3,8 @@ import DeliveryContent from "./DeliveryContent";
 import menu from "./delivery-menu.json";
 
 export const metadata: Metadata = {
-  title: "Delivery Menu | Indigenous Midtown Cannabis",
-  description: "Browse the Indigenous Midtown Cannabis delivery product catalog and compare flower tiers and prices.",
+  title: "Broadway Midtown Delivery Menu | Indigenous Midtown Cannabis",
+  description: "Delivery catalog for Indigenous Midtown Cannabis at 93 Broadway Ave near Yonge–Eglinton. Adults 19+. Confirm availability with the store before ordering.",
   alternates: { canonical: "https://www.indigenousmidtowncannabis.ca/delivery" },
 };
 
