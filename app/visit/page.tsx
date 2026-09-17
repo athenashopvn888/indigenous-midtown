@@ -167,9 +167,10 @@ export default function VisitPage() {
 
         <h2>Parking on Broadway Avenue</h2>
         <p>
-          Curb parking on Broadway Avenue is the practical option for most
-          walk-in visits. Midday can be tighter around Yonge–Eglinton; evening
-          and overnight curb space on Broadway is usually easier. Read posted
+              Curb parking on Broadway Avenue is the practical option for most
+              walk-in visits. Street parking on Broadway Avenue is the usual
+              choice; midday can be tighter around Yonge–Eglinton; evening
+              and overnight curb space on Broadway is usually easier. Read posted
           signs on the block you actually stop on. Paid public lots exist around
           the Yonge–Eglinton Centre area if the curb is full — this page does
           not invent validation or a store-owned garage.
