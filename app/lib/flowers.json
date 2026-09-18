@@ -249,10 +249,7 @@
     "isSale": false,
     "thc": "28%",
     "price3g": null,
-    "price5g": {
-      "regular": 20,
-      "sale": null
-    },
+    "price5g": null,
     "price14g": {
       "regular": 45,
       "sale": null
@@ -1164,24 +1161,6 @@
     "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/353_PINK_PANTHER_showcase.webp"
   },
   {
-    "sku": "357",
-    "name": "EL CHAPO",
-    "slug": "el-chapo",
-    "tier": "AAA+",
-    "type": "indica",
-    "isHot": false,
-    "isSale": true,
-    "thc": "31%",
-    "price3g": null,
-    "price5g": null,
-    "price14g": {
-      "regular": 70,
-      "sale": null
-    },
-    "price28g": null,
-    "image": "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/357-el-chapo-showcase-600.webp"
-  },
-  {
     "sku": "362",
     "name": "SPICY PINK",
     "slug": "spicy-pink",
@@ -1380,7 +1359,7 @@
     "isSale": false,
     "thc": "36%",
     "price3g": {
-      "regular": 45,
+      "regular": 40,
       "sale": null
     },
     "price5g": {
@@ -1401,7 +1380,7 @@
     "isSale": false,
     "thc": "",
     "price3g": {
-      "regular": 45,
+      "regular": 40,
       "sale": null
     },
     "price5g": {
