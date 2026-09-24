@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     "Supporting weed and cannabis notes for Indigenous Midtown Cannabis at 93 Broadway Ave near Yonge–Eglinton. Adults 19+. The homepage is the visit hub.",
   alternates: {
-    canonical: "https://www.indigenousmidtowncannabis.ca/",
+    canonical: "https://www.indigenousmidtowncannabis.ca/weed-dispensary-toronto",
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
     googleBot: {
-      index: false,
+      index: true,
       follow: true,
     },
   },
