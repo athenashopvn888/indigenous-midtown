@@ -1,5 +1,9 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
+import HiringRibbon from "../components/HiringRibbon";
+import TvStoreHeader from "../components/TvStoreHeader";
+import { tvHiring } from "../lib/tvHiring";
+import { formatBoardTime, readStockUpdatedAt } from "../lib/tvStockTime";
 import styles from "./tv2.module.css";
 
 /* -- TYPES -- */
@@ -183,13 +187,17 @@ export default function TV2Page() {
   const [items, setItems] = useState<Item[]>([]);
   const [highlights, setHighlights] = useState<Record<string,number>>({});
   const [lastUpdate, setLastUpdate] = useState("");
+  const [stockUpdated, setStockUpdated] = useState<string | null>(null);
   const [daytime, setDaytime] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setDaytime(isDaytime());
+    const frame = window.requestAnimationFrame(() => setDaytime(isDaytime()));
     const iv = setInterval(() => setDaytime(isDaytime()), 60_000);
-    return () => clearInterval(iv);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      clearInterval(iv);
+    };
   }, []);
 
   const loadData = useCallback(async () => {
@@ -197,10 +205,11 @@ export default function TV2Page() {
       const res = await fetch("/api/tv-data?type=items");
       const data: Item[] = res.ok ? await res.json() : [];
       setItems(data);
+      setStockUpdated(readStockUpdatedAt(res, data));
       const hi: Record<string,number> = {};
       CARD_CONFIG.forEach(c => { hi[c.id] = 0; });
       setHighlights(hi);
-      setLastUpdate(new Date().toLocaleTimeString());
+      setLastUpdate(formatBoardTime(new Date()) || "");
     } catch (err) { console.warn("[TV2] Load failed:", err); }
   }, []);
 
@@ -214,10 +223,17 @@ export default function TV2Page() {
   }, []);
 
   useEffect(() => {
-    loadData(); fitToScreen();
+    const frame = window.requestAnimationFrame(() => {
+      loadData();
+      fitToScreen();
+    });
     window.addEventListener("resize", fitToScreen);
     const refresh = setInterval(loadData, 5*60*1000);
-    return () => { window.removeEventListener("resize", fitToScreen); clearInterval(refresh); };
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("resize", fitToScreen);
+      clearInterval(refresh);
+    };
   }, [loadData, fitToScreen]);
 
   useEffect(() => {
@@ -238,9 +254,11 @@ export default function TV2Page() {
   return (
     <div className={styles.tvPage} style={bgUrl ? { backgroundImage: `url(${bgUrl})`, backgroundSize: "cover" } : undefined}>
       <div className={styles.wrap} ref={wrapRef}>
-        
+        <TvStoreHeader eyebrow="Secondary Menu Board" stockUpdated={stockUpdated} />
+
         {/* GRID */}
         <div className={styles.stage}>
+          <HiringRibbon hiring={tvHiring} />
           <div className={styles.grid}>
             {CARD_CONFIG.map(card => {
               const filtered = items.filter(card.filter);
@@ -272,7 +290,7 @@ export default function TV2Page() {
         </div>
         
       </div>
-      <div className={styles.lastUpdated}>Updated: {lastUpdate}</div>
+      {lastUpdate ? <div className={styles.lastUpdated}>Refreshed {lastUpdate}</div> : null}
     </div>
   );
 }
