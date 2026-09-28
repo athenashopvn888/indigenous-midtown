@@ -199,7 +199,7 @@ export default function TV2Page() {
   const [highlights, setHighlights] = useState<Record<string,number>>({});
   const [lastUpdate, setLastUpdate] = useState("");
   const [stockUpdated, setStockUpdated] = useState<string | null>(null);
-  const [daytime, setDaytime] = useState(() => isTv2Daytime());
+  const [daytime, setDaytime] = useState(false);
   const [cigaretteOfferVisible, setCigaretteOfferVisible] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
