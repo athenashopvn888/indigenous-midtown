@@ -3,6 +3,16 @@
    Full clone of TVMenu.html with store branding
    ================================================================ */
 
+/* Hide the site-wide delivery bar on this in-store board only. */
+:global(html),
+:global(body) {
+  overflow: hidden !important;
+  height: 100%;
+}
+:global(a.deliveryAnnouncement) {
+  display: none !important;
+}
+
 /* ── FULLSCREEN RESET ── */
 .tvPage {
   position: fixed;
@@ -145,6 +155,9 @@
 .stage {
   flex: 1 1 auto;
   min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   border-radius: 26px;
   padding: 18px;
   box-sizing: border-box;
@@ -173,12 +186,13 @@
 .grid {
   position: relative;
   z-index: 1;
-  height: 100%;
+  flex: 1 1 auto;
+  height: auto;
   min-height: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 0.30fr);
   grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 48px;
+  gap: 32px;
   grid-template-areas:
     "EXOTIC  PREMIUM AAA    ADDONS"
     "AA      BUDGET  OZ     ADDONS";
@@ -1361,6 +1375,71 @@
   bottom: 4px;
   right: 8px;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.25);
+  font-weight: 800;
+  color: rgba(15, 23, 42, 0.78);
+  background: rgba(255, 255, 255, 0.82);
+  padding: 2px 8px;
+  border-radius: 8px;
   z-index: 999;
+}
+
+/* Header + hiring ribbon take vertical space. Keep every product row on screen. */
+.mediaFrame {
+  aspect-ratio: auto;
+  flex: 1 1 0;
+  min-height: 0;
+  height: auto;
+}
+.cardHeader {
+  padding: 8px 10px;
+}
+.tierCrown {
+  font-size: 40px;
+}
+.row {
+  min-height: 42px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.mc {
+  padding: 3px 8px;
+}
+.mcStrain,
+.mcThc,
+.mcPrice {
+  font-size: 22px;
+}
+.mcStrain {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+}
+.pLab {
+  font-size: 16px;
+}
+.pLine {
+  line-height: 1.05;
+  gap: 4px;
+}
+.mh {
+  padding: 5px 8px;
+  font-size: 16px;
+}
+.ozImgWrap {
+  width: 160px;
+  height: 160px;
+}
+.addonsHeroImg {
+  max-height: 180px;
+}
+.vibeSection {
+  margin-top: 6px;
+  padding: 6px 10px;
+}
+.card {
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
 }

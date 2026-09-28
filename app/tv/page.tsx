@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
+import HiringRibbon from "../components/HiringRibbon";
+import TvStoreHeader from "../components/TvStoreHeader";
+import { tvHiring } from "../lib/tvHiring";
+import { formatBoardTime, readStockUpdatedAt } from "../lib/tvStockTime";
 import styles from "./tv.module.css";
 
 /* -- Types -- */
@@ -724,6 +728,7 @@ export default function TVMenuPage() {
   const [addOns, setAddOns] = useState<Item[]>([]);
   const [highlights, setHighlights] = useState<Record<string,number>>({});
   const [lastUpdate, setLastUpdate] = useState("");
+  const [stockUpdated, setStockUpdated] = useState<string | null>(null);
   const [particles, setParticles] = useState<Array<{size:number;left:string;color:string;shadow:string;dur:string;delay:string}>>([]);
   const wrapRef = useRef<HTMLDivElement>(null);
 
@@ -737,6 +742,7 @@ export default function TVMenuPage() {
       ]);
       const fData: Flower[] = fRes.ok ? await fRes.json() : [];
       const iData: Item[] = iRes.ok ? await iRes.json() : [];
+      setStockUpdated(readStockUpdatedAt(fRes, fData) || readStockUpdatedAt(iRes, iData));
 
       for (const f of fData) {
         if (!f.isSale && (hasSalePrice(f) || hasNameSale(f.name))) f.isSale = true;
@@ -776,7 +782,7 @@ export default function TVMenuPage() {
       for (const t of TIERS) hi[t] = 0;
       hi["OZ"] = 0; hi["ADDONS"] = 0;
       setHighlights(hi);
-      setLastUpdate(new Date().toLocaleTimeString());
+      setLastUpdate(formatBoardTime(new Date()) || "");
     } catch (err) { console.warn("[TV] Load failed:", err); }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -792,22 +798,29 @@ export default function TVMenuPage() {
 
   useEffect(() => {
     const colors = ['rgba(220,38,38,.12)','rgba(245,158,11,.10)','rgba(59,130,246,.10)','rgba(16,185,129,.08)','rgba(168,85,247,.08)'];
-    setParticles(Array.from({length: 25}, (_, i) => {
-      const size = 4 + Math.random() * 8;
-      const color = colors[i % colors.length];
-      return {
-        size,
-        left: `${5 + Math.random() * 90}%`,
-        color,
-        shadow: `0 0 ${size*3}px ${color}`,
-        dur: `${18 + Math.random() * 22}s`,
-        delay: `${-Math.random() * 25}s`,
-      };
-    }));
-    loadData(); fitToScreen();
+    const frame = window.requestAnimationFrame(() => {
+      setParticles(Array.from({length: 25}, (_, i) => {
+        const size = 4 + Math.random() * 8;
+        const color = colors[i % colors.length];
+        return {
+          size,
+          left: `${5 + Math.random() * 90}%`,
+          color,
+          shadow: `0 0 ${size*3}px ${color}`,
+          dur: `${18 + Math.random() * 22}s`,
+          delay: `${-Math.random() * 25}s`,
+        };
+      }));
+      loadData();
+      fitToScreen();
+    });
     window.addEventListener("resize", fitToScreen);
     const refresh = setInterval(loadData, 5*60*1000);
-    return () => { window.removeEventListener("resize", fitToScreen); clearInterval(refresh); };
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("resize", fitToScreen);
+      clearInterval(refresh);
+    };
   }, [loadData, fitToScreen]);
 
   useEffect(() => {
@@ -851,11 +864,11 @@ export default function TVMenuPage() {
         ))}
       </div>
       <div className={styles.wrap} ref={wrapRef}>
-
-        
+        <TvStoreHeader eyebrow="Flower Menu Board" stockUpdated={stockUpdated} />
 
         {/* GRID */}
         <div className={styles.stage}>
+          <HiringRibbon hiring={tvHiring} />
           <div className={styles.grid}>
             {/* Row 1: EXOTIC, PREMIUM, AAA+ */}
             {TIERS.slice(0,3).map(tier => (
@@ -875,7 +888,7 @@ export default function TVMenuPage() {
 
         
       </div>
-      <div className={styles.lastUpdated}>Updated: {lastUpdate}</div>
+      {lastUpdate ? <div className={styles.lastUpdated}>Refreshed {lastUpdate}</div> : null}
     </div>
   );
 }
