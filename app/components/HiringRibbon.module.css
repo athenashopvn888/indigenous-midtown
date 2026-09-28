@@ -65,7 +65,7 @@
   padding: 0 22px;
   box-sizing: border-box;
   font-size: 60px;
-  line-height: 1.05;
+  line-height: 1.35;
   font-weight: 950;
   letter-spacing: 3px;
   white-space: nowrap;
@@ -92,8 +92,9 @@
   z-index: 2;
   display: block;
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.35;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 .hiringPhase::before,
