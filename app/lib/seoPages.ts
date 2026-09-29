@@ -109,9 +109,10 @@ export const SEO_PAGES: SeoPageData[] = [
   },
   {
     slug: "native-cigarettes-toronto",
-    title: "Indigenous Midtown Cannabis Native Cigarettes Guide",
+    title: "Native Cigarettes Near Me | Indigenous Midtown Cannabis",
     metaDescription:
-      "A shopper-friendly Native cigarettes guide for Indigenous Midtown Cannabis, with cigarette category notes where listed.",
+      "Native cigarettes guide for Indigenous Midtown Cannabis at 93 Broadway Ave in Midtown Toronto. Check the current cigarette menu; store is open 24 hours.",
+    absoluteTitle: true,
     h1: "Indigenous Midtown Cannabis Native Cigarettes Guide",
     icon: "*",
     heroTagline: "Cigarette category notes for local shoppers",
