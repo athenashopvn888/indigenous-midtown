@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const lineStyle = {
   margin: 0,
@@ -28,6 +28,8 @@ function isThanksgivingNoticeActive(date: Date) {
 }
 
 export default function FleetAnnouncementBanner() {
+  const announcementRef = useRef<HTMLElement>(null);
+  const [navClearance, setNavClearance] = useState<number | null>(null);
   const [showThanksgivingNotice, setShowThanksgivingNotice] = useState(false);
 
   useEffect(() => {
@@ -39,8 +41,45 @@ export default function FleetAnnouncementBanner() {
     return () => window.clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const announcement = announcementRef.current;
+    const nav = document.getElementById("main-nav");
+    if (!announcement || !nav) return;
+
+    let frame = 0;
+    const updateClearance = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(() => {
+        const currentMargin = Number.parseFloat(
+          window.getComputedStyle(announcement).marginTop,
+        );
+        const flowTop =
+          announcement.getBoundingClientRect().top - (currentMargin || 0);
+        const nextClearance = Math.max(
+          0,
+          Math.ceil(nav.getBoundingClientRect().bottom - flowTop),
+        );
+        setNavClearance((current) =>
+          current === nextClearance ? current : nextClearance,
+        );
+      });
+    };
+
+    updateClearance();
+    const resizeObserver = new ResizeObserver(updateClearance);
+    resizeObserver.observe(nav);
+    window.addEventListener("resize", updateClearance);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", updateClearance);
+    };
+  }, []);
+
   return (
     <aside
+      ref={announcementRef}
       data-fleet-homepage-announcement=""
       aria-label="Store announcements"
       style={{
@@ -49,6 +88,7 @@ export default function FleetAnnouncementBanner() {
         width: "100%",
         height: "auto",
         minHeight: 0,
+        marginTop: navClearance === null ? undefined : navClearance,
         position: "relative",
         zIndex: 50,
       }}

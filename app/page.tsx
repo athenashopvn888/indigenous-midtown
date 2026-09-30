@@ -202,9 +202,9 @@ export default function HomePage() {
 
   return (
     <main className={styles.main}>
-      <FleetAnnouncementBanner />
       {/* ── NAVBAR ── */}
       <Navbar />
+      <FleetAnnouncementBanner />
 
       {/* ── WELCOME BANNER ── */}
       <section className={styles.welcomeBannerSection}>
