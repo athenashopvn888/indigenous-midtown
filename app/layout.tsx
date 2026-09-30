@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
-import AgeGate from "./components/AgeGate";
 import {
   HOME_FAQS,
   cannabisStoreJsonLd,
@@ -126,7 +125,6 @@ export default function RootLayout({
           NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
         </Link>
         {children}
-        <AgeGate />
       </body>
     </html>
   );
