@@ -42,6 +42,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    { url: `${BASE}/weed-dispensary-yonge-eglinton`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/24-hour-yonge-eglinton-dispensary`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/native-cigarettes-yonge-eglinton`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${BASE}/nicotine-vape-yonge-eglinton`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
   ];
 
   /* Tier pages */
