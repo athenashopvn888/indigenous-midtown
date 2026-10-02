@@ -8,10 +8,11 @@ test("TOP WEED TIER stack uses the approved order and exact offer", () => {
   const banner = read("app/components/FleetAnnouncementBanner.tsx");
   const strip = read("app/lib/flowerDeals.ts");
   assert.match(strip, /TOP WEED TIER SPECIAL · \$\{BOGO_BUY_2_GET_1\}  \$\{BOGO_BUY_3_GET_3\} \*/);
-  const markers = ["<FlowerBogoStrip hero />", 'data-exotic-tier-banner=""', 'data-cigarette-deal=""', 'data-bb-light-deal=""', 'data-cig-mix-banner=""', 'data-bb-premium-banner=""', 'data-belmont-premium-banner=""'];
+  const markers = ["<FlowerBogoStrip hero />", 'data-exotic-tier-banner=""', 'data-cigarette-deal=""', 'data-bb-light-deal=""', 'data-cig-mix-banner=""', 'data-belmont-premium-banner=""'];
   let offset = -1;
   for (const marker of markers) { const next = banner.indexOf(marker); assert.ok(next > offset, `${marker} should follow the previous stack item`); offset = next; }
-  for (const asset of ["top-weed-tier-imc01.webp", "bb-premium-grade-full-lights.webp", "BB_Belmont_Premium_Grade.webp", "2pack5cig.webp"]) assert.ok(existsSync(new URL(`../public/banners/${asset}`, import.meta.url)));
+  for (const asset of ["top-weed-tier-imc01.webp", "BB_Belmont_Premium_Grade.webp", "2pack5cig.webp"]) assert.ok(existsSync(new URL(`../public/banners/${asset}`, import.meta.url)));
+  assert.ok(!existsSync(new URL("../public/banners/bb-premium-grade-full-lights.webp", import.meta.url)));
 });
 
 test("Dual-Frame math is exact on Exotic, Premium and AAA+ only", () => {
