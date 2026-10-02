@@ -59,6 +59,12 @@ export function getGuide(slug: string) {
   return GUIDE_REGISTRY.find((guide) => guide.slug === slug);
 }
 
+const GUIDE_LANES: GuideLane[] = ["strain", "native_cig", "nic_vape", "thc_vape"];
+export function getGuidesByLane() {
+  return GUIDE_LANES.map((lane) => ({ lane, guides: GUIDE_REGISTRY.filter((guide) => guide.lane === lane) }))
+    .filter((group) => group.guides.length > 0);
+}
+
 export function resolveGuideProduct(guide: GuideEntry): FlowerProduct | ItemProduct | undefined {
   if (!guide.preferredProductSlug) return undefined;
   const products = guide.lane === "strain" ? allFlowers : allItems;
@@ -86,6 +92,5 @@ export function getCategoryGuideGroups(categoryPath: string) {
   }
   return [];
 }
-
 
 
