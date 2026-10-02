@@ -1,0 +1,19 @@
+.main { min-height:100vh; background:#07140f; color:#eefbf4; }
+.hero { padding:clamp(130px,18vw,210px) 24px 72px; background:radial-gradient(circle at 75% 15%,rgba(34,197,94,.2),transparent 38%),linear-gradient(145deg,#07140f,#123224); }
+.wrap { width:min(1040px,100%); margin:0 auto; }
+.wrap > span { color:#86efac; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.wrap h1 { max-width:850px; margin:14px 0 18px; font-size:clamp(40px,7vw,76px); line-height:1.02; letter-spacing:-.04em; }
+.wrap > p { max-width:760px; color:#d1fae5; font-size:clamp(18px,2.4vw,24px); line-height:1.55; }
+.actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+.actions a { padding:13px 18px; border:1px solid #86efac; border-radius:999px; color:#07140f; background:#86efac; font-weight:800; text-decoration:none; }
+.actions a + a { color:#f0fdf4; background:transparent; }
+.content { padding:68px 24px 90px; }
+.layout { display:grid; grid-template-columns:minmax(0,2fr) minmax(260px,1fr); gap:24px; width:min(1040px,100%); margin:0 auto; }
+.layout article,.layout aside,.faq { padding:clamp(24px,4vw,40px); border:1px solid rgba(134,239,172,.22); border-radius:22px; background:rgba(15,46,32,.72); }
+.layout h2 { margin:0 0 18px; color:#bbf7d0; font-size:clamp(23px,3vw,32px); }
+.layout p { color:#d9f7e5; line-height:1.75; }
+.layout a { color:#86efac; font-weight:750; }
+.faq { grid-column:1/-1; }
+.faq details { padding:16px 0; border-top:1px solid rgba(134,239,172,.18); }
+.faq summary { cursor:pointer; font-weight:800; }
+@media (max-width:720px) { .hero { padding-top:140px; } .layout { grid-template-columns:1fr; } .faq { grid-column:auto; } }

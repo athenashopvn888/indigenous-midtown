@@ -103,6 +103,15 @@ const EXPLORE_CATEGORIES = [
   },
 ];
 
+const LOCAL_HUB_LINKS = [
+  { href: "/weed-dispensary-yonge-eglinton", label: "Broadway at Yonge–Eglinton Dispensary" },
+  { href: "/24-hour-yonge-eglinton-dispensary", label: "Open 24 Hours in Midtown" },
+  { href: "/delivery", label: "Delivery Information" },
+  { href: "/native-cigarettes-yonge-eglinton", label: "Native Cigarettes" },
+  { href: "/nicotine-vape-yonge-eglinton", label: "Nicotine Vape" },
+  { href: "/visit", label: "Plan a Broadway Avenue Visit" },
+];
+
 interface Review {
   name: string;
   comment: string;
@@ -278,6 +287,18 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.localHubSection} aria-labelledby="local-hub-heading">
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle} id="local-hub-heading">Broadway Avenue store hub</h2>
+            <p className={styles.sectionSubtitle}>Choose the page that matches your Yonge–Eglinton visit, delivery question, or adult product shelf.</p>
+          </div>
+          <div className={styles.localHubGrid}>
+            {LOCAL_HUB_LINKS.map((item) => <Link key={item.href} href={item.href} className={styles.localHubCard}>{item.label}<span aria-hidden="true">→</span></Link>)}
           </div>
         </div>
       </section>
