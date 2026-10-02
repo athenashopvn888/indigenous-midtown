@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FlowerCard from "../components/FlowerCard";
@@ -10,6 +11,8 @@ import {
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
 import styles from "./tier.module.css";
+import { getTierGuideLinks } from "../lib/guideRegistry";
+import guideStyles from "../guides/[slug]/guide.module.css";
 
 /* -- Generate all tier pages at build -- */
 export function generateStaticParams() {
@@ -58,6 +61,7 @@ export default async function TierPage({
   const saleFlowers = flowers.filter((f) => f.isSale);
   const regularFlowers = flowers.filter((f) => !f.isSale);
   const hotFlowers = flowers.filter((f) => f.isHot);
+  const guideLinks = getTierGuideLinks(`/${config.slug}`);
 
   return (
     <main className={styles.main}>
@@ -169,6 +173,12 @@ export default async function TierPage({
           </div>
         </div>
       </section>
+
+      {guideLinks.length > 0 && (
+        <section className={`${styles.container} ${guideStyles.guideStrip}`} aria-label="Popular strain guides">
+          <h2>Popular strain guides</h2><div className={guideStyles.guideLinks}>{guideLinks.map((guide) => <Link key={guide.slug} href={`/guides/${guide.slug}`}>{guide.name}</Link>)}</div>
+        </section>
+      )}
 
       {/* ── SEO Content ── */}
       {seo && (
