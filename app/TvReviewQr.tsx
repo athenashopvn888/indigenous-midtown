@@ -13,6 +13,7 @@ export default function TvReviewQr({ storeName }: Readonly<{ storeName: string }
         sizes="(max-width: 800px) 96px, (max-height: 600px) 96px, 8vw"
         priority
       />
+      <span className={styles.note}>SCAN FOR REVIEW</span>
     </aside>
   );
 }

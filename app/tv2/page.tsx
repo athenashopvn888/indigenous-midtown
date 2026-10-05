@@ -15,7 +15,7 @@ import { CIGARETTE_FLASH_MESSAGE, isCigaretteFlashWindow } from "../tv/flashMess
 /* -- TYPES -- */
 interface Item {
   sku: string; name: string; category: string;
-  type?: string; thc?: string; mg?: string; price?: string; image?: string; isSale?: boolean;
+  type?: string; thc?: string; mg?: string; price?: string; image?: string; isSale?: boolean; promoImage?: string | null;
 }
 
 /* -- CATEGORY CONFIG -- */
@@ -32,6 +32,20 @@ const CARD_CONFIG = [
 const fmtPrice = (v?:string) => { const s=String(v||"").trim(); if(!s)return""; return /^\$/.test(s)?s:"$"+s; };
 const fmtTHC = (v?:string) => { const s=String(v||"").trim(); if(!s)return""; if(/^\d+(\.\d+)?%?$/.test(s)){const n=parseFloat(s);return(n<=1?Math.round(n*100):Math.round(n))+"%";}return s; };
 const fmtMG = (v?:string) => { const s=String(v||"").trim(); if(!s)return""; if(/^\d+(\.\d+)?$/.test(s))return s+"mg"; return s; };
+
+const hasCartonFlash = (item?: Item) =>
+  item?.category === "CIGARETTES" &&
+  item.promoImage === "CIG_2_FOR_5" &&
+  Number(String(item.price || "").replace(/[^0-9.]/g, "")) === 25;
+
+function CigarettePriceFlash() {
+  return (
+    <span className={styles.cigarettePriceFlash} aria-label="$25 carton, 2 packs $5">
+      <span aria-hidden="true">$25 CARTON</span>
+      <span aria-hidden="true">2 PACKS $5</span>
+    </span>
+  );
+}
 
 /* -- ITEM CARD -- */
 function ItemCard({ title, accent, items, hiIdx, preset, offerOverlay = false }: {
@@ -98,7 +112,11 @@ function ItemCard({ title, accent, items, hiIdx, preset, offerOverlay = false }:
                 {metaParts.map((p,i) => (
                   <span key={i}>
                     {i > 0 && <span className={styles.detailSep}> · </span>}
-                    <span className={p===fmtTHC(hi?.thc)?styles.detailThc:undefined} style={p===fmtPrice(hi?.price)?{fontWeight:900}:undefined}>{p}</span>
+                    {p === fmtPrice(hi?.price) && hasCartonFlash(hi) ? (
+                      <CigarettePriceFlash />
+                    ) : (
+                      <span className={p===fmtTHC(hi?.thc)?styles.detailThc:undefined} style={p===fmtPrice(hi?.price)?{fontWeight:900}:undefined}>{p}</span>
+                    )}
                   </span>
                 ))}
               </div>
@@ -129,7 +147,9 @@ function ItemCard({ title, accent, items, hiIdx, preset, offerOverlay = false }:
                     {it.thc && <span className={styles.submeta}> · {fmtTHC(it.thc)}</span>}
                     {it.mg && <span className={styles.submeta}> · {fmtMG(it.mg)}</span>}
                   </div>
-                  <div className={styles.mcPrice}>{fmtPrice(it.price)}</div>
+                  <div className={styles.mcPrice}>
+                    {hasCartonFlash(it) ? <CigarettePriceFlash /> : fmtPrice(it.price)}
+                  </div>
                 </div>
               );
             })}

@@ -21,6 +21,17 @@
   height: auto;
 }
 
+.note {
+  display: block;
+  margin-top: 4px;
+  color: #000;
+  font-size: clamp(11px, 0.72vw, 14px);
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+  white-space: nowrap;
+}
+
 @media (max-width: 800px), (max-height: 600px) {
   .card {
     right: max(8px, env(safe-area-inset-right));
