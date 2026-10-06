@@ -1,42 +1,67 @@
 .card {
-  position: fixed;
-  right: max(12px, env(safe-area-inset-right));
-  bottom: max(12px, env(safe-area-inset-bottom));
-  z-index: 2147483647;
-  width: clamp(108px, 8vw, 154px);
-  padding: clamp(4px, 0.35vw, 7px);
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  flex: 0 0 auto;
+  padding: 8px;
   overflow: hidden;
-  border: 1px solid rgb(0 0 0 / 18%);
-  border-radius: 10px;
-  background: #fff;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
   box-shadow: 0 5px 18px rgb(0 0 0 / 24%);
   line-height: 0;
   pointer-events: none;
   isolation: isolate;
+  box-sizing: border-box;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -55%;
+  z-index: -2;
+  background: conic-gradient(
+    from 0deg,
+    #e10600 0deg 80deg,
+    #1db954 90deg 170deg,
+    #e10600 180deg 260deg,
+    #1db954 270deg 350deg,
+    #e10600 360deg
+  );
+  animation: reviewQrChase 2s linear infinite;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  z-index: -1;
+  border-radius: 9px;
+  background: #fff;
+}
+
+@keyframes reviewQrChase {
+  to { transform: rotate(1turn); }
 }
 
 .image {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 5px;
 }
 
 .note {
   display: block;
-  margin-top: 4px;
+  margin: 0;
   color: #000;
-  font-size: clamp(11px, 0.72vw, 14px);
+  font-size: 17px;
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.05;
   text-align: center;
-  white-space: nowrap;
-}
-
-@media (max-width: 800px), (max-height: 600px) {
-  .card {
-    right: max(8px, env(safe-area-inset-right));
-    bottom: max(8px, env(safe-area-inset-bottom));
-    width: 96px;
-    padding: 4px;
-  }
+  white-space: normal;
 }

@@ -27,13 +27,16 @@ test("cigarette promos alternate for five seconds every thirty seconds", () => {
 });
 
 test("TV boards keep the QR, feed-gated carton flash, full images and no ticker deal", async () => {
-  const [tv, tv2, tvCss, tv2Css, ribbon, qr] = await Promise.all([
+  const [tv, tvLayout, tv2, tv2Layout, tvCss, tv2Css, ribbon, qr, qrCss] = await Promise.all([
     readFile("app/tv/page.tsx", "utf8"),
+    readFile("app/tv/layout.tsx", "utf8"),
     readFile("app/tv2/page.tsx", "utf8"),
+    readFile("app/tv2/layout.tsx", "utf8"),
     readFile("app/tv/tv.module.css", "utf8"),
     readFile("app/tv2/tv2.module.css", "utf8"),
     readFile("app/components/HiringRibbon.tsx", "utf8"),
     readFile("app/TvReviewQr.tsx", "utf8"),
+    readFile("app/TvReviewQr.module.css", "utf8"),
   ]);
   assert.match(tv, /getTvTheme/);
   assert.match(tv2, /promoImage === "CIG_2_FOR_5"/);
@@ -44,4 +47,12 @@ test("TV boards keep the QR, feed-gated carton flash, full images and no ticker 
   assert.doesNotMatch(tv2, /CIGARETTE_FLASH_MESSAGE/);
   assert.doesNotMatch(ribbon, /CIGARETTE_FLASH_MESSAGE/);
   assert.match(qr, /SCAN FOR REVIEW/);
+  assert.match(tv, /<TvReviewQr storeName="Indigenous Midtown Cannabis" \/>/);
+  assert.doesNotMatch(tvLayout, /TvReviewQr/);
+  assert.doesNotMatch(tv2Layout, /TvReviewQr/);
+  assert.doesNotMatch(tv, /reviewQrSafeArea|availableW/);
+  assert.doesNotMatch(tv2, /reviewQrSafeArea|availableW/);
+  assert.match(tvCss, /\.addonsList[\s\S]*?overflow:auto/);
+  assert.match(qrCss, /reviewQrChase 2s linear infinite/);
+  assert.doesNotMatch(qrCss, /position:\s*fixed/);
 });
