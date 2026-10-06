@@ -1469,7 +1469,8 @@
 
 .tvPage[data-tv-themed="true"] .wrap {
   z-index: 2;
-  padding-bottom: 310px;
+  /* Preserve the footer captions without leaving an unused lower band. */
+  padding-bottom: 140px;
 }
 
 .tvPage[data-tv-themed="true"] .stage {
