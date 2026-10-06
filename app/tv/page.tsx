@@ -5,8 +5,9 @@ import HiringRibbon from "../components/HiringRibbon";
 import TvStoreHeader from "../components/TvStoreHeader";
 import { tvHiring } from "../lib/tvHiring";
 import { formatBoardTime, readStockUpdatedAt } from "../lib/tvStockTime";
+import TvThemeArtwork from "../tv-theme/TvThemeArtwork";
+import { getTvTheme, getTvThemeVariables } from "../tv-theme/theme";
 import styles from "./tv.module.css";
-import { CIGARETTE_FLASH_MESSAGE, isCigaretteFlashWindow } from "./flashMessages";
 import { getFlowerEffects } from "./flowerEffects";
 import { TOP_TIER_BUNDLE_LABELS } from "./bundleLabels";
 
@@ -688,14 +689,7 @@ const TICKER_SLIDES = [
 function VerticalTicker() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [exitIdx, setExitIdx] = useState(-1);
-  const [showCigaretteFlash, setShowCigaretteFlash] = useState(() => isCigaretteFlashWindow());
-  const slides = showCigaretteFlash ? [CIGARETTE_FLASH_MESSAGE, ...TICKER_SLIDES] : TICKER_SLIDES;
-
-  useEffect(() => {
-    const update = () => setShowCigaretteFlash(isCigaretteFlashWindow());
-    const iv = setInterval(update, 60_000);
-    return () => clearInterval(iv);
-  }, []);
+  const slides = TICKER_SLIDES;
 
   useEffect(() => {
     const iv = setInterval(() => {
@@ -723,6 +717,7 @@ function VerticalTicker() {
    MAIN TV PAGE
    ============================================================ */
 export default function TVMenuPage() {
+  const theme = getTvTheme(tvHiring?.store);
   const [bgUrl, setBgUrl] = useState("");
   useEffect(() => {
     fetch("https://athena-cannabis-images.vercel.app/backgrounds/list.json")
@@ -802,8 +797,10 @@ export default function TVMenuPage() {
   const fitToScreen = useCallback(() => {
     if (!wrapRef.current) return;
     const W = window.innerWidth, H = window.innerHeight;
-    const s = Math.min(W / 3840, H / 2160);
-    const tx = Math.round((W - 3840*s)/2);
+    const reviewQrSafeArea = Math.min(184, Math.max(112, Math.round(W * 0.1)));
+    const availableW = Math.max(1, W - reviewQrSafeArea);
+    const s = Math.min(availableW / 3840, H / 2160);
+    const tx = Math.round((availableW - 3840*s)/2);
     const ty = Math.round((H - 2160*s)/2);
     wrapRef.current.style.transform = `translate(${tx}px,${ty}px) scale(${s})`;
   }, []);
@@ -861,7 +858,12 @@ export default function TVMenuPage() {
   };
 
   return (
-    <div className={styles.tvPage} style={bgUrl ? { backgroundImage: `url(${bgUrl})`, backgroundSize: "cover" } : undefined}>
+    <div
+      className={styles.tvPage}
+      data-tv-themed={theme ? "true" : undefined}
+      style={theme ? getTvThemeVariables(theme) : bgUrl ? { backgroundImage: `url(${bgUrl})`, backgroundSize: "cover" } : undefined}
+    >
+      <TvThemeArtwork theme={theme} />
       {/* Floating particles */}
       <div className={styles.particles}>
         {particles.map((p, i) => (

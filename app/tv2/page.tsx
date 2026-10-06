@@ -4,18 +4,20 @@ import HiringRibbon from "../components/HiringRibbon";
 import TvStoreHeader from "../components/TvStoreHeader";
 import { tvHiring } from "../lib/tvHiring";
 import { formatBoardTime, readStockUpdatedAt } from "../lib/tvStockTime";
+import TvThemeArtwork from "../tv-theme/TvThemeArtwork";
+import { getTvTheme, getTvThemeVariables } from "../tv-theme/theme";
 import {
   getTv2DaytimePromo,
-  isCigaretteOfferVisible,
+  getCigaretteOfferPromo,
   isTv2Daytime,
+  type Tv2DaytimePromo,
 } from "./tv2Promos";
 import styles from "./tv2.module.css";
-import { CIGARETTE_FLASH_MESSAGE, isCigaretteFlashWindow } from "../tv/flashMessages";
 
 /* -- TYPES -- */
 interface Item {
   sku: string; name: string; category: string;
-  type?: string; thc?: string; mg?: string; price?: string; image?: string; isSale?: boolean;
+  type?: string; thc?: string; mg?: string; price?: string; image?: string; isSale?: boolean; promoImage?: string | null;
 }
 
 /* -- CATEGORY CONFIG -- */
@@ -33,9 +35,23 @@ const fmtPrice = (v?:string) => { const s=String(v||"").trim(); if(!s)return""; 
 const fmtTHC = (v?:string) => { const s=String(v||"").trim(); if(!s)return""; if(/^\d+(\.\d+)?%?$/.test(s)){const n=parseFloat(s);return(n<=1?Math.round(n*100):Math.round(n))+"%";}return s; };
 const fmtMG = (v?:string) => { const s=String(v||"").trim(); if(!s)return""; if(/^\d+(\.\d+)?$/.test(s))return s+"mg"; return s; };
 
+const hasCartonFlash = (item?: Item) =>
+  item?.category === "CIGARETTES" &&
+  item.promoImage === "CIG_2_FOR_5" &&
+  Number(String(item.price || "").replace(/[^0-9.]/g, "")) === 25;
+
+function CigarettePriceFlash() {
+  return (
+    <span className={styles.cigarettePriceFlash} aria-label="$25 carton, 2 packs $5">
+      <span aria-hidden="true">$25 CARTON</span>
+      <span aria-hidden="true">2 PACKS $5</span>
+    </span>
+  );
+}
+
 /* -- ITEM CARD -- */
-function ItemCard({ title, accent, items, hiIdx, preset, offerOverlay = false }: {
-  title:string; accent:string; items:Item[]; hiIdx:number; preset:string; offerOverlay?:boolean;
+function ItemCard({ title, accent, items, hiIdx, preset, offerPromo }: {
+  title:string; accent:string; items:Item[]; hiIdx:number; preset:string; offerPromo?:Tv2DaytimePromo;
 }) {
   const MAX = 10;
   const hiW = Math.min(hiIdx % Math.max(1, items.length), items.length - 1);
@@ -98,7 +114,11 @@ function ItemCard({ title, accent, items, hiIdx, preset, offerOverlay = false }:
                 {metaParts.map((p,i) => (
                   <span key={i}>
                     {i > 0 && <span className={styles.detailSep}> · </span>}
-                    <span className={p===fmtTHC(hi?.thc)?styles.detailThc:undefined} style={p===fmtPrice(hi?.price)?{fontWeight:900}:undefined}>{p}</span>
+                    {p === fmtPrice(hi?.price) && hasCartonFlash(hi) ? (
+                      <CigarettePriceFlash />
+                    ) : (
+                      <span className={p===fmtTHC(hi?.thc)?styles.detailThc:undefined} style={p===fmtPrice(hi?.price)?{fontWeight:900}:undefined}>{p}</span>
+                    )}
                   </span>
                 ))}
               </div>
@@ -129,18 +149,20 @@ function ItemCard({ title, accent, items, hiIdx, preset, offerOverlay = false }:
                     {it.thc && <span className={styles.submeta}> · {fmtTHC(it.thc)}</span>}
                     {it.mg && <span className={styles.submeta}> · {fmtMG(it.mg)}</span>}
                   </div>
-                  <div className={styles.mcPrice}>{fmtPrice(it.price)}</div>
+                  <div className={styles.mcPrice}>
+                    {hasCartonFlash(it) ? <CigarettePriceFlash /> : fmtPrice(it.price)}
+                  </div>
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-      {offerOverlay && (
-        <div className={styles.timedPromoOverlay} aria-label="Mix and Match 2 Pack $5 Cigarette Offer">
+      {offerPromo && (
+        <div className={styles.timedPromoOverlay} aria-label={offerPromo.alt}>
           <img
-            src="/banners/2pack5cig.webp"
-            alt="Mix and Match 2 Pack $5 Cigarette Offer"
+            src={offerPromo.src}
+            alt={offerPromo.alt}
           />
         </div>
       )}
@@ -160,14 +182,7 @@ const TICKER_SLIDES = [
 function VerticalTicker() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [exitIdx, setExitIdx] = useState(-1);
-  const [showCigaretteFlash, setShowCigaretteFlash] = useState(() => isCigaretteFlashWindow());
-  const slides = showCigaretteFlash ? [CIGARETTE_FLASH_MESSAGE, ...TICKER_SLIDES] : TICKER_SLIDES;
-
-  useEffect(() => {
-    const update = () => setShowCigaretteFlash(isCigaretteFlashWindow());
-    const iv = setInterval(update, 60_000);
-    return () => clearInterval(iv);
-  }, []);
+  const slides = TICKER_SLIDES;
   useEffect(() => {
     const iv = setInterval(() => {
       setExitIdx(activeIdx);
@@ -192,6 +207,7 @@ function VerticalTicker() {
 
 /* -- MAIN TV2 PAGE -- */
 export default function TV2Page() {
+  const theme = getTvTheme(tvHiring?.store);
   const [bgUrl, setBgUrl] = useState("");
   useEffect(() => {
     fetch("https://athena-cannabis-images.vercel.app/backgrounds/list.json")
@@ -209,7 +225,7 @@ export default function TV2Page() {
   const [lastUpdate, setLastUpdate] = useState("");
   const [stockUpdated, setStockUpdated] = useState<string | null>(null);
   const [daytime, setDaytime] = useState(false);
-  const [cigaretteOfferVisible, setCigaretteOfferVisible] = useState(false);
+  const [cigaretteOfferPromo, setCigaretteOfferPromo] = useState<Tv2DaytimePromo | undefined>();
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -222,10 +238,9 @@ export default function TV2Page() {
   useEffect(() => {
     const startedAt = performance.now();
     const updateOffer = () => {
-      setCigaretteOfferVisible(
-        isCigaretteOfferVisible(isTv2Daytime(), performance.now() - startedAt),
-      );
+      setCigaretteOfferPromo(getCigaretteOfferPromo(performance.now() - startedAt));
     };
+    updateOffer();
     const iv = setInterval(updateOffer, 250);
     return () => clearInterval(iv);
   }, []);
@@ -246,8 +261,10 @@ export default function TV2Page() {
   const fitToScreen = useCallback(() => {
     if (!wrapRef.current) return;
     const W = window.innerWidth, H = window.innerHeight;
-    const s = Math.min(W/3840, H/2160);
-    const tx = Math.round((W - 3840*s)/2);
+    const reviewQrSafeArea = Math.min(184, Math.max(112, Math.round(W * 0.1)));
+    const availableW = Math.max(1, W - reviewQrSafeArea);
+    const s = Math.min(availableW/3840, H/2160);
+    const tx = Math.round((availableW - 3840*s)/2);
     const ty = Math.round((H - 2160*s)/2);
     wrapRef.current.style.transform = `translate(${tx}px,${ty}px) scale(${s})`;
   }, []);
@@ -282,7 +299,12 @@ export default function TV2Page() {
   }, [items]);
 
   return (
-    <div className={styles.tvPage} style={bgUrl ? { backgroundImage: `url(${bgUrl})`, backgroundSize: "cover" } : undefined}>
+    <div
+      className={styles.tvPage}
+      data-tv-themed={theme ? "true" : undefined}
+      style={theme ? getTvThemeVariables(theme) : bgUrl ? { backgroundImage: `url(${bgUrl})`, backgroundSize: "cover" } : undefined}
+    >
+      <TvThemeArtwork theme={theme} />
       <div className={styles.wrap} ref={wrapRef}>
         <TvStoreHeader eyebrow="Secondary Menu Board" stockUpdated={stockUpdated} />
 
@@ -330,7 +352,7 @@ export default function TV2Page() {
               return (
                 <ItemCard key={card.id} title={card.title} accent={card.accent}
                   items={filtered} hiIdx={highlights[card.id]||0} preset={card.preset}
-                  offerOverlay={card.id === "CIGARETTES" && cigaretteOfferVisible} />
+                  offerPromo={card.id === "CIGARETTES" ? cigaretteOfferPromo : undefined} />
               );
             })}
           </div>
