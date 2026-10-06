@@ -10,6 +10,7 @@ import { getTvTheme, getTvThemeVariables } from "../tv-theme/theme";
 import styles from "./tv.module.css";
 import { getFlowerEffects } from "./flowerEffects";
 import { TOP_TIER_BUNDLE_LABELS } from "./bundleLabels";
+import TvReviewQr from "../TvReviewQr";
 
 /* -- Types -- */
 interface PricePoint { regular: number; sale: number | null; }
@@ -671,6 +672,7 @@ function AddOnsCard({ items, hiIdx }: { items: Item[]; hiIdx: number }) {
             </div>
           ))}
         </div>
+        <TvReviewQr storeName="Indigenous Midtown Cannabis" />
       </div>
     </div>
   );
@@ -797,10 +799,8 @@ export default function TVMenuPage() {
   const fitToScreen = useCallback(() => {
     if (!wrapRef.current) return;
     const W = window.innerWidth, H = window.innerHeight;
-    const reviewQrSafeArea = Math.min(184, Math.max(112, Math.round(W * 0.1)));
-    const availableW = Math.max(1, W - reviewQrSafeArea);
-    const s = Math.min(availableW / 3840, H / 2160);
-    const tx = Math.round((availableW - 3840*s)/2);
+    const s = Math.min(W / 3840, H / 2160);
+    const tx = Math.round((W - 3840*s)/2);
     const ty = Math.round((H - 2160*s)/2);
     wrapRef.current.style.transform = `translate(${tx}px,${ty}px) scale(${s})`;
   }, []);
