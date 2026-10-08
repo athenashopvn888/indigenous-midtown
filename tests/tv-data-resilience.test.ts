@@ -65,7 +65,7 @@ test("HTML 200, 429, and thrown failures serve last-good with its date and a rea
   }
 });
 
-test("without last-good, failures use the static snapshot and expose the failure", async () => {
+test("without last-good, failures return the static snapshot with HTTP 200 and expose the failure", async () => {
   resetTvStockCache();
   const result = await getTvData({
     type: "flowers",
@@ -74,7 +74,7 @@ test("without last-good, failures use the static snapshot and expose the failure
     fetchImpl: async () => response(429, null),
     now: 1_000,
   });
-  assert.equal(result.status, 503);
+  assert.equal(result.status, 200);
   assert.equal(result.headers["x-tv-data-source"], "static-fallback");
   assert.equal(result.headers["x-tv-data-fallback-reason"], "HTTP 429");
   assert.equal(result.body, staticFlowers);
