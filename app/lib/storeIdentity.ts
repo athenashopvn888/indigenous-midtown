@@ -69,7 +69,7 @@ export function cannabisStoreJsonLd() {
     "@context": "https://schema.org",
     "@type": "CannabisStore",
     "@id": `${STORE.url}/#cannabis-store`,
-    name: STORE.name,
+    name: "Indigenous Midtown Cannabis Dispensary Weed Delivery",
     url: STORE.url,
     image: STORE.image,
     telephone: STORE.phoneE164,

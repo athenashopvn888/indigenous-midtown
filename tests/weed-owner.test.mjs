@@ -25,6 +25,6 @@ test("copy makes no unsupported cultural claim", () => {
   assert.doesNotMatch(owner, /indigenous-owned|community-owned/i);
 });
 test("homepage H1 and bridge are preserved", () => {
-  assert.match(home, /INDIGENOUS MIDTOWN CANNABIS/);
+  assert.match(home, /<h1 className=\{styles\.brandTitle\}>Indigenous Midtown Cannabis Dispensary Weed Delivery<\/h1>/);
   assert.match(home, /Explore Weed &amp; Cannabis/);
 });
