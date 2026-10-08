@@ -10,11 +10,11 @@ export const revalidate = 0;
 
 export async function GET(request: Request) {
   const type = new URL(request.url).searchParams.get("type") || "flowers";
-  const { body, headers } = await getTvData({
+  const { body, headers, status = 200 } = await getTvData({
     type,
     staticFlowers: allFlowers,
     staticItems: allItems,
   });
 
-  return NextResponse.json(body, { headers });
+  return NextResponse.json(body, { status, headers });
 }
