@@ -41,7 +41,6 @@ export type TvDataset = {
   items: LooseRecord[];
   stockDate: string;
   fallbackReason?: string;
-  status?: number;
 };
 
 type TvStockOptions = {
@@ -157,7 +156,7 @@ function selectTvPayload(dataset: TvDataset, type: string | null | undefined) {
       ...(dataset.fallbackReason ? { "x-tv-data-fallback-reason": dataset.fallbackReason } : {}),
       "Cache-Control": "no-store",
     },
-    status: dataset.status || 200,
+    status: 200,
   };
 }
 
@@ -169,7 +168,7 @@ async function resolveDataset(options: TvStockOptions): Promise<TvDataset> {
   const fail = (reason: string): TvDataset => {
     const dataset: TvDataset = lastGood
       ? { ...lastGood, source: "last-good", fallbackReason: reason }
-      : { ...staticDataset(options.staticFlowers, options.staticItems), fallbackReason: reason, status: 503 };
+      : { ...staticDataset(options.staticFlowers, options.staticItems), fallbackReason: reason };
     cached = { expiresAt: now + TV_STOCK_FAILURE_CACHE_MS, dataset };
     return dataset;
   };
