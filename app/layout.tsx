@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.indigenousmidtowncannabis.ca"),
   title: {
     default:
-      "Indigenous Midtown Cannabis | Broadway Walk-In at Yonge–Eglinton",
+      "Indigenous Midtown Cannabis Dispensary Weed Delivery",
     template: "%s | Indigenous Midtown Cannabis",
   },
   description:
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     url: "https://www.indigenousmidtowncannabis.ca",
     siteName: "Indigenous Midtown Cannabis",
     title:
-      "Indigenous Midtown Cannabis | Broadway Walk-In at Yonge–Eglinton",
+      "Indigenous Midtown Cannabis Dispensary Weed Delivery",
     description:
       "Adult 19+ walk-in at 93 Broadway Ave in Midtown Toronto, one block north of Eglinton near Redpath Avenue. Open 24 Hours.",
     images: [
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Indigenous Midtown Cannabis | Broadway Walk-In at Yonge–Eglinton",
+      "Indigenous Midtown Cannabis Dispensary Weed Delivery",
     description:
       "Adult 19+ walk-in at 93 Broadway Ave in Midtown Toronto, one block north of Eglinton near Redpath Avenue. Open 24 Hours.",
     images: [

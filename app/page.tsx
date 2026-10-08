@@ -220,7 +220,7 @@ export default function HomePage() {
         <div className={styles.welcomeBannerContainer}>
           <img
             src="/banners/welcome_banner.webp"
-            alt="Welcome to Indigenous Midtown Cannabis — Broadway Avenue walk-in near Yonge–Eglinton"
+            alt="Indigenous Midtown Cannabis Dispensary Weed Delivery"
             className={styles.welcomeBannerImg}
           />
         </div>
@@ -259,7 +259,7 @@ export default function HomePage() {
                 marginBottom: "8px",
               }}
             />
-            <h1 className={styles.brandTitle}>INDIGENOUS MIDTOWN CANNABIS</h1>
+            <h1 className={styles.brandTitle}>Indigenous Midtown Cannabis Dispensary Weed Delivery</h1>
             <p className={styles.brandSub}>
               Broadway Walk-In · Yonge–Eglinton · Redpath
             </p>
