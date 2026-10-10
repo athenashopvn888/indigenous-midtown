@@ -8,6 +8,7 @@ import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
 import { TIER_CONFIG } from "../../lib/products";
 import { STORE } from "../../lib/storeIdentity";
 import styles from "./seo.module.css";
+import VapeActionPanel from "../../components/VapeActionPanel";
 
 /* ── Generate all SEO pages ── */
 export function generateStaticParams() {
@@ -166,6 +167,7 @@ export default async function SeoLandingPage({
           {heroPreview?.warning && <p className={styles.nicotineWarning}>{heroPreview.warning}</p>}
         </div>
       </section>
+      {slug === "nicotine-vapes-toronto" && <VapeActionPanel />}
 
       <Footer />
     </main>

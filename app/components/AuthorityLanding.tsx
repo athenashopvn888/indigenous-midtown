@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import type { AuthorityPage } from "../lib/authorityPages";
 import { STORE } from "../lib/storeIdentity";
 import styles from "./AuthorityLanding.module.css";
+import VapeActionPanel from "./VapeActionPanel";
 
 export default function AuthorityLanding({ page }: { page: AuthorityPage }) {
   const url = `${STORE.url}${page.path}`;
@@ -30,6 +31,7 @@ export default function AuthorityLanding({ page }: { page: AuthorityPage }) {
           </div>
         </div>
       </section>
+      {page.path === "/nicotine-vape-yonge-eglinton" && <VapeActionPanel />}
       <section className={styles.content}>
         <div className={styles.layout}>
           <article>

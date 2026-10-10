@@ -14,6 +14,7 @@ import {
 import styles from "./items.module.css";
 import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 import guideStyles from "../../guides/[slug]/guide.module.css";
+import VapeActionPanel from "../../components/VapeActionPanel";
 
 /* ── Generate all category pages ── */
 export function generateStaticParams() {
@@ -103,6 +104,8 @@ export default async function ItemsCategoryPage({
           )}
         </div>
       </section>
+
+      {(catInfo.key === "VAPE PENS" || catInfo.key === "VAPE DISPOSABLE") && <VapeActionPanel />}
 
       {guideGroups.map((group) => group.guides.length > 0 && (
         <section key={group.label} className={`${styles.container} ${guideStyles.guideStrip}`} aria-label={group.label}>
