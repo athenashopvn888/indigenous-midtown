@@ -1,0 +1,4 @@
+import Link from "next/link";
+import styles from "./VapeActionPanel.module.css";
+import { STORE } from "../lib/storeIdentity";
+export default function VapeActionPanel(){const body=encodeURIComponent("Hi Indigenous Midtown Cannabis, please hold this nicotine vape/flavour if available: ");return <aside className={styles.panel} aria-label="Nicotine vape contact options"><div><strong>Confirm a nicotine vape before travelling</strong><p>Adults 19+ with valid government photo ID. Nicotine is addictive. A hold is confirmed only when staff reply.</p></div><div className={styles.actions}><a href={`tel:${STORE.phoneE164}`}>Call {STORE.phoneDisplay}</a><a href={STORE.mapLinkUrl}>Directions</a><a href={`sms:${STORE.phoneE164}?&body=${body}`}>Text to hold</a><Link href="/vape-shop-toronto">Vape shop page</Link></div></aside>}

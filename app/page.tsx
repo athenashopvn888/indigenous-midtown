@@ -109,6 +109,7 @@ const LOCAL_HUB_LINKS = [
   { href: "/delivery", label: "Delivery Information" },
   { href: "/native-cigarettes-yonge-eglinton", label: "Native Cigarettes" },
   { href: "/nicotine-vape-yonge-eglinton", label: "Nicotine Vape" },
+  { href: "/vape-shop-toronto", label: "Current Midtown vape listings" },
   { href: "/visit", label: "Plan a Broadway Avenue Visit" },
 ];
 
