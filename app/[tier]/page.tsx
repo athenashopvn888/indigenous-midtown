@@ -4,9 +4,9 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FlowerCard from "../components/FlowerCard";
+import { fetchLiveFlowers } from "../lib/liveFlowers";
 import { storeTierRange, tierRangeText } from "../lib/tierPriceRanges";
 import {
-  fetchLiveProducts,
   getTierFromSlug,
   TIER_CONFIG,
 } from "../lib/products";
@@ -18,6 +18,8 @@ import { formatAsLowAsAfterPromos, formatPerGram, isBogoDeal, type BoardDeal } f
 
 const SITE_URL = "https://www.indigenousmidtowncannabis.ca";
 const CORRIDOR = "Broadway at Yonge–Eglinton, Midtown";
+
+export const dynamic = "force-dynamic";
 
 /* -- Generate all tier pages at build -- */
 export function generateStaticParams() {
@@ -33,7 +35,7 @@ export async function generateMetadata({
   const { tier: tierSlug } = await params;
   const tierInfo = getTierFromSlug(tierSlug);
   if (!tierInfo) return {};
-  const { flowers: liveFlowers } = await fetchLiveProducts();
+  const liveFlowers = await fetchLiveFlowers();
   const flowers = liveFlowers.filter((flower) => flower.tier.toUpperCase() === tierInfo.key.toUpperCase());
   const seo = TIER_SEO[tierInfo.key];
 
@@ -60,7 +62,7 @@ export default async function TierPage({
   const tierInfo = getTierFromSlug(tierSlug);
   if (!tierInfo) notFound();
 
-  const { flowers: liveFlowers } = await fetchLiveProducts();
+  const liveFlowers = await fetchLiveFlowers();
   const flowers = liveFlowers.filter((flower) => flower.tier.toUpperCase() === tierInfo.key.toUpperCase());
   const { config } = tierInfo;
   const seo = TIER_SEO[tierInfo.key];
