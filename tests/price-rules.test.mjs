@@ -17,7 +17,7 @@ test("tier ranges use sale price per gram and source THC only", () => {
 });
 
 test("price rules, labels, FAQ schema source, and chat greeting are wired", () => {
-  const home = read("app/page.tsx");
+  const home = read("app/HomePageClient.tsx");
   const tier = read("app/[tier]/page.tsx");
   const delivery = read("app/delivery/DeliveryContent.tsx");
   const faq = read("app/faq/page.tsx");
