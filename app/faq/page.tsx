@@ -13,6 +13,12 @@ export const metadata: Metadata = {
 
 const FAQ_CATEGORIES = [
   {
+    title: "Store and Delivery Prices",
+    faqs: [
+      { q: "Can I get the store price on a delivery order?", a: "No. In-store prices are for purchases made in the store. Delivery orders always use delivery prices." },
+    ],
+  },
+  {
     title: "Location and Hours",
     faqs: [
       { q: "Where is Indigenous Midtown Cannabis located?", a: "Indigenous Midtown Cannabis is at 93 Broadway Ave, Toronto, ON M4S 2A2, one block north of Eglinton near Redpath Avenue. Use the homepage for the map pin and /visit for walking, TTC, and parking notes." },
@@ -80,7 +86,7 @@ export default function FAQPage() {
             <div key={cat.title} className={styles.category}>
               <h2 className={styles.categoryTitle}>{cat.title}</h2>
               {cat.faqs.map((faq) => (
-                <details key={faq.q} className={styles.faqItem}>
+                <details key={faq.q} id={faq.q === "Can I get the store price on a delivery order?" ? "delivery-price-rule" : undefined} className={styles.faqItem}>
                   <summary className={styles.faqQuestion}>{faq.q}</summary>
                   <p className={styles.faqAnswer}>{faq.a}</p>
                 </details>
