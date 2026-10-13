@@ -223,6 +223,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
     <main className={styles.main}>
       {/* ── NAVBAR ── */}
       <Navbar />
+      <h1 data-home-store-title="" style={{ margin: 0, padding: "118px 16px 14px", background: "#111827", color: "#ffffff", textAlign: "center", fontSize: "clamp(1.1rem, 3vw, 2rem)", fontWeight: 900, lineHeight: 1.2, position: "relative", zIndex: 60 }}>Indigenous Midtown Cannabis Dispensary Weed Delivery</h1>
       <FleetAnnouncementBanner />
 
       {/* ── WELCOME BANNER ── */}
@@ -269,7 +270,6 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
                 marginBottom: "8px",
               }}
             />
-            <h1 className={styles.brandTitle}>Indigenous Midtown Cannabis Dispensary Weed Delivery</h1>
             <p className={styles.brandSub}>
               Broadway Walk-In · Yonge–Eglinton · Redpath
             </p>
