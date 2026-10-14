@@ -10,6 +10,9 @@ for (const expected of [
   'smsConsent',
   'workflowVersion: "READY_V1"',
   'required type="checkbox"',
+  'Enter your order details before starting Web Chat.',
+  'Order details<textarea required',
+  '!firstMessage.trim()',
   'I agree to receive one READY delivery-link text for this order. Message and data rates may apply.',
   '/api/web-chat/session',
   '/api/web-chat/messages',
@@ -28,6 +31,7 @@ for (const expected of [
   'requestId: crypto.randomUUID()',
   'securely retained for future identity and address verification',
 ]) assert.ok(chat.includes(expected), `Missing Web Chat contract: ${expected}`);
+assert.ok(!chat.includes("Order details (optional)"), "Order details must not be optional");
 
 for (const forbidden of ['Reply YES', 'confirm this mobile number for my Web Chat']) {
   assert.ok(!chat.includes(forbidden), `Obsolete consent copy remains: ${forbidden}`);
