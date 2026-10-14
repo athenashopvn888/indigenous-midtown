@@ -62,6 +62,10 @@ export const HOME_FAQS: { q: string; a: string }[] = [
     q: "What can I browse at the Broadway Midtown walk-in?",
     a: "Adults 19+ can compare flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes — including Native cigarettes as a merchandise category only — on the current in-store menu. Names, packages, and posted prices change. Ask staff before you travel for one specific item.",
   },
+  {
+    q: "Where's a weed dispensary near me at Yonge and Eglinton?",
+    a: "Indigenous Midtown Cannabis is at 93 Broadway Ave, Toronto, a short walk east of Yonge and Eglinton near Redpath. We're open 24 hours for adults 19+ with valid photo ID.",
+  },
 ];
 
 export function cannabisStoreJsonLd() {
