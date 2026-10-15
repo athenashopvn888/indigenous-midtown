@@ -15,10 +15,10 @@ test("TV2 daytime uses America/Toronto regardless of process timezone", () => {
   assert.equal(isTv2Daytime(new Date("2026-10-07T21:30:00.000Z")), false);
 });
 
-test("daytime cigarette promo uses the category collage and leaves VAPES unchanged", () => {
+test("daytime cigarette promo uses an existing IMC01 edibles banner and leaves VAPES unchanged", () => {
   const collage = {
-    src: "/banners/tv2-category-collage.png",
-    alt: "Edibles, concentrates, and pre-rolls collage",
+    src: "/banners/edibles_prerolls_more_banner.webp",
+    alt: "Edibles, pre-rolls and more",
   };
   assert.deepEqual(getTv2DaytimePromo("CIGARETTES", true, 0), collage);
   assert.deepEqual(getTv2DaytimePromo("CIGARETTES", true, 10_000), collage);
@@ -35,4 +35,14 @@ test("cigarette promo overlay is hidden during daytime and keeps its night rotat
   assert.equal(getCigaretteOfferPromo(true, 0), undefined);
   assert.equal(getCigaretteOfferPromo(false, 0)?.src, "/banners/luxury_mix_match_600_web.webp");
   assert.equal(getCigaretteOfferPromo(false, 30_000)?.src, "/banners/marlboro_belmont_600x600.webp");
+});
+
+test("every local TV2 daytime promo image exists in public/", async () => {
+  const { existsSync } = await import("node:fs");
+  const { TV2_DAYTIME_PROMOS } = await import("../app/tv2/tv2Promos.ts");
+  for (const p of Object.values(TV2_DAYTIME_PROMOS)) {
+    for (const s of [p?.src, p?.fallbackSrc]) {
+      if (s && s.startsWith("/")) assert.ok(existsSync("public" + s), s);
+    }
+  }
 });
