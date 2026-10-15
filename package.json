@@ -5,6 +5,7 @@
   "scripts": {
     "verify:delivery-images": "node scripts/verify-athena-delivery-images.mjs",
     "verify:consent-webchat": "node scripts/verify-consent-webchat.mjs",
+    "test:web-chat-phone": "node --experimental-strip-types --test tests/web-chat-phone-validation.test.ts",
     "prebuild": "node scripts/prebuild-stock.js",
     "dev": "next dev",
     "build": "next build",

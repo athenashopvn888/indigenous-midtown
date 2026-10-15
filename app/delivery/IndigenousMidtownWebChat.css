@@ -28,6 +28,8 @@
 .sod-intent-options span { display:grid; gap:4px; }
 .sod-intent-options strong { font-size:13px; }
 .sod-intent-options small,.sod-chat-start label > small { color:#475c50; font-size:11px; font-weight:500; line-height:1.35; }
+.sod-chat-start label > .sod-phone-error { border-radius:7px; padding:7px 9px; background:#fff0ee; color:#b42318; font-size:12px; font-weight:800; }
+.sod-chat-start input[aria-invalid="true"] { border-color:#b42318; box-shadow:0 0 0 2px rgba(180,35,24,.12); }
 .sod-chat-start input,.sod-chat-start textarea { min-height:46px; font-size:16px; }
 .sod-chat-start textarea { min-height:92px; resize:vertical; }
 .sod-chat-start .sod-sms-consent { grid-template-columns:20px minmax(0,1fr); align-items:start; gap:9px; border:1px solid #aebdb5; border-radius:9px; padding:10px; background:#f7fbf8; color:#233d31; font-size:12px; font-weight:600; line-height:1.4; }
