@@ -74,6 +74,7 @@ export function cannabisStoreJsonLd() {
     "@type": "CannabisStore",
     "@id": `${STORE.url}/#cannabis-store`,
     name: "Indigenous Midtown Cannabis Dispensary Weed Delivery",
+    sameAs: ["https://www.google.com/maps/place/?q=place_id:ChIJ3Vc4E-gzK4gRIMLsAcKky2s"],
     url: STORE.url,
     image: STORE.image,
     telephone: STORE.phoneE164,
