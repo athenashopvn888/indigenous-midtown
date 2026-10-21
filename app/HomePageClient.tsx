@@ -11,6 +11,7 @@ import { allFlowers } from "./lib/products";
 import { storeTierRange, tierRangeText } from "./lib/tierPriceRanges";
 import Papa from "papaparse";
 import { HOME_FAQS, STORE } from "./lib/storeIdentity";
+import { mentionsHiddenCigarette, SHOW_CIGARETTES } from "./lib/showCigarettes";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -112,6 +113,10 @@ const EXPLORE_CATEGORIES = [
   },
 ];
 
+const EXPLORE = SHOW_CIGARETTES
+  ? EXPLORE_CATEGORIES
+  : EXPLORE_CATEGORIES.filter((cat) => cat.slug !== "items/cigarettes");
+
 const LOCAL_HUB_LINKS = [
   { href: "/weed-dispensary-yonge-eglinton", label: "Broadway at Yonge–Eglinton Dispensary" },
   { href: "/24-hour-yonge-eglinton-dispensary", label: "Open 24 Hours in Midtown" },
@@ -121,6 +126,10 @@ const LOCAL_HUB_LINKS = [
   { href: "/vape-shop-toronto", label: "Current Midtown vape listings" },
   { href: "/visit", label: "Plan a Broadway Avenue Visit" },
 ];
+
+const LOCAL_HUB = SHOW_CIGARETTES
+  ? LOCAL_HUB_LINKS
+  : LOCAL_HUB_LINKS.filter((item) => !item.href.includes("native-cigarettes"));
 
 interface Review {
   name: string;
@@ -178,6 +187,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
 
           const comment = row.Comment || "";
           if (!comment || comment.length < 10) return;
+          if (mentionsHiddenCigarette(comment) || mentionsHiddenCigarette(rn)) return;
           const name = rn || "Customer";
           const dateStr = row.CreateTime || "";
           reviewsPool.push({ name, comment, date: dateStr });
@@ -309,7 +319,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
             <p className={styles.sectionSubtitle}>Choose the page that matches your Yonge–Eglinton visit, delivery question, or adult product shelf.</p>
           </div>
           <div className={styles.localHubGrid}>
-            {LOCAL_HUB_LINKS.map((item) => <Link key={item.href} href={item.href} className={styles.localHubCard}>{item.label}<span aria-hidden="true">→</span></Link>)}
+            {LOCAL_HUB.map((item) => <Link key={item.href} href={item.href} className={styles.localHubCard}>{item.label}<span aria-hidden="true">→</span></Link>)}
           </div>
         </div>
       </section>
@@ -326,7 +336,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
           </div>
 
           <div className={styles.categoriesGrid}>
-            {EXPLORE_CATEGORIES.map((cat) => (
+            {EXPLORE.map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/${cat.slug}`}

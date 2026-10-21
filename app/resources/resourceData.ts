@@ -1,3 +1,5 @@
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
+
 export interface ResourceCard {
   title: string;
   href: string;
@@ -27,8 +29,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     title: "Indigenous Midtown Cannabis Resources",
     seoTitle:
       "Indigenous Midtown Cannabis Resources | Menu and Shopping Guides",
-    description:
-      "Resource guides for shopping the Indigenous Midtown Cannabis menu in Toronto, including flower, value, pre-rolls, and Native smokes where listed.",
+    description: SHOW_CIGARETTES
+      ? "Resource guides for shopping the Indigenous Midtown Cannabis menu in Toronto, including flower, value, pre-rolls, and Native smokes where listed."
+      : "Resource guides for shopping the Indigenous Midtown Cannabis menu in Toronto, including flower, value, and pre-rolls.",
     eyebrow: "Resource Centre",
     intro:
       "Planning a Midtown stop should not mean opening every menu tab. This library organizes Indigenous Midtown Cannabis by the decisions shoppers actually make: what category they want, which flower tier fits, and which details need a fresh menu check.",
@@ -85,7 +88,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "How to shop the Indigenous Midtown Cannabis menu by category, with natural tips for flower, pre-rolls, edibles, THC vapes, concentrates, and value shopping.",
     eyebrow: "Menu Guide",
     intro:
-      "Treat the Indigenous Midtown menu like a set of separate shelves. Decide whether this is a flower, pre-roll, edible, vape, concentrate, accessory, or cigarette visit first; the useful comparisons become much shorter after that.",
+      SHOW_CIGARETTES
+        ? "Treat the Indigenous Midtown menu like a set of separate shelves. Decide whether this is a flower, pre-roll, edible, vape, concentrate, accessory, or cigarette visit first; the useful comparisons become much shorter after that."
+        : "Treat the Indigenous Midtown menu like a set of separate shelves. Decide whether this is a flower, pre-roll, edible, vape, concentrate, or accessory visit first; the useful comparisons become much shorter after that.",
     cards: [
       {
         title: "Weed & Flower Guide",
@@ -254,7 +259,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "The Indigenous Midtown Cannabis resource centre gives shoppers cleaner menu guides for flower, value, pre-rolls, and store visits.",
     eyebrow: "Resource Update",
     intro:
-      "Indigenous Midtown's Resource Centre brings the site's planning guides into one Midtown-focused starting point, from flower shelves and value browsing to pre-roll and cigarette categories.",
+      SHOW_CIGARETTES
+        ? "Indigenous Midtown's Resource Centre brings the site's planning guides into one Midtown-focused starting point, from flower shelves and value browsing to pre-roll and cigarette categories."
+        : "Indigenous Midtown's Resource Centre brings the site's planning guides into one Midtown-focused starting point, from flower shelves and value browsing to pre-roll categories.",
     cards: [
       {
         title: "Menu Guide",
@@ -407,7 +414,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
 ];
 
 RESOURCE_PAGES[0].cards = [
-  { title: "Name Guides", href: "/guides", text: "Browse every Indigenous Midtown Cannabis strain, Native Cigarettes, Nicotine Vape, and THC Vape guide." },
+  { title: "Name Guides", href: "/guides", text: SHOW_CIGARETTES ? "Browse every Indigenous Midtown Cannabis strain, Native Cigarettes, Nicotine Vape, and THC Vape guide." : "Browse every Indigenous Midtown Cannabis strain, Nicotine Vape, and THC Vape guide." },
   ...RESOURCE_PAGES[0].cards.filter((card) => card.href !== "/guides"),
 ];
 

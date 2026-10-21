@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
+import { SHOW_CIGARETTES } from "../../lib/showCigarettes";
 import { TIER_CONFIG } from "../../lib/products";
 import { STORE } from "../../lib/storeIdentity";
 import styles from "./seo.module.css";
@@ -23,7 +24,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { seoPage: slug } = await params;
   const page = getSeoPageBySlug(slug);
-  if (!page) return {};
+  if (!page || (!SHOW_CIGARETTES && slug.includes("native-cigarettes"))) return { robots: { index: false, follow: false } };
 
   return {
     title: page.absoluteTitle ? { absolute: page.title } : page.title,
@@ -42,7 +43,7 @@ export default async function SeoLandingPage({
 }) {
   const { seoPage: slug } = await params;
   const page = getSeoPageBySlug(slug);
-  if (!page) notFound();
+  if (!page || (!SHOW_CIGARETTES && slug.includes("native-cigarettes"))) notFound();
 
   const tiers = Object.values(TIER_CONFIG);
   const heroPreview = page.heroPreview;

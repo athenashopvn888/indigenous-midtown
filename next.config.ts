@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { hiddenCigarettePaths, VAPE_PAGE } from "./app/lib/cigaretteRedirects";
 
 const nextConfig: NextConfig = {
   images: {
@@ -11,7 +12,7 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    return [
+    const base = [
       { source: "/exotic", destination: "/exotic-weed", permanent: true },
       { source: "/premium", destination: "/premium-weed", permanent: true },
       { source: "/aaa", destination: "/aaa-weed", permanent: true },
@@ -84,6 +85,16 @@ const nextConfig: NextConfig = {
       },
       { source: "/magic", destination: "/items/magic", permanent: true },
     ];
+    const hidden = hiddenCigarettePaths();
+    if (hidden.length === 0) return base;
+    const hiddenSources = new Set(hidden);
+    const kept = base.filter((rule) => !hiddenSources.has(rule.source));
+    const temporary = hidden.map((source) => ({
+      source,
+      destination: VAPE_PAGE,
+      statusCode: 302 as const,
+    }));
+    return [...temporary, ...kept];
   },
 };
 

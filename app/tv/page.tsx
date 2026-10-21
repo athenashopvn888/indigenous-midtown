@@ -11,6 +11,7 @@ import styles from "./tv.module.css";
 import { getFlowerEffects } from "./flowerEffects";
 import { TOP_TIER_BUNDLE_LABELS } from "./bundleLabels";
 import TvReviewQr from "../TvReviewQr";
+import { mentionsHiddenCigarette } from "../lib/showCigarettes";
 
 /* -- Types -- */
 interface PricePoint { regular: number; sale: number | null; }
@@ -686,7 +687,7 @@ const TICKER_SLIDES = [
   "FLOWER TIERS - MENU CATEGORIES",
   "Open 24 Hours",
   "ALL SALES ARE FINAL",
-];
+].filter((text) => !mentionsHiddenCigarette(text));
 
 function VerticalTicker() {
   const [activeIdx, setActiveIdx] = useState(0);

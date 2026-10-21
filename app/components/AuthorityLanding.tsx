@@ -6,6 +6,7 @@ import { STORE } from "../lib/storeIdentity";
 import styles from "./AuthorityLanding.module.css";
 import VapeActionPanel from "./VapeActionPanel";
 import CigaretteSeasonalNotice from "./CigaretteSeasonalNotice";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 export default function AuthorityLanding({ page }: { page: AuthorityPage }) {
   const url = `${STORE.url}${page.path}`;
@@ -20,7 +21,7 @@ export default function AuthorityLanding({ page }: { page: AuthorityPage }) {
   return (
     <main className={styles.main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
-      <Navbar />{page.path.includes("native-cigarettes") && <CigaretteSeasonalNotice sticky />}
+      <Navbar />{SHOW_CIGARETTES && page.path.includes("native-cigarettes") && <CigaretteSeasonalNotice sticky />}
       <section className={styles.hero}>
         <div className={styles.wrap}>
           <span>{page.eyebrow}</span>

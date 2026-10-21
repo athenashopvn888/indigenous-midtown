@@ -13,6 +13,7 @@ import {
   isTv2Daytime,
   type Tv2DaytimePromo,
 } from "./tv2Promos";
+import { isHiddenCigaretteItem, mentionsHiddenCigarette, SHOW_CIGARETTES } from "../lib/showCigarettes";
 import styles from "./tv2.module.css";
 
 /* -- TYPES -- */
@@ -37,6 +38,7 @@ const fmtTHC = (v?:string) => { const s=String(v||"").trim(); if(!s)return""; if
 const fmtMG = (v?:string) => { const s=String(v||"").trim(); if(!s)return""; if(/^\d+(\.\d+)?$/.test(s))return s+"mg"; return s; };
 
 const hasCartonFlash = (item?: Item) =>
+  SHOW_CIGARETTES &&
   item?.category === "CIGARETTES" &&
   item.promoImage === "CIG_2_FOR_5" &&
   Number(String(item.price || "").replace(/[^0-9.]/g, "")) === 25;
@@ -178,7 +180,7 @@ const TICKER_SLIDES = [
   "Open 24 Hours",
   "Pre-Rolls · Edibles · Vapes · Concentrates",
   "ALL SALES ARE FINAL",
-];
+].filter((text) => !mentionsHiddenCigarette(text));
 
 function VerticalTicker() {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -310,8 +312,10 @@ export default function TV2Page() {
           <HiringRibbon hiring={tvHiring} />
           <div className={styles.grid}>
             {CARD_CONFIG.map(card => {
-              const filtered = items.filter(card.filter).filter(it => !(daytime && isNicotineItem(it)));
-              const promo = getTv2DaytimePromo(card.id, daytime, promoElapsedMs);
+              const filtered = items.filter(card.filter).filter(it => !(daytime && isNicotineItem(it))).filter(it => !isHiddenCigaretteItem(it));
+              const promo = SHOW_CIGARETTES || card.id !== "CIGARETTES" ? getTv2DaytimePromo(card.id, daytime, promoElapsedMs) : undefined;
+              if (!SHOW_CIGARETTES && card.id === "CIGARETTES" && filtered.length === 0 && !promo) return null;
+              const title = !SHOW_CIGARETTES && card.id === "CIGARETTES" ? "BACKWOODS" : card.title;
 
               if (promo) {
                 return (
@@ -347,9 +351,9 @@ export default function TV2Page() {
               }
 
               return (
-                <ItemCard key={card.id} title={card.title} accent={card.accent}
+                <ItemCard key={card.id} title={title} accent={card.accent}
                   items={filtered} hiIdx={highlights[card.id]||0} preset={card.preset}
-                  offerPromo={card.id === "CIGARETTES" ? getCigaretteOfferPromo(daytime, promoElapsedMs) : undefined} />
+                  offerPromo={SHOW_CIGARETTES && card.id === "CIGARETTES" ? getCigaretteOfferPromo(daytime, promoElapsedMs) : undefined} />
               );
             })}
           </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 export default function Footer() {
   return (
@@ -56,7 +57,7 @@ export default function Footer() {
               <Link href="/aa-weed">AA Weed</Link>
               <Link href="/budget-weed">Budget Weed</Link>
               <Link href="/items/edibles">Edibles</Link>
-              <Link href="/items/cigarettes">Cigarettes</Link>
+              {SHOW_CIGARETTES && <Link href="/items/cigarettes">Cigarettes</Link>}
               <Link href="/items/vapes">Nicotine Vape</Link>
               <Link href="/items/vape-disposables">THC Vape</Link>
               <Link href="/info/nicotine-vapes-toronto">Nicotine Vapes Toronto</Link>
@@ -72,9 +73,11 @@ export default function Footer() {
               <Link href="/info/cheap-weed-toronto">
                 Cheap Weed Yonge and Eglinton
               </Link>
+              {SHOW_CIGARETTES && (
               <Link href="/info/native-cigarettes-toronto">
                 Native Cigarettes Yonge and Eglinton
               </Link>
+              )}
               <Link href="/info/weed-store-near-midtown-toronto-yonge-and-eglinton-mount-pleasant">
                 Weed Store Near Yonge and Eglinton
               </Link>

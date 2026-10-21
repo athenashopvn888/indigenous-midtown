@@ -8,6 +8,8 @@ import {
 import { SEO_PAGES } from "./lib/seoPages";
 import { RESOURCE_PAGES } from "./resources/resourceData";
 import { GUIDE_REGISTRY } from "./lib/guideRegistry";
+import { isHiddenCigaretteUrl } from "./lib/cigaretteRedirects";
+import { SHOW_CIGARETTES } from "./lib/showCigarettes";
 
 const BASE = "https://www.indigenousmidtowncannabis.ca";
 
@@ -111,7 +113,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/guides`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
   ];
 
-  return [
+  const entries = [
     ...staticPages,
     ...tierPages,
     ...itemPages,
@@ -122,4 +124,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...guideIndex,
     ...guidePages,
   ];
+  if (SHOW_CIGARETTES) return entries;
+  return entries.filter((entry) => !isHiddenCigaretteUrl(entry.url));
 }
