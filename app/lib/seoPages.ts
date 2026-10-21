@@ -1,3 +1,7 @@
+/** Same switch as app/lib/showCigarettes.ts. Inlined so node:test can load this module. */
+const SHOW_CIGARETTES =
+  (process.env.NEXT_PUBLIC_SHOW_CIGARETTES ?? "false").trim().toLowerCase() === "true";
+
 const NATIVE_HERO_DISCLOSURE = "Brand preview only. Selection varies by store; check the current cigarette menu before visiting.";
 const NATIVE_HERO_PRODUCTS = [
   { name: "BB Lights", image: "/products/1001-BB-LIGHTS-CARTONS.webp" },
@@ -41,14 +45,18 @@ export const SEO_PAGES: SeoPageData[] = [
     slug: "toronto-weed-dispensary",
     title: "Indigenous Midtown Cannabis Weed Dispensary in Toronto",
     metaDescription:
-      "Indigenous Midtown Cannabis is a local cannabis dispensary in Toronto around Yonge and Eglinton / Mount Pleasant, with shopper resources for flower, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes.",
+      SHOW_CIGARETTES
+        ? "Indigenous Midtown Cannabis is a local cannabis dispensary in Toronto around Yonge and Eglinton / Mount Pleasant, with shopper resources for flower, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes."
+        : "Indigenous Midtown Cannabis is a local cannabis dispensary in Toronto around Yonge and Eglinton / Mount Pleasant, with shopper resources for flower, pre-rolls, edibles, vapes, concentrates, and accessories.",
     h1: "Indigenous Midtown Cannabis Weed Dispensary in Toronto",
     icon: "*",
     heroTagline: "Menu shopping around Yonge and Eglinton / Mount Pleasant",
     sections: [
       {
         heading: "Shop Indigenous Midtown Cannabis With A Plan",
-        body: "Indigenous Midtown Cannabis helps adult shoppers review the menu by category. Start with the store page, then choose the section that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed.",
+        body: SHOW_CIGARETTES
+          ? "Indigenous Midtown Cannabis helps adult shoppers review the menu by category. Start with the store page, then choose the section that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
+          : "Indigenous Midtown Cannabis helps adult shoppers review the menu by category. Start with the store page, then choose the section that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, or accessories.",
       },
       {
         heading: "Local Notes For Yonge and Eglinton / Mount Pleasant",
@@ -70,7 +78,9 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         q: "Does the site show current product categories?",
-        a: "The site includes menu categories for flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and cigarettes where listed.",
+        a: SHOW_CIGARETTES
+          ? "The site includes menu categories for flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and cigarettes where listed."
+          : "The site includes menu categories for flower tiers, pre-rolls, edibles, vapes, concentrates, and accessories.",
       },
     ],
   },

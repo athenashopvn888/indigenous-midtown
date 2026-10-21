@@ -1,3 +1,5 @@
+import { SHOW_CIGARETTES } from "./showCigarettes";
+
 /** Canonical NAP, hours, and local SEO identity for Indigenous Midtown Cannabis (IMC01). */
 export const STORE = {
   name: "Indigenous Midtown Cannabis",
@@ -60,7 +62,9 @@ export const HOME_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What can I browse at the Broadway Midtown walk-in?",
-    a: "Adults 19+ can compare flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes — including Native cigarettes as a merchandise category only — on the current in-store menu. Names, packages, and posted prices change. Ask staff before you travel for one specific item.",
+    a: SHOW_CIGARETTES
+      ? "Adults 19+ can compare flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes — including Native cigarettes as a merchandise category only — on the current in-store menu. Names, packages, and posted prices change. Ask staff before you travel for one specific item."
+      : "Adults 19+ can compare flower tiers, pre-rolls, edibles, vapes, concentrates, and accessories on the current in-store menu. Names, packages, and posted prices change. Ask staff before you travel for one specific item.",
   },
   {
     q: "Where's a weed dispensary near me at Yonge and Eglinton?",

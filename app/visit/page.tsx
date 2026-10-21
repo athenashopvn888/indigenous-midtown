@@ -8,6 +8,7 @@ import {
   stringifyJsonLd,
 } from "../lib/storeIdentity";
 import styles from "./visit.module.css";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 const VISIT_FAQS = [
   {
@@ -187,8 +188,7 @@ export default function VisitPage() {
           Indigenous Midtown Cannabis is a walk-in for adults 19+. Bring
           government-issued photo ID. Staff can show the current menu
           categories — flower, pre-rolls, edibles, vapes, concentrates,
-          accessories, and listed cigarettes (including Native cigarettes as a
-          product category only) — but this page does not claim stock, sale
+          and accessories{SHOW_CIGARETTES ? ", and listed cigarettes (including Native cigarettes as a product category only)" : ""} — but this page does not claim stock, sale
           prices, medical benefit, or any cultural affiliation beyond the
           verified business name. If one product is the only reason for the
           trip, call {STORE.phoneDisplay} first.

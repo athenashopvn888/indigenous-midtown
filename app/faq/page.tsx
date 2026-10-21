@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./faq.module.css";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
+
+const FAQ_DESCRIPTION = SHOW_CIGARETTES
+  ? "Frequently asked questions about Indigenous Midtown Cannabis in Toronto, including store-page checks, menu categories, value shopping, and Native smokes where listed."
+  : "Frequently asked questions about Indigenous Midtown Cannabis in Toronto, including store-page checks, menu categories, and value shopping.";
 
 export const metadata: Metadata = {
   title: "FAQ | Indigenous Midtown Cannabis",
-  description: "Frequently asked questions about Indigenous Midtown Cannabis in Toronto, including store-page checks, menu categories, value shopping, and Native smokes where listed.",
+  description: FAQ_DESCRIPTION,
   alternates: {
     canonical: "https://www.indigenousmidtowncannabis.ca/faq",
   },
@@ -29,7 +34,7 @@ const FAQ_CATEGORIES = [
   {
     title: "Products and Menu",
     faqs: [
-      { q: "What menu categories can shoppers compare?", a: "The site has paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed." },
+      { q: "What menu categories can shoppers compare?", a: SHOW_CIGARETTES ? "The site has paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed." : "The site has paths for flower, pre-rolls, edibles, THC vapes, concentrates, and accessories." },
       { q: "How should shoppers use the menu?", a: "Pick one category first, then compare product name, format, weight or package size, posted price, and item details." },
       { q: "Do menu details change?", a: "Yes. Product names, prices, and menu details can change, so use the current menu or ask staff before making the trip." },
     ],
@@ -42,14 +47,14 @@ const FAQ_CATEGORIES = [
       { q: "How do shoppers avoid guessing?", a: "Stay inside one tier, compare the posted details, and ask staff when the final choice needs a current answer." },
     ],
   },
-  {
+  ...(SHOW_CIGARETTES ? [{
     title: "Native Smokes",
     faqs: [
       { q: "Does Indigenous Midtown Cannabis list Native cigarettes?", a: "The cigarette menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Confirm current options through the menu or staff." },
       { q: "Where can I confirm carton details?", a: "Where $25 carton-style listings are shown, confirm current price and menu details through the menu or staff." },
       { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the store page for directions, contact options, and listed hours." },
     ],
-  },
+  }] : []),
 ];
 
 export default function FAQPage() {

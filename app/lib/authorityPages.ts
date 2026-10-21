@@ -1,3 +1,5 @@
+import { SHOW_CIGARETTES } from "./showCigarettes";
+
 export type AuthorityPage = {
   path: string;
   eyebrow: string;
@@ -17,7 +19,9 @@ export const AUTHORITY_PAGES = {
     summary: "Plan a walk-in visit to Indigenous Midtown Cannabis at 93 Broadway Avenue, one block north of Eglinton near Redpath Avenue.",
     body: [
       "Indigenous Midtown Cannabis is at 93 Broadway Ave in Midtown Toronto. From Yonge Street, turn east on Broadway Avenue and continue toward Redpath Avenue. The shop sits within the Yonge–Eglinton grid, close to the Broadway residential towers and a short walk north of Eglinton Avenue.",
-      "Start with the current menu before leaving. Flower is arranged across Exotic, Premium, AAA+, AA and Budget tiers, while pre-rolls, edibles, concentrates, THC vapes, nicotine vapes, cigarettes and accessories each keep their own category. That separation makes it easier to compare the right shelf for this location.",
+      SHOW_CIGARETTES
+        ? "Start with the current menu before leaving. Flower is arranged across Exotic, Premium, AAA+, AA and Budget tiers, while pre-rolls, edibles, concentrates, THC vapes, nicotine vapes, cigarettes and accessories each keep their own category. That separation makes it easier to compare the right shelf for this location."
+        : "Start with the current menu before leaving. Flower is arranged across Exotic, Premium, AAA+, AA and Budget tiers, while pre-rolls, edibles, concentrates, THC vapes, nicotine vapes, and accessories each keep their own category. That separation makes it easier to compare the right shelf for this location.",
       "Eglinton Station is the closest Line 1 stop. Drivers should follow the posted curb and parking signs on the block where they stop, because restrictions can change by side and time. The visit page collects the subway, walking, driving and last-block notes for 93 Broadway Ave.",
     ],
     menuHref: "/exotic-weed",

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import { GUIDE_REGISTRY, GUIDE_STORE, getGuide, resolveGuideProduct, type GuideEntry } from "../../lib/guideRegistry";
+import { isHiddenGuide, isKeptTobaccoText, SHOW_CIGARETTES } from "../../lib/showCigarettes";
 import GuideBody, { stripMarkdown } from "./GuideBody";
 import styles from "./guide.module.css";
 
@@ -21,7 +22,7 @@ export function generateStaticParams() { return GUIDE_REGISTRY.map((guide) => ({
 
 export async function generateMetadata({ params }: GuidePageProps): Promise<Metadata> {
   const guide = getGuide((await params).slug);
-  if (!guide) return {};
+  if (!guide || isHiddenGuide(guide)) return { robots: { index: false, follow: false } };
   const description = stripMarkdown(guide.description);
   return {
     title: { absolute: guide.title },
@@ -33,13 +34,22 @@ export async function generateMetadata({ params }: GuidePageProps): Promise<Meta
   };
 }
 
-const relatedEntries = (guide: GuideEntry) => guide.relatedSlugs.map(getGuide).filter((entry): entry is GuideEntry => Boolean(entry));
+const relatedEntries = (guide: GuideEntry) => guide.relatedSlugs
+  .map(getGuide)
+  .filter((entry): entry is GuideEntry => Boolean(entry))
+  .filter((entry) => !isHiddenGuide(entry));
+const menuPathFor = (guide: GuideEntry) => (
+  !SHOW_CIGARETTES && isKeptTobaccoText(`${guide.slug} ${guide.name}`) && guide.preferredCategoryPath === "/items/cigarettes"
+    ? "/items/add-ons"
+    : guide.preferredCategoryPath
+);
 
 export default async function GuidePage({ params }: GuidePageProps) {
   const guide = getGuide((await params).slug);
-  if (!guide) notFound();
+  if (!guide || isHiddenGuide(guide)) notFound();
   const product = resolveGuideProduct(guide);
   const productHref = product ? `${guide.lane === "strain" ? "/flower" : "/item"}/${product.slug}` : undefined;
+  const menuPath = menuPathFor(guide);
   const canonical = `${BASE}/guides/${guide.slug}`;
   const lane = laneCopy[guide.lane];
   const graph: Record<string, unknown>[] = [{
@@ -76,20 +86,20 @@ export default async function GuidePage({ params }: GuidePageProps) {
           <h1>{guide.title}</h1>
           <p className={styles.lede}>{stripMarkdown(guide.description)}</p>
           <div className={styles.actions}>
-            <Link className={styles.primary} href={productHref ?? guide.preferredCategoryPath}>{productHref ? `Open the ${guide.name} menu listing` : "Check today’s board"}</Link>
-            <Link className={styles.secondary} href={guide.preferredCategoryPath}>Browse {lane.category}</Link>
+            <Link className={styles.primary} href={productHref ?? menuPath}>{productHref ? `Open the ${guide.name} menu listing` : "Check today’s board"}</Link>
+            <Link className={styles.secondary} href={menuPath}>Browse {lane.category}</Link>
           </div>
         </header>
         <section className={styles.section} aria-label={`${guide.name} guide`}><GuideBody markdown={guide.bodyMd} /></section>
-        <section className={styles.section} aria-labelledby="related-guides-heading">
+        {relatedEntries(guide).length > 0 && <section className={styles.section} aria-labelledby="related-guides-heading">
           <h2 id="related-guides-heading">Related {lane.label} guides</h2>
           <div className={styles.related}>{relatedEntries(guide).map((entry) => <Link key={entry.slug} href={`/guides/${entry.slug}`}>{entry.name}<span>{laneCopy[entry.lane].label}</span></Link>)}</div>
-        </section>
+        </section>}
         <aside className={styles.finalCta}>
           <h2>Check today&apos;s board</h2>
           <p>Use the current menu path for the latest posted listing and format details.</p>
           <div className={styles.actions}>
-            <Link className={styles.primary} href={productHref ?? guide.preferredCategoryPath}>Open today&apos;s menu path</Link>
+            <Link className={styles.primary} href={productHref ?? menuPath}>Open today&apos;s menu path</Link>
             <Link className={styles.secondary} href="/visit">Visit {GUIDE_STORE.brand}</Link>
           </div>
         </aside>

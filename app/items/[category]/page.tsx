@@ -17,6 +17,7 @@ import styles from "./items.module.css";
 import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 import guideStyles from "../../guides/[slug]/guide.module.css";
 import VapeActionPanel from "../../components/VapeActionPanel";
+import { isHiddenCigaretteItem, SHOW_CIGARETTES } from "../../lib/showCigarettes";
 
 /* ── Generate all category pages ── */
 export function generateStaticParams() {
@@ -32,6 +33,7 @@ export async function generateMetadata({
   const { category: catSlug } = await params;
   const catInfo = getCategoryFromSlug(catSlug);
   if (!catInfo) return {};
+  if (!SHOW_CIGARETTES && catSlug === "cigarettes") return { robots: { index: false, follow: false } };
   const { items: liveItems } = await fetchLiveProducts();
   const items = liveItems.filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
 
@@ -56,11 +58,17 @@ export default async function ItemsCategoryPage({
   /* Pre-Rolls also shows accessories (ADD ONS) */
   const { items: liveItems } = await fetchLiveProducts();
   let items = liveItems.filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
+  if (!SHOW_CIGARETTES) items = items.filter((item) => !isHiddenCigaretteItem(item));
   if (catInfo.key === "PREROLLS") {
     const accessories = liveItems.filter((item) => item.category.toUpperCase() === "ADD ONS");
     const existingIds = new Set(items.map(i => i.sku));
     const uniqueAccessories = accessories.filter(a => !existingIds.has(a.sku));
     items = [...items, ...uniqueAccessories];
+  }
+  if (!SHOW_CIGARETTES && catInfo.key === "ADD ONS") {
+    const kept = liveItems.filter((item) => item.category.toUpperCase() === "CIGARETTES" && !isHiddenCigaretteItem(item));
+    const existingIds = new Set(items.map((item) => item.sku));
+    items = [...items, ...kept.filter((item) => !existingIds.has(item.sku))];
   }
   const { config } = catInfo;
   const categoryBanner = resolveItemBanner(catSlug, config.banner);
@@ -69,7 +77,7 @@ export default async function ItemsCategoryPage({
   return (
     <main className={styles.main}>
       <Navbar />
-      {catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
+      {SHOW_CIGARETTES && catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
 
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
@@ -123,6 +131,7 @@ export default async function ItemsCategoryPage({
           {(catInfo.key === "VAPE PENS" || catInfo.key === "VAPE DISPOSABLE") && (
             <h1 className={styles.seoTitle}>{config.name}</h1>
           )}
+          {(SHOW_CIGARETTES || catSlug !== "cigarettes") && <>
           <h2 className={styles.seoTitle}>{config.seoTitle}</h2>
           <p className={styles.seoBody}>{config.seoDescription}</p>
 
@@ -138,6 +147,7 @@ export default async function ItemsCategoryPage({
               ))}
             </div>
           )}
+          </>}
 
           {/* Visit CTA */}
           <div className={styles.visitCta}>
@@ -178,7 +188,7 @@ function ItemCard({ item, catColor }: { item: ItemProduct; catColor: string }) {
         </div>
       </div>
       <div className={styles.cardBody}>
-        <span className={styles.cardCategory}>{item.category}</span>
+        <span className={styles.cardCategory}>{!SHOW_CIGARETTES && item.category.toUpperCase() === "CIGARETTES" ? "Backwoods" : item.category}</span>
         <h3 className={styles.cardName}>{item.name}</h3>
         {item.price && (
           <div className={styles.cardPrice}>

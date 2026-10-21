@@ -1,6 +1,7 @@
 import CigaretteSeasonalNotice from "./CigaretteSeasonalNotice";
 import { Fragment } from "react";
 import Link from "next/link";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 const STORE_NAME = "Indigenous Midtown Cannabis";
 const THEME = { accent: "#8b5cf6", background: "#140b22" };
@@ -12,7 +13,8 @@ const promos = [
 ] as const;
 
 const STORE_ORIGIN = "https://www.indigenousmidtowncannabis.ca";
-const bannerImageObjects = promos.map((promo) => ({ "@type": "ImageObject", name: promo.alt, contentUrl: `${STORE_ORIGIN}${promo.image}`, description: `${promo.alt} at ${STORE_NAME}.`, caption: promo.caption }));
+const visiblePromos = SHOW_CIGARETTES ? promos : promos.filter((promo) => !promo.key.includes("cigarette"));
+const bannerImageObjects = visiblePromos.map((promo) => ({ "@type": "ImageObject", name: promo.alt, contentUrl: `${STORE_ORIGIN}${promo.image}`, description: `${promo.alt} at ${STORE_NAME}.`, caption: promo.caption }));
 
 const figureStyle = { margin: 0, width: "100%" } as const;
 const imageStyle = { display: "block", width: "100%", maxWidth: "100%", height: "auto" } as const;
@@ -22,7 +24,7 @@ export default function FleetAnnouncementBanner() {
   return (
     <aside data-fleet-homepage-announcement="" aria-label="Store promotions" style={{ display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", height: "auto", minHeight: 0, overflow: "visible", position: "relative", zIndex: 50 }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": bannerImageObjects }).replace(/</g, "\\u003c") }} />
-      {promos.map((promo) => (
+      {visiblePromos.map((promo) => (
         <Fragment key={promo.key}>
         {promo.key === "cigarettes" && <CigaretteSeasonalNotice />}
         <figure data-core-banner={promo.key} style={{ ...figureStyle, boxShadow: `inset 0 0 0 2px ${THEME.accent}` }}>

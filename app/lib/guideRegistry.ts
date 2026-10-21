@@ -1,5 +1,6 @@
 import guideCopy from "./guideCopy.json";
 import { allFlowers, allItems, type FlowerProduct, type ItemProduct } from "./products";
+import { isHiddenGuide, SHOW_CIGARETTES } from "./showCigarettes";
 
 export type GuideLane = "strain" | "native_cig" | "nic_vape" | "thc_vape";
 export type GuideFaq = { question: string; answer: string };
@@ -78,14 +79,17 @@ const GUIDE_LANES: { lane: GuideLane; label: string }[] = [
   { lane: "thc_vape", label: "THC Vape" },
 ];
 
+const visibleGuides = () => GUIDE_REGISTRY.filter((guide) => !isHiddenGuide(guide));
+
 export function getGuidesByLane(lane: GuideLane): GuideEntry[];
 export function getGuidesByLane(): { lane: GuideLane; label: string; guides: GuideEntry[] }[];
 export function getGuidesByLane(lane?: GuideLane) {
-  if (lane) return GUIDE_REGISTRY.filter((guide) => guide.lane === lane);
+  const guides = visibleGuides();
+  if (lane) return guides.filter((guide) => guide.lane === lane);
   return GUIDE_LANES.map(({ lane, label }) => ({
     lane,
     label,
-    guides: GUIDE_REGISTRY.filter((guide) => guide.lane === lane),
+    guides: guides.filter((guide) => guide.lane === lane),
   })).filter((group) => group.guides.length > 0);
 }
 
@@ -101,7 +105,7 @@ export const getTierGuideLinks = (categoryPath: string, limit = 6) => GUIDE_REGI
   .slice(0, limit);
 
 export function getCategoryGuideGroups(categoryPath: string) {
-  if (categoryPath === "/items/cigarettes") return [{ label: "Native Cigarettes brand guides", guides: GUIDE_REGISTRY.filter((guide) => guide.lane === "native_cig").slice(0, 9) }];
+  if (categoryPath === "/items/cigarettes") return [{ label: SHOW_CIGARETTES ? "Native Cigarettes brand guides" : "Backwoods", guides: visibleGuides().filter((guide) => guide.lane === "native_cig").slice(0, 9) }];
   if (categoryPath === "/items/vapes") return [
     { label: "Nicotine Vape brand guides", guides: GUIDE_REGISTRY.filter((guide) => guide.lane === "nic_vape").slice(0, 6) },
     { label: "Separate THC Vape guides", guides: GUIDE_REGISTRY.filter((guide) => guide.lane === "thc_vape").slice(0, 3) },

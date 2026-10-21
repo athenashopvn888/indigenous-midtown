@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { allItems, fetchLiveProducts, CATEGORY_CONFIG, type ItemProduct } from "../../lib/products";
+import { isHiddenCigaretteItem, publicItemCategory } from "../../lib/showCigarettes";
 import { getItemData } from "../../lib/itemData";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import Magnifier from "../../components/Magnifier";
@@ -22,19 +23,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const { items } = await fetchLiveProducts();
-  const item = items.find((i) => i.slug === slug);
-  if (!item) return {};
+  const item = items.find((i) => i.slug === slug) ?? allItems.find((i) => i.slug === slug);
+  if (!item || isHiddenCigaretteItem(item)) return { robots: { index: false, follow: false } };
 
-  const itemData = getItemData(item.category, item.name);
+  const categoryLabel = publicItemCategory(item.category, item.name, item.slug);
+  const itemData = getItemData(categoryLabel, item.name);
 
   return {
-    title: `${item.name} | ${item.category} | Indigenous Midtown Cannabis Toronto`,
+    title: `${item.name} | ${categoryLabel} | Indigenous Midtown Cannabis Toronto`,
     description: itemData.metaDescription,
     alternates: {
       canonical: `https://www.indigenousmidtowncannabis.ca/item/${slug}`,
     },
     openGraph: {
-      title: `${item.name} | Indigenous Midtown Cannabis`,
+      title: `${item.name} | ${categoryLabel} | Indigenous Midtown Cannabis`,
       description: itemData.metaDescription,
       images: item.image ? [{ url: item.image, width: 800, height: 800, alt: item.name }] : [],
     },
@@ -51,7 +53,7 @@ function cleanSku(value: string) {
 }
 
 function getJsonLd(item: ItemProduct) {
-  const itemData = getItemData(item.category, item.name);
+  const itemData = getItemData(publicItemCategory(item.category, item.name, item.slug), item.name);
   const priceNum = item.price ? parseFloat(item.price.replace('$', '')) : 0;
 
   const offers: any = {
@@ -84,8 +86,15 @@ function getJsonLd(item: ItemProduct) {
 }
 
 /* -- Breadcrumb JSON-LD -- */
+function categoryHrefFor(item: ItemProduct) {
+  const label = publicItemCategory(item.category, item.name, item.slug);
+  if (label !== item.category) return "/items/add-ons";
+  const catInfo = Object.values(CATEGORY_CONFIG).find(c => c.name.toUpperCase() === item.category.toUpperCase() || c.name === item.category);
+  return `/items/${catInfo?.slug || item.category.toLowerCase().replace(" ", "-")}`;
+}
+
 function getBreadcrumbJsonLd(item: ItemProduct) {
-  const catSlug = item.category.toLowerCase().replace(' ', '-');
+  const label = publicItemCategory(item.category, item.name, item.slug);
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -99,8 +108,8 @@ function getBreadcrumbJsonLd(item: ItemProduct) {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": item.category,
-        "item": `https://www.indigenousmidtowncannabis.ca/items/${catSlug}`
+        "name": label,
+        "item": `https://www.indigenousmidtowncannabis.ca${categoryHrefFor(item)}`
       },
       {
         "@type": "ListItem",
@@ -120,14 +129,16 @@ export default async function ItemPage({
 }) {
   const { slug } = await params;
   const { items } = await fetchLiveProducts();
-  const item = items.find((i) => i.slug === slug);
-  if (!item) notFound();
+  const item = items.find((i) => i.slug === slug) ?? allItems.find((i) => i.slug === slug);
+  if (!item || isHiddenCigaretteItem(item)) notFound();
 
   const catInfo = Object.values(CATEGORY_CONFIG).find(c => c.name.toUpperCase() === item.category.toUpperCase() || c.name === item.category);
+  const categoryLabel = publicItemCategory(item.category, item.name, item.slug);
+  const categoryHref = categoryHrefFor(item);
   const catColor = catInfo?.color || "#94a3b8";
   const catIcon = catInfo?.icon || "🏷️";
   
-  const itemData = getItemData(item.category, item.name);
+  const itemData = getItemData(categoryLabel, item.name);
   const itemPrice = getItemPriceDisplay(item.price, item.sku);
 
   return (
@@ -149,7 +160,7 @@ export default async function ItemPage({
           <nav className={styles.breadcrumb}>
             <Link href="/">Home</Link>
             <span>/</span>
-            <Link href={`/items/${catInfo?.slug || item.category.toLowerCase().replace(' ', '-')}`}>{item.category}</Link>
+            <Link href={categoryHref}>{categoryLabel}</Link>
             <span>/</span>
             <span className={styles.breadcrumbCurrent}>{item.name}</span>
           </nav>
@@ -174,7 +185,7 @@ export default async function ItemPage({
             {/* -- Details -- */}
             <div className={styles.details}>
               <div className={styles.tierBadge} style={{ color: catColor, borderColor: `${catColor}33`, background: `${catColor}10` }}>
-                {catIcon} {item.category}
+                {catIcon} {categoryLabel}
               </div>
 
               <h1 className={styles.strainName}>{item.name}</h1>
