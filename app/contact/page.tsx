@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { FULL_NAME_NAP } from "../lib/fullNameNap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { getFleetContent } from "../lib/fleetContent";
 import styles from "./contact.module.css";
 
-export const metadata: Metadata = {
+export const dynamic = "force-dynamic";
+
+const CONTACT_METADATA: Metadata = {
   title: "Contact Us — Indigenous Midtown Cannabis | 93 Broadway Ave, Toronto",
   description:
     "Visit Indigenous Midtown Cannabis at 93 Broadway Ave, Toronto, ON M4S 2A2. Open 24 hours, 7 days a week. Walk-ins welcome.",
@@ -17,6 +20,21 @@ export const metadata: Metadata = {
       "93 Broadway Ave, Toronto. Open 24 hours, 7 days a week. Premium cannabis, always fire.",
   },
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  if (!fleet.active) return CONTACT_METADATA;
+  const page = fleet.pages.Contact;
+  const description = page?.metaDescription || "";
+  const title = page?.metaTitle || "";
+  const codedTitle = typeof CONTACT_METADATA.title === "string" ? CONTACT_METADATA.title : "";
+  if ((!description || description === CONTACT_METADATA.description) && (!title || title === codedTitle)) return CONTACT_METADATA;
+  return {
+    ...CONTACT_METADATA,
+    ...(description && description !== CONTACT_METADATA.description ? { description, openGraph: { ...CONTACT_METADATA.openGraph, description } } : {}),
+    ...(title && title !== codedTitle ? { title: { absolute: title } } : {}),
+  };
+}
 
 export default function ContactPage() {
   return (
