@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
-import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
+import FleetAnnouncementBanner from "./components/fleet/FleetAnnouncementBanner";
+import type { ResolvedBanner } from "./lib/fleet/types";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
@@ -142,7 +143,7 @@ interface ReviewStats {
   avg: number;
 }
 
-export default function HomePageClient({ initialFlowers }: { initialFlowers: Parameters<typeof storeTierRange>[0] }) {
+export default function HomePageClient({ initialFlowers, contentBanners }: { initialFlowers: Parameters<typeof storeTierRange>[0]; contentBanners?: ResolvedBanner[] }) {
   const [featuredStrains, setFeaturedStrains] = useState<any[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [reviewsStats, setReviewsStats] = useState<ReviewStats | null>(null);
@@ -234,7 +235,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
       {/* ── NAVBAR ── */}
       <Navbar />
       <h1 data-home-store-title="" style={{ margin: 0, padding: "118px 16px 14px", background: "#111827", color: "#ffffff", textAlign: "center", fontSize: "clamp(1.1rem, 3vw, 2rem)", fontWeight: 900, lineHeight: 1.2, position: "relative", zIndex: 60 }}>Indigenous Midtown Cannabis Dispensary Weed Delivery</h1>
-      <FleetAnnouncementBanner />
+      <FleetAnnouncementBanner banners={contentBanners} />
 
       {/* ── WELCOME BANNER ── */}
       <section className={styles.welcomeBannerSection}>
