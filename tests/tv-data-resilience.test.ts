@@ -80,6 +80,54 @@ test("without last-good, failures return the static snapshot with HTTP 200 and e
   assert.equal(result.body, staticFlowers);
 });
 
+test("a failed refresh keeps last-good cig, and a miss with no saved cig has no block", async () => {
+  resetTvStockCache();
+  const cig = { on: true, tvOn: false, webOn: false };
+  await getCigaretteDataset({
+    staticFlowers,
+    staticItems,
+    fetchImpl: async () => response(200, { ...live, cig }),
+    now: 1_000,
+  });
+  const withinWindow = await getCigaretteDataset({
+    staticFlowers,
+    staticItems,
+    fetchImpl: async () => response(500, null),
+    now: 30_000,
+  });
+  assert.equal(withinWindow.source, "live");
+  assert.deepEqual(withinWindow.cig, cig);
+
+  const saved = await getCigaretteDataset({
+    staticFlowers,
+    staticItems,
+    fetchImpl: async () => response(500, null),
+    now: 70_000,
+  });
+  assert.equal(saved.source, "last-good");
+  assert.deepEqual(saved.cig, cig);
+
+  resetTvStockCache();
+  const miss = await getCigaretteDataset({
+    staticFlowers,
+    staticItems,
+    fetchImpl: async () => response(500, null),
+    now: 1_000,
+  });
+  assert.equal(miss.source, "static-fallback");
+  assert.equal(miss.cig, null);
+
+  resetTvStockCache();
+  const liveMissing = await getCigaretteDataset({
+    staticFlowers,
+    staticItems,
+    fetchImpl: async () => response(200, { ...live }),
+    now: 1_000,
+  });
+  assert.equal(liveMissing.source, "live");
+  assert.equal(liveMissing.cig, null);
+});
+
 test("cigarette dataset keeps the feed cig block and refreshes it on the short cache", async () => {
   resetTvStockCache();
   const cig = { on: true, tvOn: true, webOn: false };
