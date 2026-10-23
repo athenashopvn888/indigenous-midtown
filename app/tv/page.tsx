@@ -12,6 +12,8 @@ import { getFlowerEffects } from "./flowerEffects";
 import { TOP_TIER_BUNDLE_LABELS } from "./bundleLabels";
 import TvReviewQr from "../TvReviewQr";
 import { mentionsHiddenCigarette } from "../lib/showCigarettes";
+import { useCigaretteState } from "../components/CigaretteStateProvider";
+import { readCigaretteTvHeader } from "../lib/cigDecision";
 import FleetTvTakeover from "../components/fleet/FleetTvTakeover";
 import { useFleetTvManifest } from "../components/fleet/useFleetTvManifest";
 
@@ -722,6 +724,8 @@ function VerticalTicker() {
    MAIN TV PAGE
    ============================================================ */
 export default function TVMenuPage() {
+  const seeded = useCigaretteState();
+  const [tvCig, setTvCig] = useState({ show: seeded.tv, wording: seeded.wording });
   const fleetTv = useFleetTvManifest();
   const theme = getTvTheme(tvHiring?.store);
   const [bgUrl, setBgUrl] = useState("");
@@ -755,6 +759,7 @@ export default function TVMenuPage() {
       ]);
       const fData: Flower[] = fRes.ok ? await fRes.json() : [];
       const iData: Item[] = iRes.ok ? await iRes.json() : [];
+      setTvCig(iRes.ok ? readCigaretteTvHeader(iRes.headers) : { show: false, wording: seeded.wording });
       setStockUpdated(readStockUpdatedAt(fRes, fData) || readStockUpdatedAt(iRes, iData));
 
       for (const f of fData) {
@@ -798,7 +803,7 @@ export default function TVMenuPage() {
       setLastUpdate(formatBoardTime(new Date()) || "");
     } catch (err) { console.warn("[TV] Load failed:", err); }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [seeded.wording]);
 
   const fitToScreen = useCallback(() => {
     if (!wrapRef.current) return;
@@ -864,6 +869,7 @@ export default function TVMenuPage() {
   return (
     <div
       className={styles.tvPage}
+      data-cig-tv={tvCig.show ? "1" : "0"}
       data-tv-themed={theme ? "true" : undefined}
       style={theme ? getTvThemeVariables(theme) : bgUrl ? { backgroundImage: `url(${bgUrl})`, backgroundSize: "cover" } : undefined}
     >

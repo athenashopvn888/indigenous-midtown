@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { getTvData, resetTvStockCache } from "../app/lib/tvStock.ts";
+import { getCigaretteDataset, getTvData, resetTvStockCache } from "../app/lib/tvStock.ts";
 
 const staticFlowers = [{ sku: "sf", name: "Static flower" }];
 const staticItems = [{ sku: "si", name: "Static item" }];
@@ -78,4 +78,21 @@ test("without last-good, failures return the static snapshot with HTTP 200 and e
   assert.equal(result.headers["x-tv-data-source"], "static-fallback");
   assert.equal(result.headers["x-tv-data-fallback-reason"], "HTTP 429");
   assert.equal(result.body, staticFlowers);
+});
+
+test("cigarette dataset keeps the feed cig block and refreshes it on the short cache", async () => {
+  resetTvStockCache();
+  const cig = { on: true, tvOn: true, webOn: false };
+  let calls = 0;
+  const fetchImpl = async () => {
+    calls += 1;
+    return response(200, { ...live, cig });
+  };
+  const first = await getCigaretteDataset({ staticFlowers, staticItems, fetchImpl, now: 1_000 });
+  assert.equal(first.source, "live");
+  assert.deepEqual(first.cig, cig);
+  await getCigaretteDataset({ staticFlowers, staticItems, fetchImpl, now: 30_000 });
+  assert.equal(calls, 1);
+  await getCigaretteDataset({ staticFlowers, staticItems, fetchImpl, now: 70_000 });
+  assert.equal(calls, 2);
 });

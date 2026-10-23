@@ -5,6 +5,20 @@
 export const SHOW_CIGARETTES =
   (process.env.NEXT_PUBLIC_SHOW_CIGARETTES ?? "false").trim().toLowerCase() === "true";
 
+function hardOffRaw(raw: string | undefined): string | undefined {
+  if (raw != null) return raw;
+  // SHOW_CIGARETTES defaults to false when the env var is unset. That default
+  // is the website gate. An unset var is not a hard off, so the TV feed can
+  // still turn the board on. Only an explicit 0/false/no/off blocks the feed.
+  return process.env.SHOW_CIGARETTES ?? process.env.NEXT_PUBLIC_SHOW_CIGARETTES;
+}
+
+/** Explicit 0 / false / no / off. The feed cannot turn that surface back on. */
+export function cigaretteEnvHardOff(raw: string | undefined = hardOffRaw(undefined)): boolean {
+  if (raw == null) return false;
+  return /^(0|false|no|off)$/i.test(raw.trim());
+}
+
 export const VAPE_PAGE = "/items/vapes";
 
 const KEPT_TOBACCO = /\b(backwoods?|cigarillos?|rolling\s+papers?)\b/i;

@@ -41,6 +41,7 @@ export type TvDataset = {
   items: LooseRecord[];
   stockDate: string;
   fallbackReason?: string;
+  cig: Record<string, unknown> | null;
 };
 
 type TvStockOptions = {
@@ -107,12 +108,32 @@ function asRecords(value: unknown): LooseRecord[] {
   return Array.isArray(value) ? (value as LooseRecord[]) : [];
 }
 
+function normalizeCig(value: unknown): Record<string, unknown> | null {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  return value as Record<string, unknown>;
+}
+
 function staticDataset(staticFlowers: unknown, staticItems: unknown): TvDataset {
   return {
     source: "static-fallback",
     flowers: asRecords(staticFlowers),
     items: asRecords(staticItems),
     stockDate: "",
+    cig: null,
+  };
+}
+
+function presentCigDataset(dataset: TvDataset): TvDataset {
+  const cig = dataset.source === "live"
+    ? normalizeCig(dataset.cig)
+    : (lastGood ? normalizeCig(lastGood.cig) : null);
+  return {
+    source: dataset.source,
+    flowers: Array.isArray(dataset.flowers) ? dataset.flowers : [],
+    items: Array.isArray(dataset.items) ? dataset.items : [],
+    stockDate: dataset.stockDate || "",
+    ...(dataset.fallbackReason ? { fallbackReason: dataset.fallbackReason } : {}),
+    cig,
   };
 }
 
@@ -133,14 +154,20 @@ function rejectLiveStock(data: unknown, staticFlowers: unknown, staticItems: unk
   return null;
 }
 
-let cached: { expiresAt: number; dataset: TvDataset } | null = null;
+const CIG_STOCK_CACHE_MS = 60 * 1000;
+
+let cached: { expiresAt: number; fetchedAt?: number; dataset: TvDataset } | null = null;
 let lastGood: TvDataset | null = null;
 let inflight: Promise<TvDataset> | null = null;
+let cigCached: { expiresAt: number; dataset: TvDataset } | null = null;
+let cigInflight: Promise<TvDataset> | null = null;
 
 export function resetTvStockCache() {
   cached = null;
   lastGood = null;
   inflight = null;
+  cigCached = null;
+  cigInflight = null;
 }
 
 function selectTvPayload(dataset: TvDataset, type: string | null | undefined) {
@@ -200,7 +227,7 @@ async function resolveDataset(options: TvStockOptions): Promise<TvDataset> {
       return fail(reason);
     }
 
-    const record = data as { flowers: LooseRecord[]; items: LooseRecord[]; stockDate?: unknown };
+    const record = data as { flowers: LooseRecord[]; items: LooseRecord[]; stockDate?: unknown; cig?: unknown };
     postprocessFlowers(record.flowers);
     postprocessItems(record.items);
 
@@ -209,8 +236,9 @@ async function resolveDataset(options: TvStockOptions): Promise<TvDataset> {
       flowers: record.flowers,
       items: record.items,
       stockDate: record.stockDate == null ? "" : String(record.stockDate),
+      cig: normalizeCig(record.cig),
     };
-    cached = { expiresAt: now + TV_STOCK_CACHE_MS, dataset };
+    cached = { expiresAt: now + TV_STOCK_CACHE_MS, fetchedAt: now, dataset };
     lastGood = dataset;
     return dataset;
   } catch (err) {
@@ -246,4 +274,24 @@ export async function getTvData(options: TvStockOptions) {
   }
 
   return selectTvPayload(dataset, options.type);
+}
+
+/** Cigarette on/off is allowed to refresh about once a minute, ahead of the five-minute menu cache. */
+export async function getCigaretteDataset(options: TvStockOptions): Promise<TvDataset> {
+  const now = options.now ?? Date.now();
+  if (cached?.fetchedAt != null && now - cached.fetchedAt < CIG_STOCK_CACHE_MS) {
+    return presentCigDataset(cached.dataset);
+  }
+  if (cigCached && now < cigCached.expiresAt) return cigCached.dataset;
+  if (!cigInflight) {
+    const started = now;
+    cigInflight = resolveDataset({ ...options, now: started }).then((dataset) => {
+      const safe = presentCigDataset(dataset);
+      cigCached = { expiresAt: started + CIG_STOCK_CACHE_MS, dataset: safe };
+      return safe;
+    }).finally(() => {
+      cigInflight = null;
+    });
+  }
+  return cigInflight;
 }
