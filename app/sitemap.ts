@@ -115,6 +115,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
+  const cannabutterRecipe: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/cannabutter-recipe-stovetop`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
+
   const guidePages: MetadataRoute.Sitemap = GUIDE_REGISTRY.map((guide) => ({
     url: `${BASE}/guides/${guide.slug}`,
     lastModified: now,
@@ -149,6 +158,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...itemDetailPages,
     ...resourcePages,
     ...capsuleLabelGuide,
+    ...cannabutterRecipe,
     ...seoPages,
     ...guideIndex,
     ...guidePages,
