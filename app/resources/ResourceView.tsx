@@ -11,6 +11,7 @@ type ResourceViewProps = {
 
 export default function ResourceView({ page }: ResourceViewProps) {
   const cards = page.cards.filter((card) => !isHiddenCigaretteHref(card.href));
+  const related = (page.related ?? []).filter((item) => !isHiddenCigaretteHref(item.href));
   return (
     <main className={styles.main}>
       <Navbar />
@@ -32,6 +33,21 @@ export default function ResourceView({ page }: ResourceViewProps) {
               </Link>
             ))}
           </div>
+        </section>
+      )}
+
+      {page.slug === "" && related.length > 0 && (
+        <section className={styles.latest} aria-labelledby="latest-articles-heading">
+          <h2 id="latest-articles-heading">Latest articles</h2>
+          <p className={styles.latestNote}>Adults 19+.</p>
+          <ul className={styles.latestList}>
+            {related.map((article) => (
+              <li key={article.href}>
+                <Link href={article.href}>{article.title}</Link>
+                <p>{article.text}</p>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
