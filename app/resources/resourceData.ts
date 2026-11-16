@@ -21,6 +21,7 @@ export interface ResourcePage {
   intro: string;
   cards: ResourceCard[];
   sections: ResourceSection[];
+  related?: ResourceCard[];
 }
 
 export const RESOURCE_PAGES: ResourcePage[] = [
@@ -78,6 +79,18 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         body: "Shoppers searching around Midtown Toronto, Yonge and Eglinton, Mount Pleasant, Davisville, or Leaside can use the same simple route through the site: confirm the store details, narrow the category, and finish on the current menu.",
       },
     ],
+    related: [
+      {
+        title: "Cannabis Capsules and Softgels: How to Read the Label, Line by Line",
+        href: "/resources/cannabis-capsules-softgels-label-guide",
+        text: "They look like the vitamin bottle in your kitchen cupboard, which is exactly why they deserve a careful read.",
+      },
+      {
+        title: "Cannabutter Recipe on the Stovetop: The Slow, Low, No-Drama Method",
+        href: "/resources/cannabutter-recipe-stovetop",
+        text: "Every kitchen experiment with cannabis starts in the same place: a pot of butter, a pile of flower and a lot of questions.",
+      },
+    ],
   },
   {
     slug: "menu-guide",
@@ -111,6 +124,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         title: "Native Smokes",
         href: "/resources/native-smokes",
         text: "Review the current cigarette list without mixing it into cannabis categories.",
+      },
+      {
+        title: "Cannabis Capsules and Softgels: How to Read the Label, Line by Line",
+        href: "/resources/cannabis-capsules-softgels-label-guide",
+        text: "They look like the vitamin bottle in your kitchen cupboard, which is exactly why they deserve a careful read.",
       },
     ],
     sections: [
@@ -168,6 +186,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         title: "Explore Indigenous Midtown Cannabis Weed in Toronto",
         href: "/weed-dispensary-toronto/",
         text: "Start with the broader Toronto Weed selection before choosing a flower collection.",
+      },
+      {
+        title: "Cannabutter Recipe on the Stovetop: The Slow, Low, No-Drama Method",
+        href: "/resources/cannabutter-recipe-stovetop",
+        text: "Every kitchen experiment with cannabis starts in the same place: a pot of butter, a pile of flower and a lot of questions.",
       },
     ],
     sections: [

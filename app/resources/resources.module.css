@@ -87,6 +87,64 @@
   line-height: 1.5;
 }
 
+.latest {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 24px 0;
+}
+
+.latest h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.latestNote {
+  margin: 8px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.latestList {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.latestList li {
+  display: grid;
+  gap: 8px;
+  padding: 16px 18px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--bg-primary);
+}
+
+.latestList a {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.latestList a:hover {
+  color: var(--green-dark);
+}
+
+.latestList p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .body {
   max-width: 860px;
   margin: 0 auto;
@@ -132,6 +190,7 @@
   }
 
   .cardsSection,
+  .latest,
   .body {
     padding-left: 18px;
     padding-right: 18px;
