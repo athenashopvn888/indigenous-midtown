@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import FlowerBogoStrip from "./FlowerBogoStrip";
-import { SHOW_CIGARETTES } from "../lib/showCigarettes";
+import { useCigaretteState } from "./CigaretteStateProvider";
 
 const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
   { href: "/exotic-weed", label: "Exotic Weed" },
@@ -30,11 +30,12 @@ const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
   { href: "/guides", label: "Guides" },
 ];
 
-const NAV_LINKS = SHOW_CIGARETTES
-  ? ALL_LINKS
-  : ALL_LINKS.filter((link) => link.href !== "/items/cigarettes");
 
 export default function Navbar() {
+  const { web: showCigarettes } = useCigaretteState();
+  const NAV_LINKS = showCigarettes
+    ? ALL_LINKS
+    : ALL_LINKS.filter((link) => link.href !== "/items/cigarettes");
   const pathname = usePathname();
   const scrollBarRef = useRef<HTMLDivElement>(null);
   const [canAdvance, setCanAdvance] = useState(false);

@@ -6,7 +6,7 @@ import CigaretteSeasonalNotice from "../CigaretteSeasonalNotice";
 import CodedAnnouncementBanner from "../FleetAnnouncementBanner";
 import { FLEET_COLORS } from "../../lib/fleet/config";
 import type { ResolvedBanner } from "../../lib/fleet/types";
-import { SHOW_CIGARETTES } from "../../lib/showCigarettes";
+import { useCigaretteState } from "../CigaretteStateProvider";
 
 const figureStyle = { margin: 0, width: "100%" } as const;
 const imageStyle = { display: "block", width: "100%", maxWidth: "100%", height: "auto" } as const;
@@ -63,13 +63,14 @@ function BannerFigure({ banner }: { banner: ResolvedBanner }) {
   );
 }
 
-function visibleBanners(banners: ResolvedBanner[]) {
-  return banners.filter((banner) => !banner.hidden && (SHOW_CIGARETTES || (banner.id !== "cigarettes" && banner.id !== "premium-cigarettes")));
+function visibleBanners(banners: ResolvedBanner[], showCigarettes: boolean) {
+  return banners.filter((banner) => !banner.hidden && (showCigarettes || (banner.id !== "cigarettes" && banner.id !== "premium-cigarettes")));
 }
 
 export default function FleetAnnouncementBanner({ banners }: { banners?: ResolvedBanner[] } = {}) {
+  const { web: showCigarettes } = useCigaretteState();
   if (!banners) return <CodedAnnouncementBanner />;
-  const visible = visibleBanners(banners);
+  const visible = visibleBanners(banners, showCigarettes);
   return (
     <aside data-fleet-homepage-announcement="" aria-label="Store promotions" style={{ display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", height: "auto", minHeight: 0, overflow: "visible", position: "relative", zIndex: 50 }}>
       {visible.map((banner) => (

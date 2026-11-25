@@ -18,6 +18,7 @@ import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 import guideStyles from "../../guides/[slug]/guide.module.css";
 import VapeActionPanel from "../../components/VapeActionPanel";
 import { isHiddenCigaretteItem, SHOW_CIGARETTES } from "../../lib/showCigarettes";
+import { getCigaretteSnapshot, reconcileSurfaceItems, toPublicCigaretteState } from "../../lib/cigaretteFeed";
 
 /* ── Generate all category pages ── */
 export function generateStaticParams() {
@@ -57,7 +58,9 @@ export default async function ItemsCategoryPage({
 
   /* Pre-Rolls also shows accessories (ADD ONS) */
   const { items: liveItems } = await fetchLiveProducts();
-  let items = liveItems.filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
+  const { web: showCigarettes } = toPublicCigaretteState(await getCigaretteSnapshot());
+  const cigaretteCategoryOff = catSlug === "cigarettes" && !showCigarettes;
+  let items = reconcileSurfaceItems(liveItems, [], showCigarettes).filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
   if (!SHOW_CIGARETTES) items = items.filter((item) => !isHiddenCigaretteItem(item));
   if (catInfo.key === "PREROLLS") {
     const accessories = liveItems.filter((item) => item.category.toUpperCase() === "ADD ONS");
@@ -77,11 +80,11 @@ export default async function ItemsCategoryPage({
   return (
     <main className={styles.main}>
       <Navbar />
-      {SHOW_CIGARETTES && catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
+      {showCigarettes && catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
 
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
-        {config.banner ? (
+        {config.banner && !cigaretteCategoryOff ? (
           <img
               src={categoryBanner}
             alt={config.name}
@@ -131,7 +134,7 @@ export default async function ItemsCategoryPage({
           {(catInfo.key === "VAPE PENS" || catInfo.key === "VAPE DISPOSABLE") && (
             <h1 className={styles.seoTitle}>{config.name}</h1>
           )}
-          {(SHOW_CIGARETTES || catSlug !== "cigarettes") && <>
+          {!cigaretteCategoryOff && <>
           <h2 className={styles.seoTitle}>{config.seoTitle}</h2>
           <p className={styles.seoBody}>{config.seoDescription}</p>
 
