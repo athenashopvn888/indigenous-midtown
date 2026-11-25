@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./Footer.module.css";
-import { SHOW_CIGARETTES } from "../lib/showCigarettes";
+import { useCigaretteState } from "./CigaretteStateProvider";
 
 export default function Footer() {
+  const { web: showCigarettes } = useCigaretteState();
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -57,7 +60,7 @@ export default function Footer() {
               <Link href="/aa-weed">AA Weed</Link>
               <Link href="/budget-weed">Budget Weed</Link>
               <Link href="/items/edibles">Edibles</Link>
-              {SHOW_CIGARETTES && <Link href="/items/cigarettes">Cigarettes</Link>}
+              {showCigarettes && <Link href="/items/cigarettes">Cigarettes</Link>}
               <Link href="/items/vapes">Nicotine Vape</Link>
               <Link href="/items/vape-disposables">THC Vape</Link>
               <Link href="/info/nicotine-vapes-toronto">Nicotine Vapes Toronto</Link>
@@ -73,7 +76,7 @@ export default function Footer() {
               <Link href="/info/cheap-weed-toronto">
                 Cheap Weed Yonge and Eglinton
               </Link>
-              {SHOW_CIGARETTES && (
+              {showCigarettes && (
               <Link href="/info/native-cigarettes-toronto">
                 Native Cigarettes Yonge and Eglinton
               </Link>

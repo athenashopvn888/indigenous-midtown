@@ -12,7 +12,8 @@ import { allFlowers } from "./lib/products";
 import { storeTierRange, tierRangeText } from "./lib/tierPriceRanges";
 import Papa from "papaparse";
 import { HOME_FAQS, STORE } from "./lib/storeIdentity";
-import { mentionsHiddenCigarette, SHOW_CIGARETTES } from "./lib/showCigarettes";
+import { useCigaretteState } from "./components/CigaretteStateProvider";
+import { mentionsHiddenCigarette } from "./lib/showCigarettes";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -114,9 +115,6 @@ const EXPLORE_CATEGORIES = [
   },
 ];
 
-const EXPLORE = SHOW_CIGARETTES
-  ? EXPLORE_CATEGORIES
-  : EXPLORE_CATEGORIES.filter((cat) => cat.slug !== "items/cigarettes");
 
 const LOCAL_HUB_LINKS = [
   { href: "/weed-dispensary-yonge-eglinton", label: "Broadway at Yonge–Eglinton Dispensary" },
@@ -128,9 +126,6 @@ const LOCAL_HUB_LINKS = [
   { href: "/visit", label: "Plan a Broadway Avenue Visit" },
 ];
 
-const LOCAL_HUB = SHOW_CIGARETTES
-  ? LOCAL_HUB_LINKS
-  : LOCAL_HUB_LINKS.filter((item) => !item.href.includes("native-cigarettes"));
 
 interface Review {
   name: string;
@@ -144,6 +139,13 @@ interface ReviewStats {
 }
 
 export default function HomePageClient({ initialFlowers, contentBanners }: { initialFlowers: Parameters<typeof storeTierRange>[0]; contentBanners?: ResolvedBanner[] }) {
+  const { web: showCigarettes } = useCigaretteState();
+  const LOCAL_HUB = showCigarettes
+    ? LOCAL_HUB_LINKS
+    : LOCAL_HUB_LINKS.filter((item) => !item.href.includes("native-cigarettes"));
+  const EXPLORE = showCigarettes
+    ? EXPLORE_CATEGORIES
+    : EXPLORE_CATEGORIES.filter((cat) => cat.slug !== "items/cigarettes");
   const [featuredStrains, setFeaturedStrains] = useState<any[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [reviewsStats, setReviewsStats] = useState<ReviewStats | null>(null);

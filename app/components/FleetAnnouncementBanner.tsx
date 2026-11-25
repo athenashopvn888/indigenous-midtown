@@ -1,7 +1,9 @@
+"use client";
+
 import CigaretteSeasonalNotice from "./CigaretteSeasonalNotice";
 import { Fragment } from "react";
 import Link from "next/link";
-import { SHOW_CIGARETTES } from "../lib/showCigarettes";
+import { useCigaretteState } from "./CigaretteStateProvider";
 
 const STORE_NAME = "Indigenous Midtown Cannabis";
 const THEME = { accent: "#8b5cf6", background: "#140b22" };
@@ -13,14 +15,15 @@ const promos = [
 ] as const;
 
 const STORE_ORIGIN = "https://www.indigenousmidtowncannabis.ca";
-const visiblePromos = SHOW_CIGARETTES ? promos : promos.filter((promo) => !promo.key.includes("cigarette"));
-const bannerImageObjects = visiblePromos.map((promo) => ({ "@type": "ImageObject", name: promo.alt, contentUrl: `${STORE_ORIGIN}${promo.image}`, description: `${promo.alt} at ${STORE_NAME}.`, caption: promo.caption }));
 
 const figureStyle = { margin: 0, width: "100%" } as const;
 const imageStyle = { display: "block", width: "100%", maxWidth: "100%", height: "auto" } as const;
 const captionStyle = { margin: 0, padding: "10px 14px", background: "#111827", color: "#ffffff", textAlign: "center" as const, fontWeight: 800, lineHeight: 1.35 };
 
 export default function FleetAnnouncementBanner() {
+  const { web: showCigarettes } = useCigaretteState();
+  const visiblePromos = showCigarettes ? promos : promos.filter((promo) => !promo.key.includes("cigarette"));
+  const bannerImageObjects = visiblePromos.map((promo) => ({ "@type": "ImageObject", name: promo.alt, contentUrl: `${STORE_ORIGIN}${promo.image}`, description: `${promo.alt} at ${STORE_NAME}.`, caption: promo.caption }));
   return (
     <aside data-fleet-homepage-announcement="" aria-label="Store promotions" style={{ display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", height: "auto", minHeight: 0, overflow: "visible", position: "relative", zIndex: 50 }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": bannerImageObjects }).replace(/</g, "\\u003c") }} />
